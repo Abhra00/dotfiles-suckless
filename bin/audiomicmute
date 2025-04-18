@@ -1,0 +1,11 @@
+#!/bin/sh
+wpctl set-mute @DEFAULT_SOURCE@ toggle
+
+mute_val=$(wpctl get-volume @DEFAULT_SOURCE@ | awk -F '[][]' '{print $2}')
+
+[ $mute_val == "MUTED" ] && dunstify -u low -i "mic-mute" "Mic is muted" && kill -45 $(pidof dwmblocks) && exit
+
+dunstify -u low -i "mic-unmute" "Mic is unmuted" && kill -45 $(pidof dwmblocks)
+
+
+

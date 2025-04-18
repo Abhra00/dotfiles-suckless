@@ -1,0 +1,50 @@
+
+
+#
+# █▀▀▄ █░░█ █▀▀▄ █▀▀ ▀▀█▀▀ █▀▀█ █▀▀ ░░ █▀▀█ █▀▀▄ █▀▀ █▀▀▄ █▀▀█ █▀▀█ █░█ 
+# █░░█ █░░█ █░░█ ▀▀█ ░░█░░ █▄▄▀ █░░ ▀▀ █░░█ █░░█ █▀▀ █░░█ █▄▄█ █▄▄▀ █▀▄ 
+# ▀▀▀░ ░▀▀▀ ▀░░▀ ▀▀▀ ░░▀░░ ▀░▀▀ ▀▀▀ ░░ ▀▀▀▀ ▀░░▀ ▀▀▀ ▀▀▀░ ▀░░▀ ▀░▀▀ ▀░▀
+#
+
+[global]
+monitor = 0
+separator_color= frame
+follow = keyboard
+gap_size = 3
+width = 370
+height = 350
+offset = 10x92
+padding = 10
+horizontal_padding = 10
+transparency = 0
+markup = full
+font = JetBrainsMono Nerd Font
+format = "<span size='x-large' font_desc='JetBrainsMono Nerd Font 12' weight='bold' foreground='#e06c75'>%s</span>\n\n%b"
+min_icon_size = 32
+max_icon_size = 128 
+icon_path = usr/share/icons/Papirus-Dark/48x48/actions/:/usr/share/icons/Papirus-Dark/48x48/apps/:/usr/share/icons/Papirus-Dark/48x48/devices/:/usr/share/icons/Papirus-Dark/48x48/emblems/:/usr/share/icons/Papirus-Dark/48x48/emotes/:/usr/share/icons/Papirus-Dark/48x48/mimetypes/:/usr/share/icons/Papirus-Dark/48x48/places/:/usr/share/icons/Papirus-Dark/48x48/status/:/home/bugs/.config/icons/
+corner_radius = 10
+
+
+[urgency_low]
+    background   = "#282c34"
+    foreground   = "#c8ccd4"
+    highlight    = "#e06c75"
+    frame_color  = "#282c34"
+    default_icon = "dialog-information"
+
+[urgency_normal]
+    background   = "#282c34"
+    foreground   = "#c8ccd4"
+    highlight    = "#e06c75"
+    frame_color  = "#282c34"
+    default_icon = "dialog-information"
+
+
+[urgency_critical]
+    background   = "#282c34"
+    foreground   = "#1e2327"
+    highlight    = "#e06c75"
+    frame_color  = "#e06c75"
+    default_icon = "dialog-error"
+    timeout      = 10
