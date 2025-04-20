@@ -7,6 +7,6 @@ WALL_DIR="$HOME/walls"
 choosen=$(find "$WALL_DIR" -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' \) | dmenu -X 645 -Y 370 -W 580 -i -p "Set Wallpaper:")
 
 # If something was selected
-if [[ -n "$choosen" ]]; then
+if [ -n "$choosen" ]; then
 	setbg "$choosen"
 fi
