@@ -1,4 +1,4 @@
-!/bin/sh
+#!/bin/sh
 
 This file runs when a DM logs you into a graphical session.
 If you use startx/xinit like a Chad, this file will also be sourced.
@@ -15,7 +15,7 @@ xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!	# Xresources 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & # Polkit authentication agent
 
 
-autostart="dwmblocks picom unclutter"
+autostart="dwmblocks picom unclutter pulsedaemon"
 
 for program in $autostart; do
 	pidof -sx "$program" || "$program" &
