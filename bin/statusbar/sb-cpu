@@ -9,4 +9,4 @@ case $BLOCK_BUTTON in
 	6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-sensors | awk '/Tctl/ {print " 󰻠 " $2}'
+sensors | awk '/Tctl/ {print "󰻠 " $2}'
