@@ -1,0 +1,65 @@
+@define-color accent_color #5f8787;              // base08
+@define-color accent_bg_color #121212;           // base01
+@define-color accent_fg_color #c1c1c1;           // base05
+
+@define-color destructive_color #a06666;         // base0A
+@define-color destructive_bg_color #222222;      // base02
+@define-color destructive_fg_color #dd9999;      // base0B
+
+@define-color success_color #dd9999;             // base0B
+@define-color success_bg_color #222222;          // base02
+@define-color success_fg_color #c1c1c1;          // base05
+
+@define-color warning_color #aaaaaa;             // base09
+@define-color warning_bg_color #333333;          // base03
+@define-color warning_fg_color #c1c1c1;          // base05
+
+@define-color error_color #a06666;               // base0A
+@define-color error_bg_color #222222;            // base02
+@define-color error_fg_color #dd9999;            // base0B
+
+@define-color window_bg_color #000000;           // base00
+@define-color window_fg_color #c1c1c1;           // base05
+
+@define-color view_bg_color #000000;             // base00
+@define-color view_fg_color #c1c1c1;             // base05
+
+@define-color headerbar_bg_color @window_bg_color;
+@define-color headerbar_fg_color @window_fg_color;
+@define-color headerbar_border_color @window_bg_color;
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color headerbar_shade_color @window_bg_color;
+
+@define-color card_bg_color #121212;             // base01
+@define-color card_fg_color #c1c1c1;             // base05
+@define-color card_shade_color rgba(255, 255, 255, 0.07);
+
+@define-color dialog_bg_color @card_bg_color;
+@define-color dialog_fg_color @card_fg_color;
+
+@define-color popover_bg_color @card_bg_color;
+@define-color popover_fg_color @card_fg_color;
+
+@define-color shade_color rgba(255, 255, 255, 0.15); // subtle frost highlight
+@define-color scrollbar_outline_color rgba(153, 153, 153, 0.3); // base06-ish
+
+@define-color sidebar_bg_color #121212;          // base01
+@define-color secondary_sidebar_bg_color @sidebar_bg_color;
+@define-color sidebar_backdrop_color @sidebar_bg_color;
+@define-color secondary_sidebar_backdrop_color @sidebar_bg_color;
+
+.navigation-sidebar {
+	background-color: @sidebar_bg_color;
+	color: @window_fg_color;
+}
+
+headerbar.default-decoration {
+  margin-bottom: 50px;
+  margin-top: -100px;
+}
+
+window.csd,
+window.csd decoration {
+  box-shadow: none;
+}
+
