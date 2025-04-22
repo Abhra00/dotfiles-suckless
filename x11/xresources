@@ -135,24 +135,46 @@ St.scrollbackindicator:     1
 
 
 /* System wide colorschemes */
-*.background: #000000
-*.foreground: #c1c1c1
-*.cursorColor: #c1c1c1
-*.color0: #000000
-*.color1: #5f8787
-*.color2: #dd9999
-*.color3: #a06666
-*.color4: #888888
-*.color5: #999999
-*.color6: #aaaaaa
-*.color7: #c1c1c1
-*.color8: #333333
-*.color9: #aaaaaa
-*.color10: #121212
-*.color11: #222222
-*.color12: #999999
-*.color13: #999999
-*.color14: #444444
-*.color15: #c1c1c1
-*.color16: #5f8787
-*.color17: #5f8787
+
+!!! Kanagawa !!!
+
+! special
+*.foreground:   #dcd7ba
+*.background:   #1f1f28
+*.cursorColor:  #dcd7ba
+
+! black
+*.color0:       #090618
+*.color8:       #727169
+
+! red
+*.color1:       #c34043
+*.color9:       #e82424
+
+! green
+*.color2:       #76946a
+*.color10:      #98bb6c
+
+! yellow
+*.color3:       #c0a36e
+*.color11:      #e6c384
+
+! blue
+*.color4:       #7e9cd8
+*.color12:      #7fb4ca
+
+! magenta
+*.color5:       #957fb8
+*.color13:      #938aa9
+
+! cyan
+*.color6:       #6a9589
+*.color14:      #7aa89f
+
+! white
+*.color7:       #c8c093
+*.color15:      #dcd7ba
+
+! highlight
+*.color16: 	#7e9cd8
+*.color17:	#7fb4ca
