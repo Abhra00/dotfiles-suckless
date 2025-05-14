@@ -136,45 +136,31 @@ St.scrollbackindicator:     1
 
 /* System wide colorschemes */
 
-!!! Eldritch-dark !!!
+!!! Solarized osaka !!!
 
-!! special
-*.background: #171928
-*.foreground: #ebfafa
-*.cursorColor: #37f499
+!! Basic colors
+*background: #001419
+*foreground: #839395
+*.cursorColor: #839395
 
-!! black
-*.color0:  #21222c
-*.color8:  #7081d0
+!! 16 colors
+*color0: #001014
+*color1: #db302d
+*color2: #849900
+*color3: #b28500
+*color4: #268bd3
+*color5: #d23681
+*color6: #29a298
+*color7: #9eabac
+*color8: #001419
+*color9: #db302d
+*color10: #849900
+*color11: #b28500
+*color12: #268bd3
+*color13: #d23681
+*color14: #29a298
+*color15: #839395
 
-!! red
-*.color1:  #f9515d 
-*.color9:  #f16c75
-
-!! green
-*.color2:  #37f499 
-*.color10: #69F8B3
-
-!! yellow
-*.color3:  #e9f941
-*.color11: #f1fc79
-
-!! blue
-*.color4:   #9071f4
-*.color12:  #a48cf2
-
-!! magenta
-*.color5:  #f265b5
-*.color13: #FD92CE
-
-!! cyan
-*.color6:  #04d1f9
-*.color14: #66e4fd
-
-!! white
-*.color7:  #ebfafa
-*.color15: #ffffff
-
-!! highlights
-*.color16: #69F8B3
-*.color17: #69F8B3
+!! Highlights
+*.color16: #849900
+*.color17: #849900
