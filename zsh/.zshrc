@@ -76,7 +76,7 @@ export SUDO_PROMPT="$fg[white]Deploying $fg[red]root access for %u $fg[blue]pass
 # !!! USING PURE ZSH PROMPT & IT WILL BE DOWNLOADED AUTOMATICALLY BY THE PLUGIN HELPER 🚀 !!!
 # !! PROMPT COLOR STYLING
 zstyle :prompt:pure:git:arrow color "#d23681"
-zstyle :prompt:pure:git:branch color "#268bd3"
+zstyle :prompt:pure:git:branch color "#b28500"
 zstyle :prompt:pure:path color "#268bd3"
 zstyle :prompt:pure:prompt:error color "#db302d"
 zstyle :prompt:pure:prompt:success color "#849900"
