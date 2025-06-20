@@ -9,4 +9,6 @@ case $BLOCK_BUTTON in
 	6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-free --mebi | sed -n '2{p;q}' | awk '{printf ("󰍛 %2.2fGiB/%2.2fGiB\n", ( $3 / 1024), ($2 / 1024))}'
+memory_usage=$(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)
+
+echo "^B1^^C0^  ^d^^B9^^C0^ $memory_usage ^d^"

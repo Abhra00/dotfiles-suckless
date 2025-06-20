@@ -9,4 +9,6 @@ case $BLOCK_BUTTON in
 	6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-sensors | awk '/Tctl/ {print "󰻠 " $2}'
+cpu_usage=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}')
+
+echo "^B4^^C0^  ^d^^B12^^C0^ $cpu_usage ^d^"
