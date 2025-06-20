@@ -75,15 +75,15 @@ export SUDO_PROMPT="$fg[white]Deploying $fg[red]root access for %u $fg[blue]pass
 #                         
 # !!! USING PURE ZSH PROMPT & IT WILL BE DOWNLOADED AUTOMATICALLY BY THE PLUGIN HELPER 🚀 !!!
 # !! PROMPT COLOR STYLING
-zstyle :prompt:pure:git:arrow color "#d23681"
-zstyle :prompt:pure:git:branch color "#b28500"
-zstyle :prompt:pure:path color "#268bd3"
-zstyle :prompt:pure:prompt:error color "#db302d"
-zstyle :prompt:pure:prompt:success color "#849900"
-zstyle :prompt:pure:prompt:continuation color "#d23681"
-zstyle :prompt:pure:suspended_jobs color "#d23681"
-zstyle :prompt:pure:user color "#268bd3"
-zstyle :prompt:pure:user:root color "#d23681"
+zstyle :prompt:pure:git:arrow color "#d8647e"
+zstyle :prompt:pure:git:branch color "#8ba9c1"
+zstyle :prompt:pure:path color "#c9b1ca"
+zstyle :prompt:pure:prompt:error color "#d8647e"
+zstyle :prompt:pure:prompt:success color "#d7d7d7"
+zstyle :prompt:pure:prompt:continuation color "#8ba9c1"
+zstyle :prompt:pure:suspended_jobs color "#e08398"
+zstyle :prompt:pure:user color "#f3be7c"
+zstyle :prompt:pure:user:root color "#d8647e"
 
 
 
@@ -228,7 +228,7 @@ repos=(
 plugin-load $repos
 
 # Styling of autosuggestions
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 
 # Keybinds for plugins
 bindkey '^[[A' history-substring-search-up
