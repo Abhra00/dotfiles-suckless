@@ -8,11 +8,11 @@ Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
 
 ! Font
-St.font:            Iosevka Nerd Font:style=Medium:size=12:antialias=true:autohint=true
+St.font:            Victor Mono Nerd Font:style=Medium:size=12:antialias=true:autohint=true
 
 ! Fallback fonts (max 8)
 St.font_fallback1:  Noto Color Emoji:size=10.0:antialias=true:autohint=true
-St.font_fallback2:  Symbols Nerd Font:size=13.5:antialias=true:autohint=true
+St.font_fallback2:  Twemoji:size=13.5:antialias=true:autohint=true
 
 ! Default columns and rows numbers
 St.cols:            80
@@ -136,31 +136,42 @@ St.scrollbackindicator:     1
 
 /* System wide colorschemes */
 
-!!! Solarized osaka !!!
+*.foreground: 	#cdcdcd
+*.background: 	#141415
+*.cursorColor: 	#cdcdcd
 
-!! Basic colors
-*background: #001419
-*foreground: #839395
-*.cursorColor: #839395
+! black
+*.color0:       #252530
+*.color8:       #606079
 
-!! 16 colors
-*color0: #001014
-*color1: #db302d
-*color2: #849900
-*color3: #b28500
-*color4: #268bd3
-*color5: #d23681
-*color6: #29a298
-*color7: #9eabac
-*color8: #001419
-*color9: #db302d
-*color10: #849900
-*color11: #b28500
-*color12: #268bd3
-*color13: #d23681
-*color14: #29a298
-*color15: #839395
+! red
+*.color1:       #d8647e
+*.color9:       #e08398
 
-!! Highlights
-*.color16: #849900
-*.color17: #849900
+! green
+*.color2:       #7fa563
+*.color10:      #99b782
+
+! yellow
+*.color3:       #f3be7c
+*.color11:      #f5cb96
+
+! blue
+*.color4:       #6e94b2
+*.color12:      #8ba9c1
+
+! magenta
+*.color5:       #bb9dbd
+*.color13:      #c9b1ca
+
+! cyan
+*.color6:       #aeaed1
+*.color14:      #bebeda
+
+! white
+*.color7:       #cdcdcd
+*.color15:      #d7d7d7
+
+! accent
+*.color16:	#d8647e
+*.color17:	#d8647e

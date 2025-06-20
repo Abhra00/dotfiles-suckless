@@ -11,7 +11,8 @@ unsetopt PROMPT_SP 2>/dev/null
 export EDITOR="nvim"
 export TERMINAL="st"
 export TERMINAL_PROG="st"
-export BROWSER="firefox"
+export LOCATION="Memari"
+export BROWSER="zen"
 
 # Desktop sessions for other wm's
 # export XDG_CURRENT_DESKTOP="bspwm"
