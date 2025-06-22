@@ -1,28 +1,28 @@
-@define-color accent_color #7E9CD8;              // Wave Blue
-@define-color accent_bg_color #1F1F28;           // Sumi Ink 0
-@define-color accent_fg_color #DCD7BA;           // Fuji White
+@define-color accent_color #d8647e;
+@define-color accent_bg_color #d8647e;
+@define-color accent_fg_color #cdcdcd;
 
-@define-color destructive_color #E46876;         // Sakura Pink
-@define-color destructive_bg_color #2A2A37;      // Sumi Ink 2
-@define-color destructive_fg_color #E6C384;      // Surimi Yellow
+@define-color destructive_color #d8647e;
+@define-color destructive_bg_color #252530;
+@define-color destructive_fg_color #f3be7c;
 
-@define-color success_color #98BB6C;             // Spring Green
-@define-color success_bg_color #2A2A37;          // Sumi Ink 2
-@define-color success_fg_color #DCD7BA;          // Fuji White
+@define-color success_color #7fa563;
+@define-color success_bg_color #252530;
+@define-color success_fg_color #cdcdcd;
 
-@define-color warning_color #FFA066;             // Carp Yellow
-@define-color warning_bg_color #393836;          // Sumi Ink 3
-@define-color warning_fg_color #DCD7BA;          // Fuji White
+@define-color warning_color #f3be7c;
+@define-color warning_bg_color #606079;
+@define-color warning_fg_color #cdcdcd;
 
-@define-color error_color #E46876;               // Sakura Pink
-@define-color error_bg_color #2A2A37;            // Sumi Ink 2
-@define-color error_fg_color #E6C384;            // Surimi Yellow
+@define-color error_color #d8647e;
+@define-color error_bg_color #252530;
+@define-color error_fg_color #f3be7c;
 
-@define-color window_bg_color #1F1F28;           // Sumi Ink 0
-@define-color window_fg_color #DCD7BA;           // Fuji White
+@define-color window_bg_color #141415;
+@define-color window_fg_color #cdcdcd;
 
-@define-color view_bg_color #1F1F28;             // Sumi Ink 0
-@define-color view_fg_color #DCD7BA;             // Fuji White
+@define-color view_bg_color #141415;
+@define-color view_fg_color #cdcdcd;
 
 @define-color headerbar_bg_color @window_bg_color;
 @define-color headerbar_fg_color @window_fg_color;
@@ -30,8 +30,8 @@
 @define-color headerbar_backdrop_color @window_bg_color;
 @define-color headerbar_shade_color @window_bg_color;
 
-@define-color card_bg_color #2A2A37;             // Sumi Ink 2
-@define-color card_fg_color #DCD7BA;             // Fuji White
+@define-color card_bg_color #252530;
+@define-color card_fg_color #cdcdcd;
 @define-color card_shade_color rgba(255, 255, 255, 0.07);
 
 @define-color dialog_bg_color @card_bg_color;
@@ -40,10 +40,10 @@
 @define-color popover_bg_color @card_bg_color;
 @define-color popover_fg_color @card_fg_color;
 
-@define-color shade_color rgba(255, 255, 255, 0.10); // subtler highlight
-@define-color scrollbar_outline_color rgba(156, 172, 192, 0.3); // subtle line from Wave Blue
+@define-color shade_color rgba(255, 255, 255, 0.10);
+@define-color scrollbar_outline_color rgba(110, 148, 178, 0.3);
 
-@define-color sidebar_bg_color #2A2A37;          // Sumi Ink 2
+@define-color sidebar_bg_color #252530;
 @define-color secondary_sidebar_bg_color @sidebar_bg_color;
 @define-color sidebar_backdrop_color @sidebar_bg_color;
 @define-color secondary_sidebar_backdrop_color @sidebar_bg_color;
@@ -62,4 +62,9 @@ window.csd,
 window.csd decoration {
   box-shadow: none;
 }
-
+menu,
+.csd .menu,
+.csd .dropdown,
+.csd .context-menu {
+    border-radius: 0px;
+}
