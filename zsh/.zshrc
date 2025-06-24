@@ -65,7 +65,7 @@ bindkey "^I" expand-or-complete-with-dots
 #  ┗┓┃┃┃┃┃┃  ┃┃┣┫┃┃┃┃┃┃┃ ┃
 #  ┗┛┗┛┻┛┗┛  ┣┛┛┗┗┛┛ ┗┣┛ ┻
 #
-export SUDO_PROMPT="$fg[white]Deploying $fg[red]root access for %u $fg[blue]password pls:󰌾 $fg[white]"
+export SUDO_PROMPT="$fg[white]Deploying $fg[magenta]root access for %u $fg[blue]password pls:󰌾 $fg[white]"
 
 
 
@@ -75,15 +75,15 @@ export SUDO_PROMPT="$fg[white]Deploying $fg[red]root access for %u $fg[blue]pass
 #                         
 # !!! USING PURE ZSH PROMPT & IT WILL BE DOWNLOADED AUTOMATICALLY BY THE PLUGIN HELPER 🚀 !!!
 # !! PROMPT COLOR STYLING
-zstyle :prompt:pure:git:arrow color "#d8647e"
-zstyle :prompt:pure:git:branch color "#8ba9c1"
-zstyle :prompt:pure:path color "#c9b1ca"
-zstyle :prompt:pure:prompt:error color "#d8647e"
-zstyle :prompt:pure:prompt:success color "#d7d7d7"
-zstyle :prompt:pure:prompt:continuation color "#8ba9c1"
-zstyle :prompt:pure:suspended_jobs color "#e08398"
-zstyle :prompt:pure:user color "#f3be7c"
-zstyle :prompt:pure:user:root color "#d8647e"
+zstyle :prompt:pure:git:arrow color 13
+zstyle :prompt:pure:git:branch color 12
+zstyle :prompt:pure:path color 15
+zstyle :prompt:pure:prompt:error color 10
+zstyle :prompt:pure:prompt:success color 13
+zstyle :prompt:pure:prompt:continuation color 11
+zstyle :prompt:pure:suspended_jobs color 13
+zstyle :prompt:pure:user color 13
+zstyle :prompt:pure:user:root color 10
 
 
 
@@ -222,13 +222,23 @@ function plugin-load {
 repos=(
 	sindresorhus/pure
 	zsh-users/zsh-autosuggestions
-	zdharma-continuum/fast-syntax-highlighting
+	zsh-users/zsh-syntax-highlighting
 	zsh-users/zsh-history-substring-search
 )
 plugin-load $repos
 
 # Styling of autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
+
+# Styling of syntax highlighting
+# Declare the variable
+typeset -A ZSH_HIGHLIGHT_STYLES
+
+# To differentiate aliases from other command types
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=12,bold'
+ZSH_HIGHLIGHT_STYLES[command]='fg=13'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=13'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=13'
 
 # Keybinds for plugins
 bindkey '^[[A' history-substring-search-up
