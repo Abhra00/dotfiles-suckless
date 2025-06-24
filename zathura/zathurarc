@@ -3,7 +3,6 @@ set statusbar-h-padding 0
 set statusbar-v-padding 0
 set page-padding 1
 set selection-clipboard clipboard
-
 map u scroll half-up
 map d scroll half-down
 map D toggle_page_mode
@@ -14,7 +13,6 @@ map J zoom out
 map i recolor
 map p print
 map g goto top
-
 map [fullscreen] u scroll half-up
 map [fullscreen] d scroll half-down
 map [fullscreen] D toggle_page_mode
@@ -26,23 +24,23 @@ map [fullscreen] i recolor
 map [fullscreen] p print
 map [fullscreen] g goto top
 
-set default-bg                     "#141415"
-set default-fg                     "#cdcdcd"
-set statusbar-bg                   "#141415"
-set statusbar-fg                   "#cdcdcd"
-set inputbar-bg                    "#141415"
-set inputbar-fg                    "#cdcdcd"
-set notification-bg                "#141415"
-set notification-fg                "#cdcdcd"
-set notification-error-bg          "#141415"
-set notification-error-fg          "#cdcdcd"
-set notification-warning-bg        "#141415"
-set notification-warning-fg        "#cdcdcd"
-set highlight-color                "#f3be7c"   # color3
-set highlight-active-color         "#6e94b2"   # color4
-set completion-bg                  "#f3be7c"   # color3
-set completion-fg                  "#6e94b2"   # color4
-set completion-highlight-bg        "#f3be7c"   # color3
-set completion-highlight-fg        "#6e94b2"   # color4
-set recolor-lightcolor             "#141415"
-set recolor-darkcolor              "#cdcdcd"
+set default-bg                     "#171819"
+set default-fg                     "#F0F5E1"
+set statusbar-bg                   "#171819"
+set statusbar-fg                   "#F0F5E1"
+set inputbar-bg                    "#171819"
+set inputbar-fg                    "#F0F5E1"
+set notification-bg                "#171819"
+set notification-fg                "#F0F5E1"
+set notification-error-bg          "#171819"
+set notification-error-fg          "#F0F5E1"
+set notification-warning-bg        "#171819"
+set notification-warning-fg        "#F0F5E1"
+set highlight-color                "#556B1C"
+set highlight-active-color         "#76848B"
+set completion-bg                  "#556B1C"
+set completion-fg                  "#76848B"
+set completion-highlight-bg        "#556B1C"
+set completion-highlight-fg        "#76848B"
+set recolor-lightcolor             "#171819"
+set recolor-darkcolor              "#F0F5E1"
