@@ -37,12 +37,12 @@ _comp_options+=(globdots)
 #                                      
 zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:*:*:*' menu select
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} 'ma=0\;33'
+zstyle ':completion:*:default' list-colors ${(s.:.)ZLS_COLORS} 'ma=1\;33'
 zstyle ':completion:*' matcher-list \
 		'm:{a-zA-Z}={A-Za-z}' \
 		'+r:|[._-]=* r:|=*' \
 		'+l:|=*'
-zstyle ':completion:*:warnings' format "%B%F{red}No matches for:%f %F{magenta}%d%b"
+zstyle ':completion:*:warnings' format "%B%F{blue}No matches for:%f %F{magenta}%d%b"
 zstyle ':completion:*:descriptions' format '%F{yellow}[-- %d --]%f'
 
 
