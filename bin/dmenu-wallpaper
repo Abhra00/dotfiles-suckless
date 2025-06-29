@@ -6,7 +6,11 @@ currentThemeFile="${XDG_DATA_HOME:-$HOME/.local/share}/currentTheme"
 # CurrentTheme
 currentTheme=$(cat $currentThemeFile)
 
+# Wallpaper directory default
 WALL_DIR="$HOME/walls"
+
+# Bg location
+bgloc="${XDG_DATA_HOME:-$HOME/walls}/bg"
 
 case $currentTheme in
 	Gruvbox)
@@ -27,4 +31,24 @@ choosen=$(find "$WALL_DIR" -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname
 # If something was selected
 if [ -n "$choosen" ]; then
 	setbg "$choosen"
+fi
+
+# For pywalWallpapers change the colors also
+if [ "$currentTheme" = "Wallpaper" ]; then
+	# Run wallust
+	wallust run $(readlink -f $bgloc)
+
+	# Pywalfox update
+	pywalfox update
+
+	# Reload dunst
+	pkill dunst; setsid -f dunst
+	
+	# Source xresources
+	xrdb $HOME/.config/x11/xresources
+	
+	# If running, dwm hit the key to refresh the color scheme.
+	pidof dwm >/dev/null && xdotool key super+F1 && notify-send -i "$bgloc" "Colors changed 👉👌 🌈 😎"
+
+
 fi
