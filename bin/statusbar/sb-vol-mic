@@ -20,4 +20,4 @@ mic=$(echo "$mic * 100" | bc)
 mic=$(printf "%.0f" "$mic")
 
 
-echo "^B15^^C0^  $vol ^d^^B15^^C0^  $mic ^d^"
+echo "^B14^^C0^  $vol ^d^^B0^^C14^  $mic ^d^"

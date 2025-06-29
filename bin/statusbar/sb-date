@@ -8,4 +8,4 @@ case $BLOCK_BUTTON in
 	6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-echo "^B15^^C0^   $(date +"%Y %b %d (%a)") ^d^"
+echo "^B14^^C0^  ^d^^B0^^C14^ $(date +" %Y %b %d (%a)") ^d^"

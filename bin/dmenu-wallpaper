@@ -1,7 +1,25 @@
 #!/bin/sh
 
-# Your wallpaper directory
+# Current Theme File
+currentThemeFile="${XDG_DATA_HOME:-$HOME/.local/share}/currentTheme"
+
+# CurrentTheme
+currentTheme=$(cat $currentThemeFile)
+
 WALL_DIR="$HOME/walls"
+
+case $currentTheme in
+	Gruvbox)
+		WALL_DIR="$HOME/walls/gruvbox";;
+	Rose-Pine)
+		WALL_DIR="$HOME/walls/rose-pine";;
+	Nord)
+		WALL_DIR="$HOME/walls/nord";;
+	Onedark)
+		WALL_DIR="$HOME/walls/onedark";;
+	Wallpaper)
+		WALL_DIR="$HOME/walls/pywalWalls";;
+esac
 
 # Use find to get images, then dmenu to pick
 choosen=$(find "$WALL_DIR" -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' \) | dmenu -X 645 -Y 370 -W 580 -i -p "Set Wallpaper:")

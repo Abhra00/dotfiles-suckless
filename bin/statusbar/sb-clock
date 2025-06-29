@@ -19,4 +19,4 @@ case "$clock" in
 esac
 
 
-echo "^B15^^C0^ $icon$(date +"%I:%M%p") ^d^"
+echo "^C11^ $icon^d^^C11^$(date +"%I:%M%p") ^d^"

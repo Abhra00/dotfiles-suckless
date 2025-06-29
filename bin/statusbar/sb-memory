@@ -11,4 +11,4 @@ esac
 
 memory_usage=$(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)
 
-echo "^B1^^C0^  ^d^^B9^^C0^ $memory_usage ^d^"
+echo "^B14^^C0^  ^d^^B0^^C14^ $memory_usage ^d^"

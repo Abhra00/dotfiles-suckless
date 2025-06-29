@@ -1,0 +1,42 @@
+#!/bin/sh
+
+choice=$(echo " Gruvbox\n Nord\n Rose-Pine\n Onedark\n Wallpaper" | dmenu -X 645 -Y 370 -W 580 -i -p " Set Theme:")
+bgloc="${XDG_DATA_HOME:-$HOME/walls}/bg"
+currentThemeFile="${XDG_DATA_HOME:-$HOME/.local/share/}/currentTheme"
+
+# No choice exit
+[ -z "$choice" ] && exit 0
+
+case $choice in
+	' Gruvbox')
+		wallust theme gruvbox && setbg $HOME/walls/gruvbox && notify-send -i "$bgloc" "Changing colors 🌈" ;;
+	' Nord')
+		wallust theme Nord && setbg $HOME/walls/nord && notify-send -i "$bgloc" "Changing colors 🌈" ;;
+	' Rose-Pine')
+		wallust theme rose-pine && setbg $HOME/walls/rose-pine && notify-send -i "$bgloc" "Changing colors 🌈" ;;
+	' Onedark')
+	 	wallust theme base16-onedark && setbg $HOME/walls/onedark && notify-send -i "$bgloc" "Changing colors 🌈" ;;
+	' Wallpaper')
+		setbg $HOME/walls/pywalWalls/ && wallust run $(readlink -f $bgloc) && notify-send -i "$bgloc" "Changing colors 🌈" ;;
+esac
+
+
+
+# Track the current theme
+echo "$choice" | awk '{ printf "%s\n", $2 }' > "$currentThemeFile"
+
+# Pywalfox update
+pywalfox update
+
+# Reload dunst
+pkill dunst; setsid -f dunst
+
+# Source xresources
+xrdb $HOME/.config/x11/xresources
+
+# If running, dwm hit the key to refresh the color scheme.
+pidof dwm >/dev/null && xdotool key super+F1 && notify-send -i "$bgloc" "Colors changed 👉👌 🌈 😎"
+
+
+
+

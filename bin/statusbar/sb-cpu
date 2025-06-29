@@ -11,4 +11,4 @@ esac
 
 cpu_usage=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}')
 
-echo "^B4^^C0^  ^d^^B12^^C0^ $cpu_usage ^d^"
+echo "^B13^^C0^  ^d^^B0^^C13^ $cpu_usage ^d^"
