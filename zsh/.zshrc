@@ -78,8 +78,8 @@ export SUDO_PROMPT="$fg[white]Deploying $fg[magenta]root access for %u $fg[blue]
 zstyle :prompt:pure:git:arrow color 13
 zstyle :prompt:pure:git:branch color 12
 zstyle :prompt:pure:path color 15
-zstyle :prompt:pure:prompt:error color 10
-zstyle :prompt:pure:prompt:success color 13
+zstyle :prompt:pure:prompt:error color 1
+zstyle :prompt:pure:prompt:success color 2
 zstyle :prompt:pure:prompt:continuation color 11
 zstyle :prompt:pure:suspended_jobs color 13
 zstyle :prompt:pure:user color 13

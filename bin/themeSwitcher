@@ -1,6 +1,6 @@
 #!/bin/sh
 
-choice=$(echo " Gruvbox\n Nord\n Rose-Pine\n Onedark\n Wallpaper" | dmenu -X 645 -Y 370 -W 580 -i -p " Set Theme:")
+choice=$(echo " Gruvbox-Material\n Nord\n Everforest\n EverBlush\n Rose-Pine\n Onedark\n Wallpaper" | dmenu -X 645 -Y 370 -W 580 -i -p " Set Theme:")
 bgloc="${XDG_DATA_HOME:-$HOME/walls}/bg"
 currentThemeFile="${XDG_DATA_HOME:-$HOME/.local/share/}/currentTheme"
 
@@ -8,10 +8,14 @@ currentThemeFile="${XDG_DATA_HOME:-$HOME/.local/share/}/currentTheme"
 [ -z "$choice" ] && exit 0
 
 case $choice in
-	' Gruvbox')
-		wallust theme gruvbox && setbg $HOME/walls/gruvbox && notify-send -i "$bgloc" "Changing colors 🌈" ;;
+	' Gruvbox-Material')
+		wallust theme Gruvbox-Material-Dark && setbg $HOME/walls/gruvbox-material && notify-send -i "$bgloc" "Changing colors 🌈" ;;
 	' Nord')
 		wallust theme Nord && setbg $HOME/walls/nord && notify-send -i "$bgloc" "Changing colors 🌈" ;;
+	' Everforest')
+		wallust theme Everforest-Dark-Hard && setbg $HOME/walls/everforest && notify-send -i "$bgloc" "Changing colors 🌈" ;;
+	' EverBlush')
+		wallust theme Everblush && setbg $HOME/walls/everblush && notify-send -i "$bgloc" "Changing colors 🌈" ;;
 	' Rose-Pine')
 		wallust theme rose-pine && setbg $HOME/walls/rose-pine && notify-send -i "$bgloc" "Changing colors 🌈" ;;
 	' Onedark')

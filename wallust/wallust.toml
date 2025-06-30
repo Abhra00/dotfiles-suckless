@@ -37,7 +37,15 @@ palette = "dark16"
 # Ensures a "readable contrast" (OPTIONAL, disabled by default)
 # Should only be enabled when you notice an unreadable contrast frequently happening
 # with your images. The reference color for the contrast is the background color.
-#check_contrast = true
+# check_contrast = true
+
+# Difference between similar colors, used by the colorspace:
+#  1          Not perceptible by human eyes.
+#  1 - 2      Perceptible through close observation.
+#  2 - 10     Perceptible at a glance.
+#  11 - 49    Colors are more similar than opposite
+#  100        Colors are exact opposite
+threshold = 11
 
 # Color saturation, between [1% and 100%] (OPTIONAL, disabled by default)
 # usually something higher than 50 increases the saturation and below
