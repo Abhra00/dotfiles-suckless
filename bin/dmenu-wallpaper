@@ -50,6 +50,9 @@ if [ -n "$choosen" ] && [ "$currentTheme" = "Wallpaper" ]; then
 	
 	# Source xresources
 	xrdb $HOME/.config/x11/xresources
+
+	# Restart nm-applet
+	killall nm-applet && nohup nm-applet
 	
 	# If running, dwm hit the key to refresh the color scheme.
 	pidof dwm >/dev/null && xdotool key super+F1 && notify-send -i "$bgloc" "Colors changed 👉👌 🌈 😎"

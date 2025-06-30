@@ -21,7 +21,7 @@ case $choice in
 	' Onedark')
 	 	wallust theme base16-onedark && setbg $HOME/walls/onedark && notify-send -i "$bgloc" "Changing colors 🌈" ;;
 	' Wallpaper')
-		setbg $HOME/walls/pywalWalls/ && wallust run $(readlink -f $bgloc) && notify-send -i "$bgloc" "Changing colors 🌈" ;;
+		setbg $HOME/walls/pywalWalls && wallust run $(readlink -f $bgloc) && notify-send -i "$bgloc" "Changing colors 🌈" ;;
 esac
 
 
@@ -37,6 +37,9 @@ pkill dunst; setsid -f dunst
 
 # Source xresources
 xrdb $HOME/.config/x11/xresources
+
+# Reloading nm-applet
+killall nm-applet && nohup nm-applet
 
 # If running, dwm hit the key to refresh the color scheme.
 pidof dwm >/dev/null && xdotool key super+F1 && notify-send -i "$bgloc" "Colors changed 👉👌 🌈 😎"
