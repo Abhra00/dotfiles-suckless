@@ -257,4 +257,4 @@ source <(fzf --zsh)
 #  ┣┫┃┃ ┃ ┃┃┗┓ ┃ ┣┫┣┫ ┃ 
 #  ┛┗┗┛ ┻ ┗┛┗┛ ┻ ┛┗┛┗ ┻ 
 #                       
-fastfetch --config $HOME/.config/fastfetch/config-aesthetic.jsonc
+fastfetch --config $HOME/.config/fastfetch/sxless.jsonc

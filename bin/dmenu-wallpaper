@@ -38,7 +38,7 @@ if [ -n "$choosen" ]; then
 fi
 
 # For pywalWallpapers change the colors also
-if [ "$currentTheme" = "Wallpaper" ]; then
+if [ -n "$choosen" ] && [ "$currentTheme" = "Wallpaper" ]; then
 	# Run wallust
 	wallust run $(readlink -f $bgloc)
 
