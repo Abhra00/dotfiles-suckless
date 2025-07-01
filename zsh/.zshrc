@@ -74,16 +74,16 @@ export SUDO_PROMPT="$fg[white]Deploying $fg[magenta]root access for %u $fg[blue]
 #   ┻ ┛┗┗┛  ┣┛┛┗┗┛┛ ┗┣┛ ┻ 
 #                         
 # !!! USING PURE ZSH PROMPT & IT WILL BE DOWNLOADED AUTOMATICALLY BY THE PLUGIN HELPER 🚀 !!!
-# !! PROMPT COLOR STYLING
-zstyle :prompt:pure:git:arrow color 13
-zstyle :prompt:pure:git:branch color 12
-zstyle :prompt:pure:path color 15
-zstyle :prompt:pure:prompt:error color 1
-zstyle :prompt:pure:prompt:success color 2
-zstyle :prompt:pure:prompt:continuation color 11
-zstyle :prompt:pure:suspended_jobs color 13
-zstyle :prompt:pure:user color 13
-zstyle :prompt:pure:user:root color 10
+# !!! PROMPT COLOR STYLING
+# zstyle :prompt:pure:git:arrow color 13
+# zstyle :prompt:pure:git:branch color 12
+# zstyle :prompt:pure:path color 15
+# zstyle :prompt:pure:prompt:error color 15
+# zstyle :prompt:pure:prompt:success color 5
+# zstyle :prompt:pure:prompt:continuation color 11
+# zstyle :prompt:pure:suspended_jobs color 13
+# zstyle :prompt:pure:user color 13
+# zstyle :prompt:pure:user:root color 10
 
 
 
@@ -93,7 +93,7 @@ zstyle :prompt:pure:user:root color 10
 #                                                       
 command_not_found_handler() {
 	printf "%s%s? WTF!!  you are typing\n" "$acc" "$0" >&2
-    return 127
+    	return 127
 }
 
 

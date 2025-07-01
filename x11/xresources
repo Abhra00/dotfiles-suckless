@@ -13,7 +13,7 @@ Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
 
 ! Font
-St.font:             Iosevka Nerd Font:style=Medium:size=12:antialias=true:autohint=true
+St.font:            Firacode Nerd Font:style=Regular:size=15:antialias=true:autohint=true
 
 ! Fallback fonts (max 8)
 St.font_fallback1:  Noto Color Emoji:size=10.0:antialias=true:autohint=true
@@ -146,25 +146,25 @@ St.scrollbackindicator:     1
 !!!!!!!!!!!!!!!!!
 
 !! Colors
-*.foreground:   #E0DEF4
-*.background:   #191724
-*.cursorColor:  #E0DEF4
+*.foreground:   #D4BE98
+*.background:   #282828
+*.cursorColor:  #D4BE98
 
-*.color0: 	#1F1D2E
-*.color1:	#EB6F92
-*.color2:	#F6C177
-*.color3:	#EBBCBA
-*.color4:	#31748F
-*.color5:	#C4A7E7
-*.color6:	#9CCFD8
-*.color7:	#6E6A86
-*.color8:	#26233A
-*.color9:	#EB6F92
-*.color10:	#F6C177
-*.color11:	#EBBCBA
-*.color12:	#31748F
-*.color13:	#C4A7E7
-*.color14:	#9CCFD8
-*.color15:	#908CAA
-*.color16:	#9CCFD8
-*.color17:	#9CCFD8
+*.color0: 	#3C3836
+*.color1:	#EA6962
+*.color2:	#A9B665
+*.color3:	#D8A657
+*.color4:	#7DAEA3
+*.color5:	#D3869B
+*.color6:	#89B482
+*.color7:	#D4BE98
+*.color8:	#3C3836
+*.color9:	#EA6962
+*.color10:	#A9B665
+*.color11:	#D8A657
+*.color12:	#7DAEA3
+*.color13:	#D3869B
+*.color14:	#89B482
+*.color15:	#D4BE98
+*.color16:	#89B482
+*.color17:	#89B482

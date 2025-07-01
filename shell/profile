@@ -53,6 +53,13 @@ export SQLITE_HISTORY="$XDG_DATA_HOME/sqlite_history"
 # ZLS COLORS
 export ZLS_COLORS="un=0;37:ma=1;34:di=0;36:fi=0;37:ex=0;32"
 
+# Fzf OPTS
+export FZF_DEFAULT_OPTS="--style=full --height=90% --pointer '>' \
+                --color 'pointer:green:bold,bg+:-1:,fg+:green:bold,info:blue:bold,marker:yellow:bold,hl:gray:bold,hl+:yellow:bold' \
+                --input-label ' Search ' --color 'input-border:blue,input-label:blue:bold' \
+                --list-label ' Results ' --color 'list-border:green,list-label:green:bold' \
+                --preview-label ' Preview ' --color 'preview-border:magenta,preview-label:magenta:bold'"
+
 # Other program settings:
 export DICS="/usr/share/stardict/dic/"
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"

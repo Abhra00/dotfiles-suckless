@@ -13,7 +13,7 @@ Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
 
 ! Font
-St.font:             Iosevka Nerd Font:style=Medium:size=12:antialias=true:autohint=true
+St.font:            Firacode Nerd Font:style=Regular:size=15:antialias=true:autohint=true
 
 ! Fallback fonts (max 8)
 St.font_fallback1:  Noto Color Emoji:size=10.0:antialias=true:autohint=true
