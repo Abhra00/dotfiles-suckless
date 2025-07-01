@@ -1,6 +1,6 @@
 #!/bin/sh
 
-choice=$(echo " Gruvbox-Material\n Nord\n Everforest\n EverBlush\n Rose-Pine\n Onedark\n Wallpaper" | dmenu -X 645 -Y 370 -W 580 -i -p " Set Theme:")
+choice=$(echo " Gruvbox-Material\n Nord\n Everforest\n EverBlush\n Catppuccin\n Rose-Pine\n Onedark\n Wallpaper" | dmenu -X 645 -Y 370 -W 580 -i -p " Set Theme:")
 bgloc="${XDG_DATA_HOME:-$HOME/walls}/bg"
 currentThemeFile="${XDG_DATA_HOME:-$HOME/.local/share/}/currentTheme"
 
@@ -16,6 +16,8 @@ case $choice in
 		wallust theme Everforest-Dark-Hard && setbg $HOME/walls/everforest && notify-send -i "$bgloc" "Changing colors 🌈" ;;
 	' EverBlush')
 		wallust theme Everblush && setbg $HOME/walls/everblush && notify-send -i "$bgloc" "Changing colors 🌈" ;;
+	' Catppuccin')
+		wallust theme Catppuccin-Mocha && setbg $HOME/walls/catppuccin && notify-send -i "$bgloc" "Changing colors 🌈" ;;
 	' Rose-Pine')
 		wallust theme rose-pine && setbg $HOME/walls/rose-pine && notify-send -i "$bgloc" "Changing colors 🌈" ;;
 	' Onedark')
@@ -39,7 +41,7 @@ pkill dunst; setsid -f dunst
 xrdb $HOME/.config/x11/xresources
 
 # Reloading nm-applet
-killall nm-applet && nohup nm-applet
+killall nm-applet && nm-applet
 
 # If running, dwm hit the key to refresh the color scheme.
 pidof dwm >/dev/null && xdotool key super+F1 && notify-send -i "$bgloc" "Colors changed 👉👌 🌈 😎"

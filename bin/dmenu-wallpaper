@@ -23,6 +23,8 @@ case $currentTheme in
 		WALL_DIR="$HOME/walls/everforest";;
 	EverBlush)
 		WALL_DIR="$HOME/walls/everblush";;
+	Catppuccin)
+		WALL_DIR="$HOME/walls/catppuccin";;
 	Onedark)
 		WALL_DIR="$HOME/walls/onedark";;
 	Wallpaper)
@@ -52,7 +54,7 @@ if [ -n "$choosen" ] && [ "$currentTheme" = "Wallpaper" ]; then
 	xrdb $HOME/.config/x11/xresources
 
 	# Restart nm-applet
-	killall nm-applet && nohup nm-applet
+	killall nm-applet && nm-applet
 	
 	# If running, dwm hit the key to refresh the color scheme.
 	pidof dwm >/dev/null && xdotool key super+F1 && notify-send -i "$bgloc" "Colors changed 👉👌 🌈 😎"
