@@ -19,7 +19,8 @@
         }
     },
     "display": {
-        "separator": " ▌ "
+        "separator": " ▌ ",
+	"brightColor": true
     },
     "modules": [
 	"break",
@@ -35,12 +36,12 @@
         },
         {
             "type": "wm",
-            "key": " ",
+            "key": " ",
             "keyColor": "cyan" 
         },
         {
             "type": "shell",
-            "key": " ",
+            "key": "󰈺 ",
             "keyColor": "white"
         },
         {
@@ -51,7 +52,7 @@
         {
             "type": "font",
             "key": " ",
-            "keyColor": "white"
+            "keyColor": "yellow"
         },
         "break",
         "colors",
