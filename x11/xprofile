@@ -7,7 +7,7 @@ xrandr --dpi 96	# Set DPI. User may want to use a larger number for larger scree
 
 xset rate r 200 35 # Set keyboard rate
 
-xwp &
+setbg $(readlink -f $HOME/.local/share/bg)
 
 
 xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!	# Xresources colors/settings on startup

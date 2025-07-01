@@ -15,7 +15,7 @@ horizontal_padding = 10
 transparency = 0
 markup = full
 font = Victor Mono Italic
-format = "<span size='x-large' font_desc='Victor Mono Italic 12' weight='Bold' foreground='#D3869B'>%s</span>\n\n%b"
+format = "<span size='x-large' font_desc='Victor Mono Italic 12' weight='Bold' foreground='#B48EAD'>%s</span>\n\n%b"
 min_icon_size = 32
 max_icon_size = 64 
 icon_path = usr/share/icons/Papirus-Dark/48x48/actions/:/usr/share/icons/Papirus-Dark/48x48/apps/:/usr/share/icons/Papirus-Dark/48x48/devices/:/usr/share/icons/Papirus-Dark/48x48/emblems/:/usr/share/icons/Papirus-Dark/48x48/emotes/:/usr/share/icons/Papirus-Dark/48x48/mimetypes/:/usr/share/icons/Papirus-Dark/48x48/places/:/usr/share/icons/Papirus-Dark/48x48/status/:/home/bugs/.config/icons/
@@ -23,23 +23,23 @@ corner_radius = 0
 
 
 [urgency_low]
-    background   = "#282828"
-    foreground   = "#D4BE98"
-    highlight    = "#D3869B"
-    frame_color  = "#D3869B"
+    background   = "#2E3440"
+    foreground   = "#D8DEE9"
+    highlight    = "#B48EAD"
+    frame_color  = "#B48EAD"
     default_icon = "dialog-information"
 
 [urgency_normal]
-    background   = "#282828"
-    foreground   = "#D4BE98"
-    highlight    = "#D3869B"
-    frame_color  = "#D3869B"
+    background   = "#2E3440"
+    foreground   = "#D8DEE9"
+    highlight    = "#B48EAD"
+    frame_color  = "#B48EAD"
     default_icon = "dialog-information"
 
 [urgency_critical]
-    background   = "#282828"
-    foreground   = "#D4BE98"
-    highlight    = "#D3869B"
-    frame_color  = "#A9B665"
+    background   = "#2E3440"
+    foreground   = "#D8DEE9"
+    highlight    = "#B48EAD"
+    frame_color  = "#A3BE8C"
     timeout      = 10
     default_icon = "dialog-error"

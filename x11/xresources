@@ -13,7 +13,7 @@ Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
 
 ! Font
-St.font:            Firacode Nerd Font:style=Regular:size=15:antialias=true:autohint=true
+St.font:            JetBrains Mono Nerd Font:style=Regular:size=15:antialias=true:autohint=true
 
 ! Fallback fonts (max 8)
 St.font_fallback1:  Noto Color Emoji:size=10.0:antialias=true:autohint=true
@@ -63,7 +63,7 @@ St.scrollbackindicatorfg: 258
 St.dynamic_cursor_color: 1
 
 ! Default style of cursor
-St.cursorstyle:     2
+St.cursorstyle:     1
 
 ! Controls the blinking of the cursor
 St.cursorblinking:  1
@@ -146,25 +146,25 @@ St.scrollbackindicator:     1
 !!!!!!!!!!!!!!!!!
 
 !! Colors
-*.foreground:   #D4BE98
-*.background:   #282828
-*.cursorColor:  #D4BE98
+*.foreground:   #D8DEE9
+*.background:   #2E3440
+*.cursorColor:  #D8DEE9
 
-*.color0: 	#3C3836
-*.color1:	#EA6962
-*.color2:	#A9B665
-*.color3:	#D8A657
-*.color4:	#7DAEA3
-*.color5:	#D3869B
-*.color6:	#89B482
-*.color7:	#D4BE98
-*.color8:	#3C3836
-*.color9:	#EA6962
-*.color10:	#A9B665
-*.color11:	#D8A657
-*.color12:	#7DAEA3
-*.color13:	#D3869B
-*.color14:	#89B482
-*.color15:	#D4BE98
-*.color16:	#89B482
-*.color17:	#89B482
+*.color0: 	#3B4252
+*.color1:	#BF616A
+*.color2:	#A3BE8C
+*.color3:	#EBCB8B
+*.color4:	#81A1C1
+*.color5:	#B48EAD
+*.color6:	#88C0D0
+*.color7:	#E5E9F0
+*.color8:	#4C566A
+*.color9:	#BF616A
+*.color10:	#A3BE8C
+*.color11:	#EBCB8B
+*.color12:	#81A1C1
+*.color13:	#B48EAD
+*.color14:	#8FBCBB
+*.color15:	#ECEFF4
+*.color16:	#88C0D0
+*.color17:	#88C0D0

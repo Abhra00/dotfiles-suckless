@@ -1,9 +1,9 @@
 sw_volume: 100
 audio_device_state:1:PipeWire Sound Server
 audio_device_state:1:my_fifo
-state: play
-current: 5
-time: 109.291
+state: pause
+current: 0
+time: 4.037
 random: 0
 repeat: 0
 single: 0
@@ -21,4 +21,8 @@ playlist_begin
 5:0921_eminem_the_marshall_mathers_lp_2000__mlib/05 - Who Knew.flac
 6:0921_eminem_the_marshall_mathers_lp_2000__mlib/07 - The Way I Am.flac
 7:0921_eminem_the_marshall_mathers_lp_2000__mlib/06 - Steve Berman.flac
+8:FamousEnglishSongs/Bottoms Up.mp3
+9:FamousEnglishSongs/Break even.mp3
+10:FamousEnglishSongs/THE EVERLY BROTHERS.mp3
+11:Requiem_For_A_Dream🚬/Winter- Lux Aeterna.wav
 playlist_end
