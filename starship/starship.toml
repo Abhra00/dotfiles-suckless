@@ -41,7 +41,7 @@ truncate_to_repo = false
 [character]
 format = '$symbol'
 success_symbol = '[❯ ](bold green)'
-error_symbol   = '[❯ ](bold red)'
+error_symbol   = '[❯ ](bold #ff6c6b)'
 vimcmd_symbol = '[❮ ](bold green)'
 vimcmd_replace_symbol = '[❮ ](bold purple)'
 vimcmd_replace_one_symbol = '[❮ ](bold purple)'
