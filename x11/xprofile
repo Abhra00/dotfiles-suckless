@@ -5,7 +5,7 @@ If you use startx/xinit like a Chad, this file will also be sourced.
 
 xrandr --dpi 96	# Set DPI. User may want to use a larger number for larger screens.
 
-xset rate r 200 35 # Set keyboard rate
+xset r rate 200 50 # Set keyboard rate
 
 setbg $(readlink -f $HOME/.local/share/bg)
 
@@ -15,7 +15,7 @@ xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!	# Xresources 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & # Polkit authentication agent
 
 
-autostart="dwmblocks mpd dunst picom unclutter nm-applet pulsedaemon"
+autostart="dwmblocks mpd dunst picom nm-applet pulsedaemon"
 
 for program in $autostart; do
 	pidof -sx "$program" || "$program" &
