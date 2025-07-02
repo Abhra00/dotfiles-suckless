@@ -12,6 +12,6 @@ set fish_color_param 	      brwhite
 
 
 
-# Starship prompt
-starship init fish | source
+# Prompt
+# Using hydro prompt for that
 

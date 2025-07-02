@@ -52,7 +52,6 @@ alias gco='git checkout'
 
 # ── Misc Utilities ────────────────────────────────────────
 alias h='history'
-alias path='printf "%s\n" $PATH'
 alias reload='exec fish'
 alias q='exit'
 

@@ -2,6 +2,7 @@
 # VERSION: 3.0
 SETUVAR --path PATH:/usr/local/sbin\x1e/usr/local/bin\x1e/usr/bin\x1e/home/bugs/\x2elocal/bin/statusbar
 SETUVAR __fish_initialized:3800
+SETUVAR _hydro_git_6731:main\u2022\x20
 SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:brgreen
@@ -30,3 +31,4 @@ SETUVAR fish_pager_color_description:yellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
+SETUVAR fish_user_paths:/home/bugs/\x2elocal/bin\x1e/home/bugs/\x2elocal/bin/statusbar\x1e/home/bugs/\x2elocal/bin/cron\x1e/home/bugs/Applications\x1e/var/lib/flatpak/exports/bin/

@@ -5,14 +5,11 @@
 
 
 # Environment variables and application defaults
-
-# Add all scripts in my path
-if test -d ~/.local/bin
-    set -gx PATH (find ~/.local/bin -type d | string split '\n') $PATH
-end
+set -e fish_user_paths
+set -U fish_user_paths $HOME/.local/bin $HOME/.local/bin/statusbar $HOME/.local/bin/cron $HOME/Applications /var/lib/flatpak/exports/bin/ $fish_user_paths
 
 # Supresses fish's intro message
-set fish_greeting                                 
+set fish_greeting ""                               
 
 # Default programs
 set -gx EDITOR nvim
@@ -49,9 +46,6 @@ set -gx MBSYNCRC "$XDG_CONFIG_HOME/mbsync/config"
 set -gx ELECTRUMDIR "$XDG_DATA_HOME/electrum"
 set -gx PYTHONSTARTUP "$XDG_CONFIG_HOME/python/pythonrc"
 set -gx SQLITE_HISTORY "$XDG_DATA_HOME/sqlite_history"
-
-# ZLS Colors
-set -gx ZLS_COLORS "un=0;37:ma=1;34:di=0;36:fi=0;37:ex=0;32"
 
 # Fzf options
 set -gx FZF_DEFAULT_OPTS "--style=full --height=90% --pointer '>' --color 'pointer:green:bold,bg+:-1:,fg+:green:bold,info:blue:bold,marker:yellow:bold,hl:gray:bold,hl+:yellow:bold' --input-label ' Search ' --color 'input-border:blue,input-label:blue:bold' --list-label ' Results ' --color 'list-border:green,list-label:green:bold' --preview-label ' Preview ' --color 'preview-border:magenta,preview-label:magenta:bold'"
