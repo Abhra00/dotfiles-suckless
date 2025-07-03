@@ -3,15 +3,16 @@
 #  ┗┛┗┛  ┛┗┣┛┣┛┗┛┛┗┛┗┛┗┛┗┗┛┗┛
 #                            
 
-# Autocomplete and highlight colors #
-set fish_color_normal 	      brcyan
-set fish_color_autosuggestion brblack
-set fish_color_command 	      brgreen
-set fish_color_error 	      '#ff6c6b'
-set fish_color_param 	      brwhite
+# Autocomplete and highlight colors 
+set -g fish_color_normal 	      brblue
+set -g fish_color_autosuggestion      brblack
+set -g fish_color_command 	      brmagenta
+set -g fish_color_error 	      brred
+set -g fish_color_param 	      brwhite
 
 
 
-# Prompt
-# Using hydro prompt for that
+# Prompt (Download HYDRO prompt using fundle)
+fundle plugin 'jorgebucaran/hydro'
+fundle init
 
