@@ -1,6 +1,6 @@
 #!/bin/sh
 
-choice=$(echo " Gruvbox-Material\n Nord\n Everforest\n EverBlush\n Catppuccin\n Rose-Pine\n Onedark\n Wallpaper" | dmenu -X 645 -Y 370 -W 580 -i -p " Set Theme:")
+choice=$(echo " Gruvbox-Material\n Nord\n Everforest\n EverBlush\n Catppuccin\n Rose-Pine\n Onedark\n Black-Metal\n Wallpaper" | dmenu -X 645 -Y 370 -W 580 -i -p " Set Theme:")
 bgloc="${XDG_DATA_HOME:-$HOME/walls}/bg"
 currentThemeFile="${XDG_DATA_HOME:-$HOME/.local/share/}/currentTheme"
 
@@ -22,6 +22,8 @@ case $choice in
 		wallust theme rose-pine && setbg $HOME/walls/rose-pine && notify-send -i "$bgloc" "Changing colors 🌈" ;;
 	' Onedark')
 	 	wallust theme base16-onedark && setbg $HOME/walls/onedark && notify-send -i "$bgloc" "Changing colors 🌈" ;;
+	' Black-Metal')
+	 	wallust theme base16-black-metal && setbg $HOME/walls/black-metal && notify-send -i "$bgloc" "Changing colors 🌈" ;;
 	' Wallpaper')
 		setbg $HOME/walls/pywalWalls && wallust run $(readlink -f $bgloc) && notify-send -i "$bgloc" "Changing colors 🌈" ;;
 esac

@@ -27,6 +27,8 @@ case $currentTheme in
 		WALL_DIR="$HOME/walls/catppuccin";;
 	Onedark)
 		WALL_DIR="$HOME/walls/onedark";;
+	Black-Metal)
+		WALL_DIR="$HOME/walls/black-metal";;
 	Wallpaper)
 		WALL_DIR="$HOME/walls/pywalWalls";;
 esac
