@@ -50,8 +50,8 @@
             "keyColor": "magenta"
         },
         {
-            "type": "font",
-            "key": " ",
+            "type": "packages",
+            "key": "󰮯 ",
             "keyColor": "yellow"
         },
         "break",
