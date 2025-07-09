@@ -24,23 +24,30 @@ map [fullscreen] i recolor
 map [fullscreen] p print
 map [fullscreen] g goto top
 
-set default-bg                     "#2E3440"
-set default-fg                     "#D8DEE9"
-set statusbar-bg                   "#2E3440"
-set statusbar-fg                   "#D8DEE9"
-set inputbar-bg                    "#2E3440"
-set inputbar-fg                    "#D8DEE9"
-set notification-bg                "#2E3440"
-set notification-fg                "#D8DEE9"
-set notification-error-bg          "#2E3440"
-set notification-error-fg          "#D8DEE9"
-set notification-warning-bg        "#2E3440"
-set notification-warning-fg        "#D8DEE9"
-set highlight-color                "#EBCB8B"
-set highlight-active-color         "#81A1C1"
-set completion-bg                  "#EBCB8B"
-set completion-fg                  "#81A1C1"
-set completion-highlight-bg        "#EBCB8B"
-set completion-highlight-fg        "#81A1C1"
-set recolor-lightcolor             "#2E3440"
-set recolor-darkcolor              "#D8DEE9"
+# Doom One-inspired Zathura color scheme
+
+set default-bg                     "#282c34"
+set default-fg                     "#bbc2cf"
+set statusbar-bg                   "#282c34"
+set statusbar-fg                   "#bbc2cf"
+set inputbar-bg                    "#282c34"
+set inputbar-fg                    "#bbc2cf"
+
+set notification-bg                "#282c34"
+set notification-fg                "#bbc2cf"
+set notification-error-bg          "#282c34"
+set notification-error-fg          "#ff6c6b"
+set notification-warning-bg        "#282c34"
+set notification-warning-fg        "#ecbe7b"
+
+set highlight-color                "#ecbe7b"  
+set highlight-active-color         "#51afef" 
+
+set completion-bg                  "#3f444a"
+set completion-fg                  "#bbc2cf"    
+set completion-highlight-bg        "#51afef"
+set completion-highlight-fg        "#282c34"    
+
+set recolor-lightcolor             "#282c34"
+set recolor-darkcolor              "#bbc2cf"
+
