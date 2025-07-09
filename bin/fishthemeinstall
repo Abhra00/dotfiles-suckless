@@ -1,8 +1,0 @@
-#!/bin/sh
-
-echo "Installing / Updating fish theme..."
-git clone https://github.com/jorgebucaran/hydro.git $HOME/.local/src/hydro-fish-theme
-mv -iv $HOME/.local/src/hydro-fish-theme/conf.d/hydro.fish $HOME/.config/fish/conf.d/hydro.fish
-mv -iv $HOME/.local/src/hydro-fish-theme/functions/* $HOME/.config/fish/functions/
-rm -rf $HOME/.local/src/hydro-fish-theme
-echo "Done..."
