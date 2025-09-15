@@ -2,21 +2,20 @@
 
 # This file runs when a DM logs you into a graphical session.
 # If you use startx/xinit like a Chad, this file will also be sourced.
-xrandr -s 1920x1080
-xrandr --dpi 96	# Set DPI. User may want to use a larger number for larger screens.
+xrandr --dpi 96 # Set DPI. User may want to use a larger number for larger screens.
 
 # Set keybaord input rate
-xset r rate 200 55 & 
+xset r rate 200 55 &
 
-# set wallpaper
-setbg $(readlink -f $HOME/.local/share/bg) 
+# Set wallpaper
+setbg $(readlink -f $HOME/.local/share/bg)
 
 # Polkit authentication agent
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & 	
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Place applications that are needed to autostarted
-autostart="slstatus mpd dunst nm-applet pulsedaemon"
+autostart="slstatus mpd dunst picom nm-applet pulsedaemon"
 
 for program in $autostart; do
-	pidof -sx "$program" || "$program" &
+  pidof -sx "$program" || "$program" &
 done >/dev/null 2>&1
