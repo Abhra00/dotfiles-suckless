@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Get the volume of the default audio sink as a percentage
+volume=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2 * 100) "%"}')
+
+# Print the volume percentage
+echo "$volume"

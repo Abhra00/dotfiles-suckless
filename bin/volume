@@ -18,8 +18,8 @@ case $1 in
 		;;
 esac
 
-# Update dwmblocks
-kill -44 $(pidof dwmblocks)
+# Update slstatus
+kill -35 $(pidof slstatus)
 
 VOLUME=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | tr -dc '0-9' | sed 's/^0\{1,2\}//')
 

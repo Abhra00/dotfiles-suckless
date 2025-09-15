@@ -1,11 +1,12 @@
-#  ┳┓┳┳┳┓┏┓┏┳┓┳┓┏┓  ┳┓┏┓┏┓┳┳┓  ┏┓┳┓┏┓
-#  ┃┃┃┃┃┃┗┓ ┃ ┣┫┃ ━━┃┃┃┃┃┃┃┃┃━━┃┃┃┃┣ 
-#  ┻┛┗┛┛┗┗┛ ┻ ┛┗┗┛  ┻┛┗┛┗┛┛ ┗  ┗┛┛┗┗┛
+#  ┳┓┳┳┳┓┏┓┏┳┓┳┓┏┓
+#  ┃┃┃┃┃┃┗┓ ┃ ┣┫┃ 
+#  ┻┛┗┛┛┗┗┛ ┻ ┛┗┗┛
 #                                    
 
 
 [global]
 monitor = 0
+frame_width = 1
 separator_color = frame
 follow = keyboard
 gap_size = 3
@@ -16,8 +17,8 @@ padding = 10
 horizontal_padding = 10
 transparency = 0
 markup = full
-font = Victor Mono Italic
-format = "<span size='x-large' font_desc='Victor Mono Italic 12' weight='Bold' foreground='#46d9ff'>%s</span>\n\n%b"
+font = IosevkaTerm Nerd Font
+format = "<span size='x-large' font_desc='IosevkaTerm Nerd Font 12' weight='Bold' foreground='#ff007c'>%s</span>\n\n%b"
 min_icon_size = 32
 max_icon_size = 64 
 corner_radius = 0
@@ -31,22 +32,19 @@ icon_path = usr/share/icons/Papirus-Dark/48x48/actions/:/usr/share/icons/Papirus
 
 
 [urgency_low]
-    background   = "#282c34"
-    foreground   = "#bbc2cf"
-    highlight    = "#46d9ff"
-    frame_color  = "#46d9ff"
-    default_icon = "dialog-information"
+    background  = "#16161e"
+    foreground  = "#c0caf5"
+    highlight   = "#ff007c"
+    frame_color = "#ff007c"
 
 [urgency_normal]
-    background   = "#282c34"
-    foreground   = "#bbc2cf"
-    highlight    = "#46d9ff"
-    frame_color  = "#46d9ff"
-    default_icon = "dialog-information"
+    background  = "#1a1b26"
+    foreground  = "#c0caf5"
+    highlight   = "#ff007c"
+    frame_color = "#ff007c"
 
 [urgency_critical]
-    background   = "#282c34"
-    foreground   = "#bbc2cf"
-    highlight    = "#46d9ff"
-    frame_color  = "#ff6c6b"
-    default_icon = "dialog-error"
+    background  = "#292e42"
+    foreground  = "#db4b4b"
+    highlight   = "#ff007c"
+    frame_color = "#db4b4b"
