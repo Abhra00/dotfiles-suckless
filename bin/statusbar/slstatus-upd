@@ -1,0 +1,22 @@
+#!/bin/bash
+
+cache_file="${XDG_CACHE_HOME:-$HOME/.cache}/pkg_updates"
+
+pacman_updates=$(checkupdates 2>/dev/null | wc -l)
+
+if command -v yay &>/dev/null; then
+    aur_updates=$(yay -Qum 2>/dev/null | wc -l)
+elif command -v paru &>/dev/null; then
+    aur_updates=$(paru -Qum 2>/dev/null | wc -l)
+else
+    aur_updates=0
+fi
+
+total_updates=$((pacman_updates + aur_updates))
+
+notify-send "📦 Total $total_updates packages can be upgraded"
+
+echo "$total_updates" > "$cache_file"
+
+slstatus_pid=$(pidof slstatus)
+[ -n "$slstatus_pid" ] && kill -36 "$slstatus_pid"
