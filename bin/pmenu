@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # A dmenu wrapper script for system functions.
 export WM="dwm"
@@ -13,10 +13,19 @@ wmpid(){ # This function is needed if there are multiple instances of the window
 	echo "${tree%%)*}"
 }
 
-case "$(printf ":g  lock\n:g  leave $WM\n:g  renew $WM\n:g  hibernate\n:g  reboot\n:g ⏻ shutdown\n:g ⏾ sleep\n:g  display off" | dmenu -X 645 -Y 370 -W 580 -i -p 'Action: ' | sed 's/^:g //')" in
-	' lock') slock ;;
-	' leave $WM') kill -TERM "$(wmpid)" ;;
-	' renew $WM') kill -HUP "$(wmpid)" ;;
+lock(){
+    mpc pause
+    pauseallmpv
+    playerctl pause
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+    slock
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+}
+
+case "$(printf " lock\n leave $WM\n renew $WM\n hibernate\n reboot\n⏻ shutdown\n⏾ sleep\n display off" | dmenu -i -p 'Action: ' | sed 's/^:g //')" in
+	' lock') lock ;;
+	" leave $WM") kill -TERM "$(wmpid)" ;;
+	" renew $WM") kill -HUP "$(wmpid)" ;;
 	' hibernate') slock $ctl hibernate -i ;;
 	'⏾ sleep') slock $ctl suspend -i ;;
 	' reboot') $ctl reboot -i ;;

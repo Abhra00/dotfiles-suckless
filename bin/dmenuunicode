@@ -3,7 +3,7 @@ set -euo pipefail
 
 MODE="${1:-type-copy}"
 
-emoji="$(sed '1,/^### DATA ###$/d' "$0" | dmenu -i -X 645 -Y 370 -W 580 -p "Choose:" | cut -d ' ' -f 1 | tr -d '\n')"
+emoji="$(sed '1,/^### DATA ###$/d' "$0" | dmenu -i -l 20 -p "Choose:" | cut -d ' ' -f 1 | tr -d '\n')"
 
 case "$MODE" in
     type-copy)

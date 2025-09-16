@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Mounts Android Phones and USB drives (encrypted or not). This script will
 # replace the older `dmenumount` which had extra steps and couldn't handle
 # encrypted drives.
-# TODO: Try decrypt for drives in crtypttab
+# TODO: Try decrypt for drives in crypttab
 # TODO: Add some support for connecting iPhones (although they are annoying).
 
 IFS='
@@ -27,9 +27,15 @@ done)"
 lsblkoutput="$(lsblk -rpo "uuid,name,type,size,label,mountpoint,fstype")"
 # Get all LUKS drives
 allluks="$(echo "$lsblkoutput" | grep crypto_LUKS)"
-# Get a list of the LUKS drive UUIDs already decrypted.
-decrypted="$(find /dev/disk/by-id/dm-uuid-CRYPT-LUKS2-* | sed "s|.*LUKS2-||;s|-.*||")"
-# Functioning for formatting drives correctly for dmenu:
+
+# Check if dm-uuid-CRYPT-LUKS2-* exist before find
+if ls /dev/disk/by-id/dm-uuid-CRYPT-LUKS2-* 1> /dev/null 2>&1; then
+    decrypted="$(find /dev/disk/by-id/dm-uuid-CRYPT-LUKS2-* | sed "s|.*LUKS2-||;s|-.*||")"
+else
+    decrypted=""
+fi
+
+# Function for formatting drives correctly for dmenu:
 filter() { sed "s/ /:/g" | awk -F':' '$7==""{printf "%s%s (%s) %s\n",$1,$3,$5,$6}' ; }
 
 # Get only LUKS drives that are not decrypted.
@@ -56,7 +62,7 @@ set -e
 test -n "$alldrives"
 
 # Feed all found drives to dmenu and get user choice.
-chosen="$(echo "$alldrives" | dmenu -p "Mount which drive?" -i -g 1)"
+chosen="$(echo "$alldrives" | dmenu -p "Mount which drive?" -i)"
 
 # Function for prompting user for a mountpoint.
 getmount(){
@@ -69,10 +75,13 @@ getmount(){
 }
 
 attemptmount(){
-		# Attempt to mount without a mountpoint, to see if drive is in fstab.
-		sudo -A mount "$chosen" || return 1
-		notify-send "💾Drive Mounted." "$chosen mounted."
+	# Try mount without mountpoint (using fstab)
+	if sudo -A mount "$chosen" 2>/dev/null; then
+		notify-send "💾 Drive Mounted." "$chosen mounted."
 		exit
+	else
+		return 1
+	fi
 }
 
 case "$chosen" in
@@ -80,41 +89,61 @@ case "$chosen" in
 		chosen="${chosen%% *}"
 		chosen="${chosen:1}"	# This is a bashism.
 		parttype="$(echo "$lsblkoutput" | grep "$chosen")"
-		attemptmount || getmount
-		case "${parttype##* }" in
-			vfat) sudo -A mount -t vfat "$chosen" "$mp" -o rw,umask=0000 ;;
-			btrfs) sudo -A mount "$chosen" "$mp" ;;
-			ext4) sudo -A mount "$chosen" "$mp" ;;
-			*) sudo -A mount "$chosen" "$mp" -o uid="$(id -u)",gid="$(id -g)" ;;
-		esac
-		notify-send "💾Drive Mounted." "$chosen mounted to $mp."
+		if ! attemptmount; then
+			getmount
+			# If mountpoint not set by getmount, exit
+			[ -z "$mp" ] && { echo "Mount point not set. Exiting."; exit 1; }
+
+			case "${parttype##* }" in
+				vfat)
+					sudo -A mount -t vfat "$chosen" "$mp" -o rw,umask=0000
+					;;
+				btrfs)
+					sudo -A mount "$chosen" "$mp"
+					;;
+				ntfs)
+					sudo -A mount -t ntfs-3g "$chosen" "$mp" -o uid="$(id -u)",gid="$(id -g)"
+					;;
+				*)
+					# For ext4, xfs, etc., don't use uid/gid options
+					sudo -A mount "$chosen" "$mp"
+					;;
+			esac
+			notify-send "💾 Drive Mounted." "$chosen mounted to $mp."
+		fi
 		;;
 
 	🔒*)
 		chosen="${chosen%% *}"
 		chosen="${chosen:1}"	# This is a bashism.
 		# Number the drive.
+		num=0
 		while true; do
-			[ -f "/dev/mapper/usb$num" ] || break
-			num="$(printf "%02d" "$((num +1))")"
+			[ -f "/dev/mapper/usb$(printf "%02d" "$num")" ] || break
+			num=$((num + 1))
 		done
+		num=$(printf "%02d" "$num")
 
 		# Decrypt in a terminal window
 		${TERMINAL:-st} -n floatterm -g 60x1 -e sudo cryptsetup open "$chosen" "usb$num"
 		# Check if now decrypted.
 		test -b "/dev/mapper/usb$num"
 
-		attemptmount || getmount
-		sudo -A mount "/dev/mapper/usb$num" "$mp" -o uid="$(id -u)",gid="$(id -g)"
-		notify-send "🔓Decrypted drive Mounted." "$chosen decrypted and mounted to $mp."
+		if ! attemptmount; then
+			getmount
+			[ -z "$mp" ] && { echo "Mount point not set. Exiting."; exit 1; }
+			sudo -A mount "/dev/mapper/usb$num" "$mp" -o uid="$(id -u)",gid="$(id -g)"
+			notify-send "🔓 Decrypted drive Mounted." "$chosen decrypted and mounted to $mp."
+		fi
 		;;
 
 	📱*)
 		notify-send "❗Note" "Remember to allow file access on your phone now."
 		getmount
+		[ -z "$mp" ] && { echo "Mount point not set. Exiting."; exit 1; }
 		number="${chosen%%:*}"
-		number="${chosen:1}"	# This is a bashism.
+		number="${number:1}"	# This is a bashism.
 		sudo -A simple-mtpfs -o allow_other -o fsname="simple-mtpfs-$(escape "$chosen")" --device "$number" "$mp"
-		dunstify --icon=android-sdk --appname=Android --urgency=normal "Android Mount" "Android device mounted at $mp"
+		notify-send "🤖 Android Mounted." "Android device mounted to $mp."
 		;;
 esac
