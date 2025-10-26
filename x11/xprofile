@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # This file runs when a DM logs you into a graphical session.
 # If you use startx/xinit like a Chad, this file will also be sourced.
@@ -7,6 +7,15 @@ xrandr --dpi 96 # Set DPI. User may want to use a larger number for larger scree
 # Set keybaord input rate
 xset r rate 200 55 &
 
+# Set right control to mod3
+xmodmap -e "clear control" -e "add control = Control_L" -e "clear mod3" -e "add mod3 = Control_R"
+
+# Set right alt to mod5
+xmodmap -e "clear mod1" -e "add mod1 = Alt_L" -e "clear mod5" -e "add mod5 = Alt_R"
+
+xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources &
+xrdbpid=$! # Xresources colors/settings on startup
+
 # Set wallpaper
 setbg $(readlink -f $HOME/.local/share/bg)
 
@@ -14,8 +23,14 @@ setbg $(readlink -f $HOME/.local/share/bg)
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Place applications that are needed to autostarted
-autostart="slstatus mpd dunst picom nm-applet pulsedaemon"
+autostart="dwmblocks clipcatd mpd dunst picom nm-applet pulsedaemon unclutter"
 
 for program in $autostart; do
-  pidof -sx "$program" || "$program" &
+    pidof -sx "$program" || "$program" &
 done >/dev/null 2>&1
+
+# Start emacs daemon
+emacs --daemon &
+
+# Ensure that xrdb has finished running before moving on to start the WM/DE.
+[ -n "$xrdbpid" ] && wait "$xrdbpid"
