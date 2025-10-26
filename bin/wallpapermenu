@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# Wallpaper directory
+WALL_DIR="$HOME/walls"
+
+menu() {
+    
+    echo "Received argument: '$1'" >&2
+
+    if [[ "$1" == "nsxiv" ]]; then
+        nsxiv -tb "$WALL_DIR"/*
+    else
+        DMENU_CHOICE=$(echo -e "Random\n$(find "$WALL_DIR" -maxdepth 1 -type f -printf "%f\n" | sort -V)" | dmenu -c -bw 2 -l 15 -i -p "Wallpaper: ")
+    fi
+
+    case "$DMENU_CHOICE" in
+    Random) setbg "$WALL_DIR" ;;
+    *.*) setbg "$WALL_DIR/$DMENU_CHOICE" ;;
+    *) exit 0 ;;
+    esac
+}
+
+# Run the menu
+menu "$@"

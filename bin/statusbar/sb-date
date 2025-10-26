@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+case $BLOCK_BUTTON in
+1)
+    cal_text=$(cal | sed "s/\<$(date +'%e' | sed 's/ //g')\>/<b><span color='#F43841'>&<\/span><\/b>/")
+    notify-send "This Month" "<span font_family='monospace'>$cal_text</span>"
+    notify-send "Appointments" "$(calcurse -d3)"
+    ;;
+2)
+    setsid -f "$TERMINAL" -e calcurse
+    ;;
+3)
+    notify-send "  Date module" "\- Left click to show upcoming appointments for the next three days via \`calcurse -d3\` and show the month via \`cal\`
+- Middle click opens calcurse if installed"
+    ;;
+6)
+    setsid -f "$TERMINAL" -e "$EDITOR" "$0"
+    ;;
+esac
+
+echo "^C19^  ^d^^C19^$(date +"%Y %b %d (%a)") ^d^"

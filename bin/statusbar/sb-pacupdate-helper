@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+case $BLOCK_BUTTON in
+1)
+    $TERMINAL -e "paru"
+    sb-pacupdate
+    ;;
+3)
+    notify-send "  Updates module" "\- Shows update count.
+- click to update."
+    ;;
+6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+updates=$(cat ~/.cache/pkg_updates)
+
+echo "^C19^ $updates^d^"

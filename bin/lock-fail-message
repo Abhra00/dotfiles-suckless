@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Unmute
+wpctl set-mute @DEFAULT_SINK@ 0
+
+# Play the message
+pw-play "$HOME/Music/failed-message.mp3"
+
+# Mute again
+wpctl set-mute @DEFAULT_SINK@ 1

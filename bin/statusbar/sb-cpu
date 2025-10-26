@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+case $BLOCK_BUTTON in
+1) notify-send "󰻠  CPU hogs" "$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)\\n(100% per core)" ;;
+2) setsid -f "$TERMINAL" -e btop ;;
+3) notify-send "󰻠  CPU module " "\- Shows CPU temperature.
+- Click to show intensive processes.
+- Middle click to open btop." ;;
+6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
+cpu_usage=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}')
+
+echo "^B2^^C0^ CPU ^d^^B16^^C13^ $cpu_usage ^d^"

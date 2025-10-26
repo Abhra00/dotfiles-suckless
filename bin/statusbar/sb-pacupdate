@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 cache_file="${XDG_CACHE_HOME:-$HOME/.cache}/pkg_updates"
 
@@ -14,9 +14,9 @@ fi
 
 total_updates=$((pacman_updates + aur_updates))
 
-notify-send "📦 Total $total_updates packages can be upgraded"
+notify-send "Total $total_updates packages can be upgraded" -i "$HOME/.config/dunst/assets/pacman.png"
 
-echo "$total_updates" > "$cache_file"
+echo "$total_updates" >"$cache_file"
 
-slstatus_pid=$(pidof slstatus)
-[ -n "$slstatus_pid" ] && kill -36 "$slstatus_pid"
+dwmblocks_pid=$(pidof dwmblocks)
+[ -n "$dwmblocks_pid" ] && kill -46 "$dwmblocks_pid"

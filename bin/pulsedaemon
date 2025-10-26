@@ -4,8 +4,8 @@
 pactl subscribe |
 while IFS='' read -r output ; do
 	case "$output" in
-		**" sink "*) kill -35 $(pidof slstatus) ;;
-		**" source "*) kill -35 $(pidof slstatus) ;;
+		**" sink "*) kill -45 $(pidof dwmblocks) ;;
+		**" source "*) kill -45 $(pidof dwmblocks) ;;
 
 	esac
 done

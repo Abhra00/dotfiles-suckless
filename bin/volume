@@ -1,42 +1,72 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-# Increment, decrement, or mute the volume using Pipewire and send a notification
+# Icon directory
+vol_dir="$HOME/.config/dunst/assets"
 
-case $1 in
-	up)
-		# Set the volume on (if it was muted)
-		wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
-		wpctl set-volume -l 2.0 @DEFAULT_AUDIO_SINK@ 5%+
-
-		;;
-	down)
-		wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
-		wpctl set-volume -l 2.0 @DEFAULT_AUDIO_SINK@ 5%-
-		;;
-	mute)
-		wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-		;;
-esac
-
-# Update slstatus
-kill -35 $(pidof slstatus)
-
-VOLUME=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | tr -dc '0-9' | sed 's/^0\{1,2\}//')
-
-
-send_notification() {
-	if [ "$1" = "mute" ]; then ICON="mute"; elif [ "$VOLUME" -lt 33 ]; then ICON="low"; elif [ "$VOLUME" -lt 66 ]; then ICON="medium"; else ICON="high"; fi
-	if [ "$1" = "mute" ]; then TEXT="Currently muted"; else TEXT="Currently at ${VOLUME}%"; fi
-
-	dunstify -a "Volume" -r 9993 -h int:value:"$VOLUME" -i "volume-$ICON" "Volume" "$TEXT" -t 2000
+notify() {
+    dunstify -u low -h string:x-dunst-stack-tag:cvolum "$@"
 }
 
+# Get volume status
+get_volume() {
+    output=$(wpctl get-volume @DEFAULT_SINK@)
+
+    if echo "$output" | grep -q '\[MUTED\]'; then
+        echo "muted"
+    else
+        # Extract the volume as a percentage (e.g., 0.76 -> 76)
+        volume=$(echo "$output" | awk '{printf "%.0f", $2 * 100}')
+        echo "$volume"
+    fi
+}
+
+# Determine icon based on status
+get_icon() {
+    current_vol=$(get_volume)
+
+    if [ "$current_vol" = "muted" ] || [ "$current_vol" -eq 0 ]; then
+        icon="$vol_dir/mute.png"
+    else
+        icon="$vol_dir/vol.png"
+    fi
+}
+
+# Show notification
+show_notification() {
+    get_icon
+    message="Volumen: $(get_volume)"
+    echo "$message" | grep -q "muted" || message="${message}%"
+    notify -i "$icon" "$message"
+}
+
+# Adjust volume
+adjust_volume() {
+    wpctl set-mute @DEFAULT_SINK@ 0
+    wpctl set-volume @DEFAULT_SINK@ "$@"
+    show_notification
+    # Update slstatus simultaneously
+    kill -45 $(pidof dwmblocks)
+}
+
+# Toggle mute
+toggle_mute() {
+    wpctl set-mute @DEFAULT_SINK@ toggle
+    get_icon
+    if wpctl get-volume @DEFAULT_SINK@ | grep -q '\[MUTED\]'; then
+        message="Muted"
+    else
+        message="Unmuted"
+    fi
+    notify -i "$icon" "$message"
+    # Update slstatus simultaneously
+    kill -45 $(pidof dwmblocks)
+}
+
+# Handle options
 case $1 in
-	mute)
-		case "$(wpctl get-volume @DEFAULT_AUDIO_SINK@)" in
-			*MUTED* ) send_notification mute;;
-			*       ) send_notification;;
-		esac;;
-	*)
-		send_notification;;
+get) get_volume ;;
+up) adjust_volume 5%+ ;;
+down) adjust_volume 5%- ;;
+mute) toggle_mute ;;
+*) echo "$(get_volume)%" ;;
 esac
