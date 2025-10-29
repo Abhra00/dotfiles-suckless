@@ -1,4 +1,8 @@
 ;; -*- lexical-binding: t; -*-
+
+;; Restore normal GC threshold after startup
+(add-hook 'emacs-startup-hook (lambda () (setq gc-cons-threshold 800000)))
+
 ;; Required for rc.el
 (package-initialize)
 (setq package-install-upgrade-built-in t)
@@ -100,6 +104,33 @@
 ;; Make line numbers relative
 (setq display-line-numbers-type 'relative)
 
+;; Save cursor positions across sessions
+(save-place-mode 1)
+
+;; Automatically refresh buffers when files change
+(global-auto-revert-mode 1)
+(setq global-auto-revert-non-file-buffers t
+      auto-revert-verbose nil)
+
+;; Highlight matching parens instantly
+(show-paren-mode 1)
+
+;; Enable recent files menu
+(recentf-mode 1)
+(setq recentf-max-menu-items 50
+      recentf-max-saved-items 100)
+
+;; Persist minibuffer history across sessions
+(savehist-mode 1)
+
+;; Undo/redo window configurations
+(winner-mode 1)
+
+;; Smoother scrolling
+(setq scroll-margin 10
+      scroll-conservatively 9999
+      scroll-step 1)
+
 ;; Ido
 (rc/require 'smex 'ido-completing-read+)
 
@@ -109,6 +140,9 @@
 
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+;; Use ibuffer for improved buffer management
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; Org mode
 (load-file "~/.config/emacs/lisps/emacs.rc/org-mode-rc.el")
@@ -133,6 +167,13 @@
 (global-set-key (kbd "C-c C-<")     'mc/mark-all-like-this)
 (global-set-key (kbd "C-\"")        'mc/skip-to-next-like-this)
 (global-set-key (kbd "C-:")         'mc/skip-to-previous-like-this)
+
+;; Convenient bindings for query-replace operations
+(global-set-key (kbd "C-c r") 'query-replace)
+(global-set-key (kbd "C-c R") 'query-replace-regexp)
+
+;; Keybinding to cycle whitespace in region or point
+(global-set-key (kbd "M-SPC") 'cycle-spacing)
 
 ;; Dired
 (require 'dired-x)
@@ -169,6 +210,14 @@
           (lambda ()
             (interactive)
             (company-mode 0)))
+
+;; Smarter on-demand completion using hippie-expand
+(setq hippie-expand-try-functions-list
+      '(try-expand-dabbrev
+        try-complete-file-name-partially
+        try-complete-file-name
+        try-expand-all-abbrevs))
+
 
 ;;; Move Text
 (rc/require 'move-text)
