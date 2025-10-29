@@ -45,6 +45,10 @@
 ;; Set the font
 (add-to-list 'default-frame-alist `(font . "Iosevka-20"))
 
+;; Add fallback for missing glyphs (icons, symbols, etc.)
+(when (member "Symbols Nerd Font Mono" (font-family-list))
+  (set-fontset-font t nil (font-spec :family "Symbols Nerd Font Mono") nil 'append))
+
 ;; Enable ligatures
 (dolist (char/ligature-re
          `((?-  . ,(rx (or (or "-->" "-<<" "->>" "-|" "-~" "-<" "->") (+ "-"))))
