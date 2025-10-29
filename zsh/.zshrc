@@ -178,6 +178,12 @@ yazicd_widget() {
 zle -N yazicd_widget
 bindkey '^O' yazicd_widget
 
+#    ┳┳┏┳┓┳┓ ┳┏┳┓┓┏  ┏┓┳┳┳┓┏┓┏┓
+#    ┃┃ ┃ ┃┃ ┃ ┃ ┗┫━━┣ ┃┃┃┃┃ ┗┓
+#    ┗┛ ┻ ┻┗┛┻ ┻ ┗┛  ┻ ┗┛┛┗┗┛┗┛
+#
+[[ -r ${ZDOTDIR:-$HOME}/functions.zsh ]] && source ${ZDOTDIR:-$HOME}/functions.zsh
+
 #  ┏┓┳┳┳┓┏┓  ┏┓┳┓┏┓┳┳┓┏┓┏┳┓
 #  ┗┓┃┃┃┃┃┃  ┃┃┣┫┃┃┃┃┃┃┃ ┃
 #  ┗┛┗┛┻┛┗┛  ┣┛┛┗┗┛┛ ┗┣┛ ┻
