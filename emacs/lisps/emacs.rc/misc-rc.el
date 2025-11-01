@@ -114,7 +114,7 @@ This command does the inverse of `fill-paragraph'."
 (defun rc/duplicate-line ()
   "Duplicate current line"
   (interactive)
-  (let ((column (- (point) (point-at-bol)))
+  (let ((column (- (point) (line-beginning-position)))
         (line (let ((s (thing-at-point 'line t)))
                 (if s (string-remove-suffix "\n" s) ""))))
     (move-end-of-line 1)
