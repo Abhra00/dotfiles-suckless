@@ -209,7 +209,7 @@ precmd_functions+=( precmd_vcs_info )
     fi
 }
 
-# Utility function for adding a new before every prompt
+# Utility function for adding a new line before every prompt
 precmd_new_line() { print "" }
 precmd_functions+=( precmd_new_line )
 
