@@ -138,7 +138,7 @@ dir locals file."
                  "git add -A && git commit -m \"%s\" && git push origin master")
                autocommit-message)))))
 
-(defun rc/autocommit-beat (autocommit-directory process event)
+(defun rc/autocommit-beat (autocommit-directory _process event)
   (let ((default-directory autocommit-directory))
     (message (if (rc/autocommit--get-lock 'autocommit-offline)
                  "[OFFLINE] Autocommit: %s"
