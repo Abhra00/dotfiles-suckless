@@ -1,3 +1,5 @@
+;;; autocommit-rc.el --- Auto-commit functionality -*- lexical-binding: t; -*-
+
 ;;; TODO(c3bdae31-4329-4217-98a0-743b9dcbb6d2): extract autocommit into a separate package
 ;;;
 ;;; Once e266bfaa-2a01-4881-9e7f-ce2c592f7cdd is done, I think we can do that.
@@ -32,10 +34,10 @@
            rc/autocommit-local-locks))
 
 (defun rc/autocommit--toggle-lock (lock)
-  (-> lock
-      (rc/autocommit--get-lock)
-      (not)
-      (rc/autocommit--set-lock)))
+  (->> lock
+       (rc/autocommit--get-lock)
+       (not)
+       ((lambda (toggled-value) (rc/autocommit--set-lock lock toggled-value)))))
 
 (defun rc/autocommit--create-dir-locals (file-name)
   (write-region "((nil . ((eval . (rc/autocommit-dir-locals)))))"
@@ -147,3 +149,6 @@ dir locals file."
       (rc/autocommit--set-lock 'autocommit-changed nil)
       (set-process-sentinel (rc/run-commit-process autocommit-directory)
                             (-partial 'rc/autocommit-beat autocommit-directory)))))
+
+(provide 'autocommit-rc)
+;;; autocommit-rc.el ends here
