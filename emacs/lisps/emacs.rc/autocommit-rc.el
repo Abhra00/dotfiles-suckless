@@ -36,8 +36,8 @@
 (defun rc/autocommit--toggle-lock (lock)
   (->> lock
        (rc/autocommit--get-lock)
-       (not)
-       ((lambda (toggled-value) (rc/autocommit--set-lock lock toggled-value)))))
+       not
+       (funcall (lambda (v) (rc/autocommit--set-lock lock v)))))
 
 (defun rc/autocommit--create-dir-locals (file-name)
   (write-region "((nil . ((eval . (rc/autocommit-dir-locals)))))"
