@@ -1,35 +1,85 @@
 #!/usr/bin/env bash
+#  ┏┓┏┓┓ ┏┏┓┳┓┳┳┓┏┓┳┓┳┳
+#  ┃┃┃┃┃┃┃┣ ┣┫┃┃┃┣ ┃┃┃┃
+#  ┣┛┗┛┗┻┛┗┛┛┗┛ ┗┗┛┛┗┗┛
+#
 
-# A dmenu wrapper script for system functions.
-export WM="dwm"
-case "$(readlink -f /sbin/init)" in
-	*systemd*) ctl='systemctl' ;;
-	*) ctl='loginctl' ;;
-esac
+# Current Theme
+theme='powermenu.rasi'
 
-wmpid(){ # This function is needed if there are multiple instances of the window manager.
-	tree="$(pstree -ps $$)"
-	tree="${tree#*$WM(}"
-	echo "${tree%%)*}"
+# CMDs
+uptime="$(uptime -p | sed -e 's/up //g')"
+host=$(hostnamectl hostname)
+
+# Options
+shutdown='󰐥'
+reboot='󰜉'
+lock='󰌾'
+suspend='󰤄'
+logout='󰈆'
+yes=''
+no=''
+
+# Rofi CMD
+rofi_cmd() {
+    rofi -dmenu \
+        -p "Goodbye ${USER}@${host}" \
+        -mesg "Uptime: $uptime" \
+        -theme ${theme}
 }
 
-lock(){
-    mpc pause
-    pauseallmpv
-    playerctl pause
-    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-    slock
-    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+# Confirmation CMD
+confirm_cmd() {
+    rofi -dmenu \
+        -p 'Confirmation' \
+        -mesg 'Are you Sure?' \
+        -theme confirm.rasi
 }
 
-case "$(printf " lock\n leave $WM\n renew $WM\n hibernate\n reboot\n⏻ shutdown\n⏾ sleep\n display off" | dmenu -i -p 'Action: ' | sed 's/^:g //')" in
-	' lock') lock ;;
-	" leave $WM") kill -TERM "$(wmpid)" ;;
-	" renew $WM") kill -HUP "$(wmpid)" ;;
-	' hibernate') slock $ctl hibernate -i ;;
-	'⏾ sleep') slock $ctl suspend -i ;;
-	' reboot') $ctl reboot -i ;;
-	'⏻ shutdown') $ctl poweroff -i ;;
-	' display off') xset dpms force off ;;
-	*) exit 1 ;;
+# Ask for confirmation
+confirm_exit() {
+    echo -e "$yes\n$no" | confirm_cmd
+}
+
+# Pass variables to rofi dmenu
+run_rofi() {
+    echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+}
+
+# Execute Command
+run_cmd() {
+    selected="$(confirm_exit)"
+    if [[ "$selected" == "$yes" ]]; then
+        if [[ $1 == '--shutdown' ]]; then
+            systemctl poweroff
+        elif [[ $1 == '--reboot' ]]; then
+            systemctl reboot
+        elif [[ $1 == '--suspend' ]]; then
+            systemctl suspend
+        elif [[ $1 == '--logout' ]]; then
+            hyprctl dispatch exit 0
+        fi
+    else
+        exit 0
+    fi
+}
+
+# Actions
+chosen="$(run_rofi)"
+case ${chosen} in
+$shutdown)
+    run_cmd --shutdown
+    ;;
+$reboot)
+    run_cmd --reboot
+    ;;
+$lock)
+    betterlockscreen -l blur
+    ;;
+$suspend)
+    run_cmd --suspend
+    ;;
+$logout)
+    run_cmd --logout
+    ;;
 esac

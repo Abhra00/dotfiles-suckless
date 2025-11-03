@@ -11,8 +11,8 @@ unsetopt PROMPT_SP 2>/dev/null
 # Default programs:
 export EDITOR="emacsclient -t"
 export VISUAL="emacsclient -c"
-export TERMINAL="st"
-export TERMINAL_PROG="st"
+export TERMINAL="ghostty"
+export TERMINAL_PROG="ghostty"
 export BROWSER="firefox"
 
 # ~/ Clean-up:
@@ -60,7 +60,7 @@ export FZF_DEFAULT_OPTS="
 
 # Other program settings:
 export DICS="/usr/share/stardict/dic/"
-export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
+export SUDO_ASKPASS="$HOME/.local/bin/rofipass"
 export LESS="R"
 export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
 export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"

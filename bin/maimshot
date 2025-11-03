@@ -7,12 +7,33 @@ option_3="  Capture Window"
 option_4="  Capture in 5s"
 option_5="  Capture in 10s"
 
+# Theme Elements
+prompt='Screenshot'
+mesg="DIR: `xdg-user-dir PICTURES`/Screenshots"
+
 # Notification icon
 icon="$HOME/.config/dunst/assets/screenshot.png"
 
+# Rofi theme elements
+list_col='1'
+list_row='5'
+win_width='670px'
+
+# Rofi CMD
+rofi_cmd() {
+	rofi -theme-str "window {width: $win_width;}" \
+		-theme-str "listview {columns: $list_col; lines: $list_row;}" \
+		-theme-str 'textbox-prompt-colon {str: "";}' \
+		-dmenu \
+		-p "$prompt" \
+		-mesg "$mesg" \
+		-markup-rows \
+		-theme $HOME/.config/rofi/maimshot.rasi
+}
+
 # Pass variables to rofi dmenu
-run_dmenu() {
-    echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5" | dmenu -i -p "Screenshot which area?" | sed 's/^:b //'
+run_rofi() {
+    echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5" | rofi_cmd
 }
 
 # Screenshot
@@ -95,7 +116,7 @@ run_cmd() {
 }
 
 # Actions
-chosen="$(run_dmenu)"
+chosen="$(run_rofi)"
 case ${chosen} in
 $option_1)
     run_cmd --opt1

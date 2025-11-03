@@ -1,76 +1,54 @@
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
-        "source": "~/.config/fastfetch/images/sakura.png",
-        "type": "kitty",
-	"height": 10,
+    "source": "~/.local/share/bg",
+	"type": "kitty",
+	"height": 11,
+	"width": 31,
         "padding": {
-            "top": 3,
-            "left": 1
+            "top": 1,
+            "right": 2
         }
     },
     "display": {
-        "separator": " "
+        "separator": " ▌ ",
+	"brightColor": true
     },
     "modules": [
-        "break",
-        "break",
-        {
-            "type": "custom",
-            "format": "\u001b[35mS U C K L E S S\u001b[0m\n"
+	"break",
+	"break",
+	{
+            "type": "title",
+            "key": " "
         },
         {
             "type": "os",
-            "key": " ",
-            "keyColor": "32"   // color10 (green)
-        },
-        {
-            "type": "kernel",
-            "key": " ",
-            "keyColor": "33"   // color11 (yellow)
-        },
-        {
-            "type": "packages",
-            "format": "{} (pacman)",
-            "key": " ",
-            "keyColor": "36"   // color12 (cyan/blue)
-        },
-        {
-            "type": "shell",
-            "key": " ",
-            "keyColor": "35"   // color13 (magenta)
+            "key": " ",
+            "keyColor": "red"  // = color3
         },
         {
             "type": "wm",
-            "key": " ",
-            "keyColor": "36"   // color14 (teal)
+            "key": " ",
+            "keyColor": "cyan" 
         },
         {
-            "type": "cursor",
-            "key": " ",
-            "keyColor": "32"   // cycle back to green
+            "type": "shell",
+            "key": " ",
+            "keyColor": "white"
         },
         {
-            "type": "terminalfont",
-            "key": " ",
-            "keyColor": "33"
+            "type": "terminal",
+            "key": " ",
+            "keyColor": "magenta"
         },
         {
-            "type": "uptime",
-            "key": " ",
-            "keyColor": "36"
+            "type": "packages",
+            "key": "󰮯 ",
+            "keyColor": "yellow"
         },
-        {
-            "type": "media",
-            "key": "󰝚 ",
-            "keyColor": "35"
-        },
-        {
-            "type": "custom",
-            "format": "\u001b[90m▃▃▃  \u001b[31m▃▃▃  \u001b[32m▃▃▃  \u001b[33m▃▃▃  \u001b[34m▃▃▃  \u001b[35m▃▃▃  \u001b[36m▃▃▃  \u001b[37m▃▃▃ "
-        },
+        "break",
+        "colors",
         "break",
         "break"
     ]
 }
-

@@ -1,0 +1,32 @@
+#	┏┓┳┓┳┳┳┓┏┓┳┓ ┳┓┏┓┳┓┓┏┓┏┓┳┓
+#	┃┓┣┫┃┃┣┫┣ ┣┫ ┃┃┣┫┣┫┃┫ ┣ ┣┫
+#	┗┛┛┗┗┛┻┛┗┛┛┗━┻┛┛┗┛┗┛┗┛┗┛┛┗
+#	                          
+
+# Gruber Darker for Ghostty
+# -------------------------
+# Theme author: John Gruber (https://daringfireball.net/projects/bbcolors/schemes/)
+# Upstream: https://github.com/blazkowolf/gruber-darker.nvim/blob/main/extras/ghostty/gruber-darker
+
+palette = 0=#181818
+palette = 1=#F43841
+palette = 2=#73D936
+palette = 3=#FFDD33
+palette = 4=#96A6C8
+palette = 5=#9E95C7
+palette = 6=#95A99F
+palette = 7=#F5F5F5
+palette = 8=#52494E
+palette = 9=#F43841
+palette = 10=#73D936
+palette = 11=#FFDD33
+palette = 12=#96A6C8
+palette = 13=#9E95C7
+palette = 14=#95A99F
+palette = 15=#FFFFFF
+
+background = #181818
+foreground = #E4E4E4
+cursor-color = #FFDD33
+selection-background = #453D41
+selection-foreground = #F4F4FF

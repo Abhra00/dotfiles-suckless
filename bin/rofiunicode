@@ -3,7 +3,7 @@ set -euo pipefail
 
 MODE="${1:-type-copy}"
 
-emoji="$(sed '1,/^### DATA ###$/d' "$0" | dmenu -i -l 20 -p "Choose:" | cut -d ' ' -f 1 | tr -d '\n')"
+emoji="$(sed '1,/^### DATA ###$/d' "$0" | rofi -dmenu -i -l 10 -theme $HOME/.config/rofi/generalMenu -p "Choose:" | cut -d ' ' -f 1 | tr -d '\n')"
 
 case "$MODE" in
     type-copy)

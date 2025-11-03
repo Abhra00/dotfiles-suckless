@@ -3,4 +3,5 @@
 # This script is the SUDO_ASKPASS variable, meaning that it will be used as a
 # password prompt if needed.
 
-dmenu -fn "IosevkaTerm NerdFont-18" -P -p "$1" <&- && echo
+rofi -dmenu -password -p "Enter Password:" -theme $HOME/.config/rofi/generalMenu.rasi && echo
+

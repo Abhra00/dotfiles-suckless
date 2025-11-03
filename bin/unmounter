@@ -17,7 +17,7 @@ $mounteddrives" | sed '/^$/d;s/ *$//')"
 
 test -n "$allunmountable"
 
-chosen="$(echo "$allunmountable" | dmenu -i -p "Unmount which drive?")"
+chosen="$(echo "$allunmountable" | rofi -dmenu -theme $HOME/.config/rofi/generalMenu.rasi -i -p "Unmount which drive?")"
 test -n "$chosen"
 
 # Extract the mountpoint path from chosen.

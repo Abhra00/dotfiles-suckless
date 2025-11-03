@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-# Mounts Android Phones and USB drives (encrypted or not). This script will
-# replace the older `dmenumount` which had extra steps and couldn't handle
-# encrypted drives.
-# TODO: Try decrypt for drives in crypttab
-# TODO: Add some support for connecting iPhones (although they are annoying).
 
 IFS='
 '
@@ -61,15 +56,15 @@ set -e
 
 test -n "$alldrives"
 
-# Feed all found drives to dmenu and get user choice.
-chosen="$(echo "$alldrives" | dmenu -p "Mount which drive?" -i)"
+# Feed all found drives to rofi and get user choice.
+chosen="$(echo "$alldrives" | rofi -dmenu -theme $HOME/.config/rofi/generalMenu.rasi -p "Mount which drive?" -i)"
 
 # Function for prompting user for a mountpoint.
 getmount(){
-	mp="$(find /mnt /media /mount /home -maxdepth 1 -type d 2>/dev/null | dmenu -i -p "Mount this drive where?")"
+	mp="$(find /mnt /media /mount /home -maxdepth 1 -type d 2>/dev/null | rofi -dmenu -theme $HOME/.config/rofi/generalMenu.rasi -p "Mount this drive where?")"
 	test -n "$mp"
 	if [ ! -d "$mp" ]; then
-		mkdiryn=$(printf "No\\nYes" | dmenu -i -p "$mp does not exist. Create it?")
+		mkdiryn=$(printf "No\\nYes" | rofi -dmenu -theme $HOME/.config/rofi/generalMenu.rasi -p "$mp does not exist. Create it?")
 		[ "$mkdiryn" = "Yes" ] && (mkdir -p "$mp" || sudo -A mkdir -p "$mp")
 	fi
 }

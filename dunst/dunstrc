@@ -33,11 +33,11 @@ frame_color = "#484848"
 sort = no
 idle_threshold = 0
 
-font = IosevkaTerm NF Medium 9
+font = Iosevka NF Medium 9
 line_height = 0
 
 markup = full
-format = "<span size='xx-large' font_desc='IosevkaTerm NF Medium 9' weight='bold' foreground='#9e95c7'>%s</span>\n%b"
+format = "<span size='xx-large' font_desc='Iosevka NF Medium 9' weight='bold' foreground='#9e95c7'>%s</span>\n%b"
 alignment = center
 vertical_alignment = center
 
