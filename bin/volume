@@ -44,8 +44,6 @@ adjust_volume() {
     wpctl set-mute @DEFAULT_SINK@ 0
     wpctl set-volume @DEFAULT_SINK@ "$@"
     show_notification
-    # Update slstatus simultaneously
-    kill -45 $(pidof dwmblocks)
 }
 
 # Toggle mute
@@ -58,8 +56,6 @@ toggle_mute() {
         message="Unmuted"
     fi
     notify -i "$icon" "$message"
-    # Update slstatus simultaneously
-    kill -45 $(pidof dwmblocks)
 }
 
 # Handle options
