@@ -18,7 +18,7 @@ theme = gruber-darker
 
 #---------Fonts----------#
 #------------------------#
-font-family = "Iosevka"
+font-family = "Iosevka Nerd Font"
 font-size = 15
 adjust-cell-height = 20%
 
