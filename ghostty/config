@@ -35,7 +35,7 @@ cursor-style-blink = true
 
 #---------Shaders----------#
 #--------------------------#
-custom-shader-animation = true
+custom-shader-animation = always
 custom-shader = "/home/bugs/.config/ghostty/shaders/cursor_blaze.glsl"
 
 #--------Keybinds----------#
