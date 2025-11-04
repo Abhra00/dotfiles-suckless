@@ -33,6 +33,11 @@ adjust-cursor-thickness = 120%
 adjust-cursor-height = 40%
 cursor-style-blink = true
 
+#---------Shaders----------#
+#--------------------------#
+custom-shader-animation = true
+custom-shader = "/home/bugs/.config/ghostty/shaders/cursor_blaze.glsl"
+
 #--------Keybinds----------#
 #--------------------------#
 keybind = alt+shift+page_up=increase_font_size:1
