@@ -8,17 +8,17 @@
 import os
 import subprocess
 from libqtile import bar, extension, hook, layout, qtile, widget
-from libqtile.config import Click, Drag, Group, Key, KeyChord, Match, Screen
+from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
 from libqtile.lazy import lazy
 import colors
 
 #---------------------- Define programs ----------------------#
-mod = "mod4"                   # Sets mod key to SUPER/WINDOWS
-alt = "mod1"                   # Sets the alt key to left-alt key
-myTerm = "ghostty"             # My terminal of choice
-myBrowser = "firefox"          # My browser of choice
-myEditor = "emacs"             # My editor of choice
-myLauncher = "rofi -show drun" # My launcher of choice
+mod         = "mod4"            # Sets mod key to SUPER/WINDOWS
+alt         = "mod1"            # Sets the alt key to left-alt key
+myTerm      = "ghostty"         # My terminal of choice
+myBrowser   = "firefox"         # My browser of choice
+myEditor    = "emacs"           # My editor of choice
+myLauncher  = "rofi -show drun" # My launcher of choice
 
 #---------------------- Define useful functions ----------------------#
 
@@ -131,6 +131,13 @@ keys = [
     # Switch focus of monitors
     Key([mod], "period", lazy.next_screen(), desc='Move focus to next monitor'),
     Key([mod], "comma", lazy.prev_screen(), desc='Move focus to prev monitor'),
+    
+    # Scratchpad's bind
+    Key(["control"], "1", lazy.group['SPTERM'].dropdown_toggle('Term')),
+    Key(["control"], "2", lazy.group['SPCALC'].dropdown_toggle('Calculator')),
+    Key(["control"], "3", lazy.group['SPMUSIC'].dropdown_toggle('Music')),
+    Key(["control"], "4", lazy.group['SPFM'].dropdown_toggle('FileManager')),
+
 
     # Volume & brightness controls
     Key([], "XF86AudioRaiseVolume", lazy.spawn("volume up"), desc="Increase volume"),
@@ -141,45 +148,49 @@ keys = [
 ]
 
 #---------------------- Groups ----------------------#
+
+# Group properties
 groups = []
-
-# Group names
 group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
-
-# Group labels
-group_labels = ["󰀫", "󰂡", "󱃮", "", "", "", "󰿈", "󰫨", "", "󰒠"]
-
-# The default layout for each of the 10 workspaces
+group_labels = ["dev", "sys", "www", "doc", "vbox", "chat", "mus", "vid", "gfx", "misc"]
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall"]
 
+# Add regular groups
 for i in range(len(group_names)):
     groups.append(
         Group(
             name=group_names[i],
             layout=group_layouts[i].lower(),
             label=group_labels[i],
-        ))
- 
-for i in groups:
+        )
+    )
+
+# Add scratchpads separately (outside the loop since they're not tied to each group)
+groups.extend([
+    ScratchPad("SPMUSIC", [DropDown("Music", "ghostty -e rmpc", x=0.05, y=0.02, width=0.90, height=0.6, on_focus_lost_hide=False)]),
+    ScratchPad("SPFM", [DropDown("FileManager", "ghostty -e yazi", x=0.2, y=0.02, width=0.55, height=0.75, on_focus_lost_hide=False)]),
+    ScratchPad("SPCALC", [DropDown("Calculator", "ghostty -e bc", x=0.2, y=0.02, width=0.50, height=0.50, on_focus_lost_hide=False)]),
+    ScratchPad("SPTERM", [DropDown("Term", "ghostty -e zsh", x=0.2, y=0.02, width=0.50, height=0.50, on_focus_lost_hide=False)]),
+])
+
+# Only bind keys for regular groups (not scratchpads)
+for i in group_names:
     keys.extend(
         [
-            # mod + letter of group = switch to group
             Key(
                 [mod],
-                i.name,
-                lazy.group[i.name].toscreen(),
-                desc="Switch to group {}".format(i.name),
+                i,
+                lazy.group[i].toscreen(),
+                desc="Switch to group {}".format(i),
             ),
-            # mod + shift + letter of group = move focused window to group
             Key(
                 [mod, "shift"],
-                i.name,
-                lazy.window.togroup(i.name, switch_group=False),
-                desc="Move focused window to group {}".format(i.name),
+                i,
+                lazy.window.togroup(i, switch_group=False),
+                desc="Move focused window to group {}".format(i),
             ),
         ]
     )
-
 
 #---------------------- Select colors ----------------------#
 colors = colors.GruberDarker
@@ -244,7 +255,7 @@ def init_widgets_list():
     widgets_list = [
         widget.Spacer(length = 8),
         widget.Image(
-                 filename = "~/.config/qtile/icons/archlinux-ar21.svg",
+                 filename = "~/.config/qtile/icons/arch.svg",
                  scale = True,
                  mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn("emacs")},
                  ),
@@ -254,22 +265,22 @@ def init_widgets_list():
                  foreground = colors[3]
         ),
         widget.GroupBox(
-                 fontsize = 14,
+                 fontsize = 12,
                  margin_y = 5,
                  margin_x = 14,
                  padding_y = 0,
                  padding_x = 2,
                  borderwidth = 3,
-                 active = colors[8],
+                 active = colors[1],
                  inactive = colors[9],
                  rounded = False,
                  hide_unused = True,
                  highlight_color = colors[0],
                  highlight_method = "line",
-                 this_current_screen_border = colors[7],
+                 this_current_screen_border = colors[4],
                  this_screen_border = colors [4],
-                 other_current_screen_border = colors[7],
-                 other_screen_border = colors[4],
+                 other_current_screen_border = colors[1],
+                 other_screen_border = colors[1],
                  ),
         widget.TextBox(
                  text = '|',
@@ -282,7 +293,7 @@ def init_widgets_list():
                  progs = [("🦊", "firefox", "Firefox web browser"),
                           ("👻", "ghostty", "Ghostty terminal"),
                           ("📁", "thunar", "Thunar file manager"),
-                          ("🎸", "vlc", "VLC media player")
+                          ("🎦", "obs", "Video Recorder")
                          ], 
                  fontsize = 12,
                  padding = 6,
@@ -395,7 +406,7 @@ def init_widgets_list():
                  ),
         widget.Net(
                 interface = "wlo1",
-                format = "W: {up:1.0f}{up_suffix}  {down:1.0f}{down_suffix}",
+                format = "󰓅 W: {up:1.0f}{up_suffix}  {down:1.0f}{down_suffix}",
                 foreground = colors[3],
                 padding = 2,
                 update_interval = 1,
