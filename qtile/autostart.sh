@@ -1,10 +1,18 @@
 #!/usr/bin/env bash
+#    ┏┓┳┳┏┳┓┏┓┏┓┏┳┓┏┓┳┓┏┳┓
+#    ┣┫┃┃ ┃ ┃┃┗┓ ┃ ┣┫┣┫ ┃ 
+#    ┛┗┗┛ ┻ ┗┛┗┛ ┻ ┛┗┛┗ ┻ 
+#
 
 # DPI (optional; Qtile can also set DPI in config)
 xrandr --dpi 96
 
 # Keyboard rate
 xset r rate 200 55 &
+
+# Xresources colors/settings on startup
+xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources &
+xrdbpid=$! 
 
 # Modifier tuning
 xmodmap -e "clear control" -e "add control = Control_L" \
@@ -41,3 +49,5 @@ fi
 # Emacs daemon
 pgrep -x emacs >/dev/null || emacs --daemon &
 
+# Ensure that xrdb has finished running before moving on to start the WM/DE
+[ -n "$xrdbpid" ] && wait "$xrdbpid"

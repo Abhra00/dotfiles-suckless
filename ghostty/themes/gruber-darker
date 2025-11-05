@@ -4,11 +4,9 @@
 #	                          
 
 # Gruber Darker for Ghostty
-# -------------------------
-# Theme author: John Gruber (https://daringfireball.net/projects/bbcolors/schemes/)
-# Upstream: https://github.com/blazkowolf/gruber-darker.nvim/blob/main/extras/ghostty/gruber-darker
+# Ported from https://github.com/rexim/gruber-darker-theme/
 
-palette = 0=#181818
+palette = 0=#282828
 palette = 1=#F43841
 palette = 2=#73D936
 palette = 3=#FFDD33
