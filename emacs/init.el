@@ -314,4 +314,5 @@
  'typescript-mode
  'rfc-mode
  'sml-mode
+ 'zig-mode
  )
