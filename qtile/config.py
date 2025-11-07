@@ -298,7 +298,7 @@ def init_widgets_list():
                  fontsize = 12,
                  padding = 6,
                  foreground = colors[3],
-        ),
+                 ),
         widget.TextBox(
                  text = '|',
                  font = "Iosevka",
@@ -322,6 +322,16 @@ def init_widgets_list():
                  padding = 8,
                  max_chars = 40
                  ),
+        widget.GenPollText(
+                 name = 'updates',
+                 func = lambda: subprocess.check_output(['pacupdates']).decode('utf-8').strip(),
+                 update_interval = 3600,
+                 foreground = colors[2],
+                 padding = 2,
+                 mouse_callbacks = {
+                     'Button1': lazy.spawn(f'sh -c "{myTerm} -e paru; qtile cmd-obj -o widget updates -f force_update"')
+                     },
+                 ),
         widget.TextBox(
                  text = '|',
                  font = "Iosevka",
@@ -330,17 +340,17 @@ def init_widgets_list():
                  fontsize = 14
                  ),
         widget.Battery(
-                format='󰁹 Fairy Dust: {percent:2.0%} {char}',
-                charge_char='CHR',
-                discharge_char='DIS',
-                empty_char='EMP',
-                full_char='FUL',
-                unknown_char='UKN',
-                not_charging_char = 'NOT',
-                foreground = colors[3],
-                update_interval=30, 
-                padding = 2,
-                ),
+                 format='󰁹 Fairy Dust: {percent:2.0%} {char}',
+                 charge_char='CHR',
+                 discharge_char='DIS',
+                 empty_char='EMP',
+                 full_char='FUL',
+                 unknown_char='UKN',
+                 not_charging_char = 'NOT',
+                 foreground = colors[3],
+                 update_interval=30, 
+                 padding = 2,
+                 ),
         widget.TextBox(
                  text = '|',
                  font = "Iosevka",
@@ -404,13 +414,6 @@ def init_widgets_list():
                  padding = 2,
                  fontsize = 14
                  ),
-        widget.Net(
-                interface = "wlo1",
-                format = "󰓅 W: {up:1.0f}{up_suffix}  {down:1.0f}{down_suffix}",
-                foreground = colors[3],
-                padding = 2,
-                update_interval = 1,
-                ),
         widget.TextBox(
                  text = '|',
                  font = "Iosevka",
