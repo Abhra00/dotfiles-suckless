@@ -414,13 +414,6 @@ def init_widgets_list():
                  padding = 2,
                  fontsize = 14
                  ),
-        widget.TextBox(
-                 text = '|',
-                 font = "Iosevka",
-                 foreground = colors[1],
-                 padding = 2,
-                 fontsize = 14
-                 ),
         widget.Clock(
                  foreground = colors[8],
                  padding = 2, 
