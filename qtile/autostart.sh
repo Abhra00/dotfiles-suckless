@@ -28,8 +28,6 @@ fi
 
 # Apps to autostart once
 apps=(
-    "clipcatd"
-    "mpd"
     "dunst"
     "picom"
     "nm-applet"
@@ -48,6 +46,9 @@ fi
 
 # Emacs daemon
 pgrep -x emacs >/dev/null || emacs --daemon &
+
+# Copyq daemon
+pgrep -x copyq >/dev/null || copyq --start-server &
 
 # Ensure that xrdb has finished running before moving on to start the WM/DE
 [ -n "$xrdbpid" ] && wait "$xrdbpid"
