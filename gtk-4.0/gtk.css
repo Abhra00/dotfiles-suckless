@@ -1,0 +1,88 @@
+/***
+ *    ┏┓┏┳┓┓┏┓  ┏┓┏┓┏┓
+ *    ┃┓ ┃ ┃┫ ━━┃ ┗┓┗┓
+ *    ┗┛ ┻ ┛┗┛  ┗┛┗┛┗┛
+ *                    
+ */
+
+@import url("../../.cache/wal/colors-gtk.css");
+
+.navigation-sidebar {
+    background-color: @sidebar_bg_color;
+    color: @window_fg_color;
+}
+
+headerbar.default-decoration {
+    margin-bottom: 50px;
+    margin-top: -100px;
+}
+
+*:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+window.csd,
+window.csd decoration {
+    box-shadow: none;
+}
+
+/* 🔒 Force square corners everywhere (Adw-GTK3 overrides) */
+/* General windows & dialogs */
+window,
+dialog,
+window.csd,
+dialog.csd,
+messagedialog,
+.message-dialog,
+dialog>box,
+dialog>box>box,
+.dialog-action-area,
+actionbar {
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+/* Popovers (used for menus, tooltips, dropdowns) */
+popover,
+popover>box,
+popover.background,
+popover.menu,
+popover>contents {
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+/* Headerbars */
+headerbar,
+.titlebar {
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+/* Buttons */
+button,
+dialog button,
+.dialog-action-area button,
+actionbar button {
+    border-radius: 0;
+}
+
+tooltip {
+    background-color: @card_bg_color;
+    /* Change to desired background */
+    border-radius: 0px;
+    padding: 6px 10px;
+    border: 1px solid @accent_color;
+}
+
+tooltip.background label {
+    color: @card_fg_color;
+    /* Change to desired foreground */
+}
