@@ -12,160 +12,45 @@ Xft.hintstyle:	hintslight
 Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
 
-! Font
-St.font:            IosevkaTerm Nerd Font:style=Regular:size=15:antialias=true:autohint=true
+!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!      NORD      !!!!
+!!!!!!!!!!!!!!!!!!!!!!!!
+#define nord0 #2E3440
+#define nord1 #3B4252
+#define nord2 #434C5E
+#define nord3 #4C566A
+#define nord4 #D8DEE9
+#define nord5 #E5E9F0
+#define nord6 #ECEFF4
+#define nord7 #8FBCBB
+#define nord8 #88C0D0
+#define nord9 #81A1C1
+#define nord10 #5E81AC
+#define nord11 #BF616A
+#define nord12 #D08770
+#define nord13 #EBCB8B
+#define nord14 #A3BE8C
+#define nord15 #B48EAD
 
-! Fallback fonts (max 8)
-St.font_fallback1:  Noto Color Emoji:size=10.0:antialias=true:autohint=true
-St.font_fallback2:  Twemoji:size=13.5:antialias=true:autohint=true
+*.foreground:   nord4
+*.background:   nord0
+*.cursorColor:  nord4
+*fading: 35
+*fadeColor: nord3
 
-! Default columns and rows numbers
-St.cols:            80
-St.rows:            24
-
-! Borders in pixels
-St.borderpx:        20
-
-! Borders as a percentage of the cell width. If greater than zero, overrides borderpx
-St.borderperc:      0
-
-! Allow resizing the window to any pixel size: 0 = off, 1 = on
-St.anysize:         1
-
-! Background opacity
-St.alpha:           1.00
-St.alphaUnfocused:  0.60
-
-! Foreground and background color of search results
-St.highlightfg:     15
-St.highlightbg:     160
-
-! Foreground and background color of flash label
-St.flashlabelfg: 15
-St.flashlabelbg: 4
-St.flashtextfg:  8
-St.flashtextbg:  0
-
-! Foreground and background color of the hyperlink hint
-St.hyperlinkhintfg: 0
-St.hyperlinkhintbg: 258
-
-! Foreground and background colors for keyboard selection mode bars
-St.kbselectfg: 0
-St.kbselectbg: 258
-
-! Foreground color for the scrollback indicator
-St.scrollbackindicatorfg: 258
-
-! Dynamic cursor color:
-! 0 = the cursor color is fixed (default st behavior)
-! 1 = the cursor uses reverse colors based on the colors of the text cell
-St.dynamic_cursor_color: 1
-
-! Default style of cursor
-St.cursorstyle:     1
-
-! Controls the blinking of the cursor
-St.cursorblinking:  1
-
-! Specifies how fast the blinking cursor blinks
-St.cursorblinktimeout: 800
-
-! Kerning / character bounding-box multipliers
-St.cwscale:         1.0
-St.chscale:         1.0
-
-! Vertically center lines in the space available: 0 = off, 1 = on
-St.vertcenter:      0
-
-! Boxdraw settings see. config.def.h
-St.boxdraw:         1
-St.boxdraw_bold:    1
-St.boxdraw_braille: 1
-St.boxdraw_extra:   1
-St.boxdraw_branch:  1
-St.boxdraw_branch_thickness: 0
-
-! Hide the X cursor whenever a key is pressed: 0 = off, 1 = on
-St.hidecursor:      1
-
-! Ligatures: 0 = off, 1 = on
-St.ligatures:       1
-
-! Command that is executed when a URL or hyperlink is clicked
-St.url_opener: xdg-open
-
-! List of URL protocols to search for when detecting a URL under the mouse
-St.url_protocols: https:\/\/,http:\/\/,file:\/,ftp:\/\/,mailto:,vscode:\/\/
-
-! Undercurl style: 0 = none, 2 = spiky, 3 = capped
-St.undercurl_style: 2
-
-! Adds 1 pixel of thickness for every undercurl_thickness_threshold pixels of font size
-St.undercurl_thickness_threshold:   28
-
-! Extra thickness for spiky and capped waves: 0 = off, 1 = on
-St.undercurl_extra_thickness:       0
-
-! Y-offset of undercurl
-St.undercurl_yoffset:               0
-
-! Scaling factor for undercurl height
-St.undercurl_height_scale:          1.0
-
-! Misc settings
-St.termname:                st-256color
-St.shell:                   /bin/sh
-St.minlatency:              2.0
-St.maxlatency:              33.0
-St.su_timeout:              200
-St.blinktimeout:            800
-St.doubleclicktimeout:      300
-St.tripleclicktimeout:      600
-St.bellvolume:              0
-St.visualbellstyle:         0
-St.visualbellduration:      100
-St.visualbellanimfps:       60
-St.tabspaces:               8
-St.cursorthickness:         2
-St.disable_bold:            0
-St.disable_italic:          0
-St.bold_is_not_bright:      1
-St.hyperlinkstyle:          1
-St.showhyperlinkhint:       1
-St.disablehyperlinks:       0
-St.autoscrolltimeout:       200
-St.autoscrollacceleration:  1.0
-St.scrollbacklines:         2000
-St.scrollbackindicator:     1
-
-
-/* System wide colorschemes */
-
-!!!!!!!!!!!!!!!!!!!!!!!
-!!!! GRUBER DARKER !!!!
-!!!!!!!!!!!!!!!!!!!!!!!
-
-*.foreground:   #E4E4E4
-*.background:   #181818
-*.cursorColor:  #FFDD33
-*.color0:       #282828
-*.color1:       #F43841
-*.color2:       #73D936
-*.color3:       #FFDD33
-*.color4:       #96A6C8
-*.color5:       #9E95C7
-*.color6:       #95A99F
-*.color7:       #F5F5F5
-*.color8:       #52494E
-*.color9:       #F43841
-*.color10:      #73D936
-*.color11:      #FFDD33
-*.color12:      #96A6C8
-*.color13:      #9E95C7
-*.color14:      #95A99F
-*.color15:      #FFFFFF
-*.color16:      #453D41
-*.color17:      #9E95C7
-*.color18:      #CC8C3C
-*.color19:      #95A99F
+*.color0: nord1
+*.color1: nord11
+*.color2: nord14
+*.color3: nord13
+*.color4: nord9
+*.color5: nord15
+*.color6: nord8
+*.color7: nord5
+*.color8: nord3
+*.color9: nord11
+*.color10: nord14
+*.color11: nord13
+*.color12: nord9
+*.color13: nord15
+*.color14: nord7
+*.color15: nord6

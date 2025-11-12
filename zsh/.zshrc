@@ -59,7 +59,7 @@ zstyle ':fzf-tab:*' accept-line enter
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
-zstyle ':vcs_info:git:*' formats '%F{015}[ %F{009}%m%u%c %F{013} %F{009}%b%F{015} ]%f'
+zstyle ':vcs_info:git:*' formats '%F{011} ( %F{009}%m%u%c %F{013} %F{009}%b%F{011} )%f'
 
 #  ┓ ┏┏┓┳┏┳┓┳┳┓┏┓  ┳┓┏┓┏┳┓┏┓
 #  ┃┃┃┣┫┃ ┃ ┃┃┃┃┓  ┃┃┃┃ ┃ ┗┓
@@ -214,8 +214,7 @@ precmd_new_line() { print "" }
 precmd_functions+=( precmd_new_line )
 
 # The actual prompt
-PROMPT="%F{015}[%f%F{015}%n%f%b%F{009}@%f%b%F{009}%M%f%F{015} %~%f%F{015}]%(?:%f%b%F{015}$:%f%b%F{009}$)%f "
-RPROMPT="\$vcs_info_msg_0_"
+PROMPT="%B%F{015} %~\$vcs_info_msg_0_ %f%(?:%f%B%F{013}∫:%f%B%F{009}∫)%f "
 
 #  ┏┓┓ ┳┳┏┓┳┳┓┏┓  ┏┓  ┏┓┓ ┳┳┏┓┳┳┓  ┏┓┏┓┏┓┏┓┳┏┓┳┏┓  ┓┏┓┏┓┓┏┳┓┳┳┓┳┓┏┓
 #  ┃┃┃ ┃┃┃┓┃┃┃┗┓  ┣╋  ┃┃┃ ┃┃┃┓┃┃┃  ┗┓┃┃┣ ┃ ┃┣ ┃┃   ┃┫ ┣ ┗┫┣┫┃┃┃┃┃┗┓

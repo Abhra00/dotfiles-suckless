@@ -14,7 +14,7 @@ window-padding-balance = 1
 
 #---------Theme-----------#
 #-------------------------#
-theme = gruber-darker
+theme = Nord
 
 #---------Fonts----------#
 #------------------------#
@@ -36,7 +36,8 @@ cursor-style-blink = true
 #---------Shaders----------#
 #--------------------------#
 custom-shader-animation = always
-custom-shader = "/home/bugs/.config/ghostty/shaders/cursor_blaze.glsl"
+custom-shader = "/home/bugs/.config/ghostty/shaders/cursor_warp.glsl"
+custom-shader = "/home/bugs/.config/ghostty/shaders/sonic_boom_cursor.glsl"
 
 #--------Keybinds----------#
 #--------------------------#
