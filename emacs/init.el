@@ -29,7 +29,7 @@
 (scroll-bar-mode -1)
 
 ;; Set theme
-(rc/require-theme 'gruber-darker)
+(rc/require-theme 'nord)
 
 ;; Add frame borders and window dividers
 (modify-all-frames-parameters
