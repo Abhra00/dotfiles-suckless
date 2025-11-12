@@ -193,7 +193,7 @@ for i in group_names:
     )
 
 #---------------------- Select colors ----------------------#
-colors = colors.GruberDarker
+colors = colors.Nord
 
 
 #---------------------- Layout management ----------------------#
