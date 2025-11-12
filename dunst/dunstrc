@@ -21,14 +21,14 @@ corner_radius = 0
 
 gap_size = 4
 separator_height = 1
-separator_color = "#453d41"
+separator_color = "#4C566A"
 
 padding = 15
 horizontal_padding = 15
 text_icon_padding = 0
 
 frame_width = 0
-frame_color = "#484848"
+frame_color = "#3B4252"
 
 sort = no
 idle_threshold = 0
@@ -37,7 +37,7 @@ font = Iosevka NF Medium 9
 line_height = 0
 
 markup = full
-format = "<span size='xx-large' font_desc='Iosevka NF Medium 9' weight='bold' foreground='#9e95c7'>%s</span>\n%b"
+format = "<span size='xx-large' font_desc='Iosevka NF Medium 9' weight='bold' foreground='#81A1C1'>%s</span>\n%b"
 alignment = center
 vertical_alignment = center
 
@@ -80,18 +80,18 @@ class = Dunst
 
 [urgency_low]
 timeout = 3
-background = "#282828"
-foreground = "#e4e4ef"
-highlight = "#96a6c8"
+background = "#3B4252"
+foreground = "#ECEFF4"
+highlight = "#81A1C1"
 
 [urgency_normal]
 timeout = 5
-background = "#282828"
-foreground = "#e4e4ef"
-highlight = "#96a6c8"
+background = "#3B4252"
+foreground = "#ECEFF4"
+highlight = "#81A1C1"
 
 [urgency_critical]
 timeout = 0
-background = "#282828"
-foreground = "#f43841"
-highlight = "#f43841"
+background = "#BF616A"
+foreground = "#ECEFF4"
+highlight = "#ECEFF4"
