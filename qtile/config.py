@@ -254,15 +254,16 @@ extension_defaults = widget_defaults.copy()
 def init_widgets_list():
     widgets_list = [
         widget.Spacer(length = 8),
-        widget.Image(
-                 filename = "~/.config/qtile/icons/arch.svg",
-                 scale = True,
+        widget.TextBox(
+                 fmt = ' ',
+                 fontsize = 35,
+                 foreground = colors[1],
                  mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn("emacs")},
                  ),
         widget.Prompt(
                  font = "Iosevka",
                  fontsize=14,
-                 foreground = colors[3]
+                 foreground = colors[5]
         ),
         widget.GroupBox(
                  fontsize = 12,
