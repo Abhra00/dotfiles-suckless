@@ -18,9 +18,9 @@ theme = Nord
 
 #---------Fonts----------#
 #------------------------#
-font-family = "Iosevka Nerd Font"
+font-family = "JetbrainsMonoNerdFont"
 font-size = 15
-adjust-cell-height = 20%
+adjust-cell-height = 25%
 
 #---Shell Integration---#
 #-----------------------#

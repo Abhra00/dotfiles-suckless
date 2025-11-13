@@ -12,6 +12,9 @@ Xft.hintstyle:	hintslight
 Xft.rgba:	rgb
 Xft.lcdfilter:	lcddefault
 
+/* Font */
+*.font:            JetBrainsMono Nerd Font:style=Medium:size=10:antialias=true:autohint=true
+
 !!!!!!!!!!!!!!!!!!!!!!!!
 !!!!      NORD      !!!!
 !!!!!!!!!!!!!!!!!!!!!!!!
