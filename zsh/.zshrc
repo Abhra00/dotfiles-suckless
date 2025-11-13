@@ -214,7 +214,7 @@ precmd_new_line() { print "" }
 precmd_functions+=( precmd_new_line )
 
 # The actual prompt
-PROMPT="%B%F{015} %~\$vcs_info_msg_0_ %f%(?:%f%B%F{013}∫:%f%B%F{009}∫)%f "
+PROMPT="%B%F{015} %~\$vcs_info_msg_0_ %f%(?:%f%B%F{013}∫:%f%B%F{009}∫)%b%f "
 
 #  ┏┓┓ ┳┳┏┓┳┳┓┏┓  ┏┓  ┏┓┓ ┳┳┏┓┳┳┓  ┏┓┏┓┏┓┏┓┳┏┓┳┏┓  ┓┏┓┏┓┓┏┳┓┳┳┓┳┓┏┓
 #  ┃┃┃ ┃┃┃┓┃┃┃┗┓  ┣╋  ┃┃┃ ┃┃┃┓┃┃┃  ┗┓┃┃┣ ┃ ┃┣ ┃┃   ┃┫ ┣ ┗┫┣┫┃┃┃┃┃┗┓
