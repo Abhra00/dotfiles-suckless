@@ -42,12 +42,19 @@
   (set-face-foreground face (face-attribute 'default :background)))
 (set-face-background 'fringe (face-attribute 'default :background))
 
-;; Set the font
-(add-to-list 'default-frame-alist `(font . "Iosevka-20"))
+;; Global Font Settings
+(set-face-attribute 'default nil
+                    :family "JetBrainsMono Nerd Font"
+                    :weight 'regular
+                    :height 210)
 
-;; Add fallback for missing glyphs (icons, symbols, etc.)
+;; Fallback for icons/symbols
 (when (member "Symbols Nerd Font Mono" (font-family-list))
   (set-fontset-font t nil (font-spec :family "Symbols Nerd Font Mono") nil 'append))
+
+;; Make sure both pitch types use JetBrainsMono
+(set-face-attribute 'fixed-pitch nil :family "JetBrainsMono Nerd Font" :height 210)
+(set-face-attribute 'variable-pitch nil :family "JetBrainsMono Nerd Font" :height 210)
 
 ;; Enable ligatures
 (dolist (char/ligature-re
