@@ -84,7 +84,22 @@
 
 ;; when org-modern is ready, set org modern symbol font
 (with-eval-after-load 'org-modern
-  (set-face-attribute 'org-modern-symbol nil :family "IosevkaTermNerdFont"))
+  (setq org-modern-variable-pitch nil) ; ensures fixed pitch
+
+  ;; Allow different heading sizes again
+  (dolist (pair '((org-level-1 . 3.35)
+                  (org-level-2 . 3.25)
+                  (org-level-3 . 3.15)
+                  (org-level-4 . 3.10)
+                  (org-level-5 . 3.05)
+                  (org-level-6 . 3.00)
+                  (org-level-7 . 3.00)
+                  (org-level-8 . 3.00)))
+    (set-face-attribute (car pair) nil
+                        :family "JetBrainsMono Nerd Font"
+                        :weight 'bold
+                        :slant 'italic
+                        :height (floor (* 110 (cdr pair))))))
 
 ;;; enable org-modern in all Org buffers
 (global-org-modern-mode)
