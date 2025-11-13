@@ -135,7 +135,7 @@ keys = [
     # Scratchpad's bind
     Key(["control"], "1", lazy.group['SPTERM'].dropdown_toggle('Term')),
     Key(["control"], "2", lazy.group['SPCALC'].dropdown_toggle('Calculator')),
-    Key(["control"], "3", lazy.group['SPMUSIC'].dropdown_toggle('Music')),
+    Key(["control"], "3", lazy.group['SPWALL'].dropdown_toggle('WallSelector')),
     Key(["control"], "4", lazy.group['SPFM'].dropdown_toggle('FileManager')),
 
 
@@ -167,7 +167,7 @@ for i in range(len(group_names)):
 
 # Add scratchpads separately (outside the loop since they're not tied to each group)
 groups.extend([
-    ScratchPad("SPMUSIC", [DropDown("Music", "ghostty -e rmpc", x=0.05, y=0.02, width=0.90, height=0.6, on_focus_lost_hide=False)]),
+    ScratchPad("SPWALL", [DropDown("WallSelector", "nsxiv /home/bugs/walls/", x=0.25, y=0.05, width=0.5, height=0.7, on_focus_lost_hide=False)]),
     ScratchPad("SPFM", [DropDown("FileManager", "ghostty -e yazi", x=0.2, y=0.02, width=0.55, height=0.75, on_focus_lost_hide=False)]),
     ScratchPad("SPCALC", [DropDown("Calculator", "ghostty -e bc", x=0.2, y=0.02, width=0.50, height=0.50, on_focus_lost_hide=False)]),
     ScratchPad("SPTERM", [DropDown("Term", "ghostty -e zsh", x=0.2, y=0.02, width=0.50, height=0.50, on_focus_lost_hide=False)]),
