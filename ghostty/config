@@ -14,13 +14,13 @@ window-padding-balance = 1
 
 #---------Theme-----------#
 #-------------------------#
-theme = Nord
+theme = modus-vivendi-tinted
 
 #---------Fonts----------#
 #------------------------#
-font-family = "JetbrainsMonoNerdFont"
-font-size = 15
-adjust-cell-height = 25%
+font-family = "Iosevka Nerd Font"
+font-size = 18
+adjust-cell-height = 20%
 
 #---Shell Integration---#
 #-----------------------#

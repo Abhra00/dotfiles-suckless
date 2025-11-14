@@ -4,85 +4,130 @@
  *    ┗┛ ┻ ┛┗┛  ┗┛┗┛┗┛
  *                    
  */
+/* Accent / Primary */
+@define-color accent_color #ff66ff;           /* magenta */
+@define-color accent_bg_color alpha(#ff66ff, 0.4); /* green with 0.7 alpha */
+@define-color accent_fg_color #0d0e1c;       /* bg-main */
 
-@import url("../../.cache/wal/colors-gtk.css");
+/* Destructive */
+@define-color destructive_color #ff5f59;     /* red */
+@define-color destructive_bg_color #ff5f59;  /* red */
+@define-color destructive_fg_color #ffffff;  /* fg-main */
+
+/* Success */
+@define-color success_color #44bc44;         /* green */
+@define-color success_bg_color #2f822f;      /* bg-green-intense */
+@define-color success_fg_color #ffffff;      /* fg-main */
+
+/* Warning */
+@define-color warning_color #d0bc00;         /* yellow */
+@define-color warning_bg_color #efef00;      /* yellow-intense */
+@define-color warning_fg_color #ffffff;      /* fg-main */
+
+/* Error */
+@define-color error_color #ff5f59;           /* red */
+@define-color error_bg_color #ff5f59;        /* red */
+@define-color error_fg_color #ffffff;        /* fg-main */
+
+/* Window / View */
+@define-color window_bg_color #0d0e1c;       /* bg-main */
+@define-color window_fg_color #ffffff;       /* fg-main */
+@define-color view_bg_color #0d0e1c;         /* bg-main */
+@define-color view_fg_color #ffffff;         /* fg-main */
+
+/* Header bar */
+@define-color headerbar_bg_color @window_bg_color;
+@define-color headerbar_fg_color @window_fg_color;
+@define-color headerbar_border_color @window_bg_color;
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color headerbar_shade_color @window_bg_color;
+
+/* Card / Popover / Dialog */
+@define-color card_bg_color #2b3045;         /* bg-inactive */
+@define-color card_fg_color #ffffff;         /* fg-main */
+@define-color card_shade_color rgba(0, 0, 0, 0.07);
+
+@define-color dialog_bg_color @card_bg_color;
+@define-color dialog_fg_color @card_fg_color;
+
+@define-color popover_bg_color @card_bg_color;
+@define-color popover_fg_color @card_fg_color;
+
+/* Misc / Shade / Scrollbar */
+@define-color shade_color rgba(0, 0, 0, 0.36);
+@define-color scrollbar_outline_color rgba(97, 100, 122, 0.5); /* border color with 0.5 alpha */
+
+/* Sidebar */
+@define-color sidebar_bg_color #2b3045;           /* bg-inactive */
+@define-color secondary_sidebar_bg_color @sidebar_bg_color;
+@define-color sidebar_backdrop_color @sidebar_bg_color;
+@define-color secondary_sidebar_backdrop_color @sidebar_bg_color;
 
 .navigation-sidebar {
-    background-color: @sidebar_bg_color;
-    color: @window_fg_color;
+  background-color: @sidebar_bg_color;
+  color: @window_fg_color;
 }
 
 headerbar.default-decoration {
-    margin-bottom: 50px;
-    margin-top: -100px;
+  margin-bottom: 50px;
+  margin-top: -100px;
 }
 
 *:focus {
-    outline: none;
-    box-shadow: none;
+  outline: none;
+  box-shadow: none;
 }
 
 window.csd,
 window.csd decoration {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 /* 🔒 Force square corners everywhere (Adw-GTK3 overrides) */
-/* General windows & dialogs */
-window,
+
+/* Core dialogs and containers */
 dialog,
-window.csd,
-dialog.csd,
-messagedialog,
+window.dialog,
 .message-dialog,
-dialog>box,
-dialog>box>box,
+.dialog,
+messagedialog,
+.dialog-vbox,
 .dialog-action-area,
-actionbar {
-    border-radius: 0;
-    border: none;
-    box-shadow: none;
-    outline: none;
-}
-
-/* Popovers (used for menus, tooltips, dropdowns) */
+.action-bar,
 popover,
-popover>box,
-popover.background,
-popover.menu,
-popover>contents {
-    border-radius: 0;
-    border: none;
-    box-shadow: none;
-    outline: none;
-}
-
-/* Headerbars */
+.popover,
+menu,
+.menu,
+.menubar,
+.context-menu,
+menuitem,
+.modelbutton,
 headerbar,
-.titlebar {
-    border-radius: 0;
-    border: none;
-    box-shadow: none;
-    outline: none;
-}
-
-/* Buttons */
-button,
+.titlebar,
+infobar,
+.message-bar,
+.toast,
 dialog button,
 .dialog-action-area button,
-actionbar button {
-    border-radius: 0;
+.action-bar button,
+menuitem,
+modelbutton,
+button {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  outline: none;
 }
 
 tooltip {
-    background-color: @card_bg_color;
-    /* Change to desired background */
-    border-radius: 0px;
-    padding: 6px 10px;
-    border: 1px solid @accent_color;
+  background-color: @card_bg_color;
+  /* Change to desired background */
+  border-radius: 0px;
+  padding: 6px 10px;
+  border: 1px solid @accent_color;
 }
 
 tooltip.background label {
-    color: @card_fg_color;
-    /* Change to desired foreground */
+  color: @card_fg_color;
+  /* Change to desired foreground */
 }

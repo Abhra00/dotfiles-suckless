@@ -6,15 +6,15 @@
 
 
 # Options
-set recolor                 "true"
-set recolor-keephue 		"true"
-set window-title-home-tilde true
-set statusbar-basename 		true
-set selection-clipboard 	clipboard
+set recolor                 	    "true"
+set recolor-keephue 		    "true"
+set window-title-home-tilde 	    true
+set statusbar-basename 		    true
+set selection-clipboard 	    clipboard
 set database			    null
 
 # Keymaps
-map u                   scroll half-up
+map u                   	    scroll half-up
 map d 				    scroll half-down
 map D 				    toggle_page_mode
 map r 				    reload
@@ -24,53 +24,61 @@ map J 				    zoom out
 map i 				    recolor
 map p 				    print
 map g 				    goto top
-map [fullscreen] u 		scroll half-up
-map [fullscreen] d 		scroll half-down
-map [fullscreen] D 		toggle_page_mode
-map [fullscreen] r 		reload
-map [fullscreen] R 		rotate
-map [fullscreen] K 		zoom in
-map [fullscreen] J 		zoom out
-map [fullscreen] i 		recolor
-map [fullscreen] p 		print
-map [fullscreen] g 		goto top
+map [fullscreen] u 		    scroll half-up
+map [fullscreen] d 		    scroll half-down
+map [fullscreen] D 		    toggle_page_mode
+map [fullscreen] r 		    reload
+map [fullscreen] R 		    rotate
+map [fullscreen] K 		    zoom in
+map [fullscreen] J 		    zoom out
+map [fullscreen] i 		    recolor
+map [fullscreen] p 		    print
+map [fullscreen] g 		    goto top
 
-set notification-error-bg       "#2E3440"
-set notification-error-fg       "#BF616A"
-set notification-warning-bg     "#2E3440"
-set notification-warning-fg     "#D08770"
-set notification-bg             "#2E3440"
-set notification-fg             "#D8DEE9"
+# Notifications
+set notification-error-bg       "#4f1127"  # bg-removed
+set notification-error-fg       "#ff5f59"  # red
+set notification-warning-bg     "#363300"  # bg-changed
+set notification-warning-fg     "#d0bc00"  # yellow
+set notification-bg             "#0d0e1c"  # bg-main
+set notification-fg             "#ffffff"  # fg-main
 
-set completion-bg               "#2E3440"
-set completion-fg               "#D8DEE9"
-set completion-group-bg         "#3B4252"
-set completion-group-fg         "#D8DEE9"
-set completion-highlight-bg     "#88C0D0"
-set completion-highlight-fg     "#3B4252"
+# Completion
+set completion-bg               "#0d0e1c"  # bg-main
+set completion-fg               "#c6daff"  # fg-alt
+set completion-group-bg         "#2b3045"  # bg-inactive
+set completion-group-fg         "#ffffff"  # fg-main
+set completion-highlight-bg     "#2fafff"  # blue
+set completion-highlight-fg     "#0d0e1c"  # bg-main
 
-set index-bg                    "#2E3440"
-set index-fg                    "#8FBCBB"
-set index-active-bg             "#8FBCBB"
-set index-active-fg             "#2E3440"
+# Index / Sidebar
+set index-bg                    "#2b3045"  # bg-inactive
+set index-fg                    "#00d3d0"  # cyan
+set index-active-bg             "#00d3d0"  # cyan
+set index-active-fg             "#2b3045"  # bg-inactive
 
-set inputbar-bg                 "#2E3440"
-set inputbar-fg                 "#E5E9F0"
+# Input bar
+set inputbar-bg                 "#2b3045"  # bg-inactive
+set inputbar-fg                 "#c6daff"  # fg-alt
 
-set statusbar-bg                "#2E3440"
-set statusbar-fg                "#E5E9F0"
+# Status bar
+set statusbar-bg                "#292d48"  # bg-mode-line-inactive
+set statusbar-fg                "#969696"  # fg-mode-line-inactive
 
-set highlight-color             "#D08770"
-set highlight-active-color      "#BF616A"
+# Highlight
+set highlight-color             "#d0bc00"  # yellow
+set highlight-active-color      "#ff5f59"  # red
 
-set default-bg                  "#2E3440"
-set default-fg                  "#D8DEE9"
+# Defaults
+set default-bg                  "#0d0e1c"  # bg-main
+set default-fg                  "#ffffff"  # fg-main
 set render-loading              "true"
-set render-loading-bg           "#2E3440"
-set render-loading-fg           "#434C5E"
+set render-loading-bg           "#2b3045"  # bg-inactive
+set render-loading-fg           "#61647a"  # border
 
-set recolor-lightcolor          "#2E3440"
-set recolor-darkcolor           "#ECEFF4"
+# Recolor / Misc
+set recolor-lightcolor          "#0d0e1c"  # bg-main
+set recolor-darkcolor           "#ffffff"  # fg-main
 set recolor                     "true"
-set font                        "JetBrainsMono Nerd Font"
+set font                        "Iosevka Nerd Font"
 set guioptions                  none

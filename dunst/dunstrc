@@ -21,23 +21,23 @@ corner_radius = 0
 
 gap_size = 4
 separator_height = 1
-separator_color = "#4C566A"
+separator_color = "#595959"
 
 padding = 15
 horizontal_padding = 15
 text_icon_padding = 0
 
 frame_width = 0
-frame_color = "#3B4252"
+frame_color = "#595959"
 
 sort = no
 idle_threshold = 0
 
-font = JetBrainsMono NF Medium 9
+font = Iosevka NF Medium 9
 line_height = 0
 
 markup = full
-format = "<span size='xx-large' font_desc='JetBrainsMono NF Medium 9' weight='bold' foreground='#81A1C1'>%s</span>\n%b"
+format = "<span size='xx-large' font_desc='Iosevka NF Medium 9' weight='bold' foreground='#ff66ff'>%s</span>\n%b"
 alignment = center
 vertical_alignment = center
 
@@ -80,18 +80,18 @@ class = Dunst
 
 [urgency_low]
 timeout = 3
-background = "#3B4252"
-foreground = "#ECEFF4"
-highlight = "#81A1C1"
+background = "#484d67"
+foreground = "#ffffff"
+highlight = "#ff66ff"
 
 [urgency_normal]
 timeout = 5
-background = "#3B4252"
-foreground = "#ECEFF4"
-highlight = "#81A1C1"
+background = "#484d67"
+foreground = "#ffffff"
+highlight = "#ff66ff"
 
 [urgency_critical]
 timeout = 0
-background = "#BF616A"
-foreground = "#ECEFF4"
-highlight = "#ECEFF4"
+background = "#484d67"
+foreground = "#ff6b55"
+highlight = "#ff6b55"

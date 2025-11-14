@@ -4,39 +4,47 @@
  *    ┗┛ ┻ ┛┗┛  ┗┛┗┛┗┛
  *                    
  */
-@define-color accent_color #BF616A;
-@define-color accent_bg_color alpha(#A3BE8C, 0.7);
-@define-color accent_fg_color #2E3440;
+/* Accent / Primary */
+@define-color accent_color #ff66ff;           /* magenta */
+@define-color accent_bg_color alpha(#ff66ff, 0.4); /* green with 0.7 alpha */
+@define-color accent_fg_color #0d0e1c;       /* bg-main */
 
-@define-color destructive_color #BF616A;
-@define-color destructive_bg_color #BF616A;
-@define-color destructive_fg_color #ECEFF4;
+/* Destructive */
+@define-color destructive_color #ff5f59;     /* red */
+@define-color destructive_bg_color #ff5f59;  /* red */
+@define-color destructive_fg_color #ffffff;  /* fg-main */
 
-@define-color success_color #A3BE8C;
-@define-color success_bg_color #8FBCBB;
-@define-color success_fg_color #ECEFF4;
+/* Success */
+@define-color success_color #44bc44;         /* green */
+@define-color success_bg_color #2f822f;      /* bg-green-intense */
+@define-color success_fg_color #ffffff;      /* fg-main */
 
-@define-color warning_color #EBCB8B;
-@define-color warning_bg_color #EBCB8B;
-@define-color warning_fg_color #ECEFF4;
+/* Warning */
+@define-color warning_color #d0bc00;         /* yellow */
+@define-color warning_bg_color #efef00;      /* yellow-intense */
+@define-color warning_fg_color #ffffff;      /* fg-main */
 
-@define-color error_color #BF616A;
-@define-color error_bg_color #BF616A;
-@define-color error_fg_color #ECEFF4;
+/* Error */
+@define-color error_color #ff5f59;           /* red */
+@define-color error_bg_color #ff5f59;        /* red */
+@define-color error_fg_color #ffffff;        /* fg-main */
 
-@define-color window_bg_color #2E3440;
-@define-color window_fg_color #D8DEE9;
-@define-color view_bg_color #2E3440;
-@define-color view_fg_color #D8DEE9;
+/* Window / View */
+@define-color window_bg_color #0d0e1c;       /* bg-main */
+@define-color window_fg_color #ffffff;       /* fg-main */
+@define-color view_bg_color #0d0e1c;         /* bg-main */
+@define-color view_fg_color #ffffff;         /* fg-main */
 
+/* Header bar */
 @define-color headerbar_bg_color @window_bg_color;
 @define-color headerbar_fg_color @window_fg_color;
 @define-color headerbar_border_color @window_bg_color;
 @define-color headerbar_backdrop_color @window_bg_color;
 @define-color headerbar_shade_color @window_bg_color;
 
-@define-color card_bg_color #3B4252;
-@define-color card_fg_color #D8DEE9;
+/* Card / Popover / Dialog */
+@define-color card_bg_color #2b3045;         /* bg-inactive */
+@define-color card_fg_color #ffffff;         /* fg-main */
 @define-color card_shade_color rgba(0, 0, 0, 0.07);
 
 @define-color dialog_bg_color @card_bg_color;
@@ -45,10 +53,12 @@
 @define-color popover_bg_color @card_bg_color;
 @define-color popover_fg_color @card_fg_color;
 
+/* Misc / Shade / Scrollbar */
 @define-color shade_color rgba(0, 0, 0, 0.36);
-@define-color scrollbar_outline_color rgba(139, 145, 152, 0.5);
+@define-color scrollbar_outline_color rgba(97, 100, 122, 0.5); /* border color with 0.5 alpha */
 
-@define-color sidebar_bg_color #3B4252;
+/* Sidebar */
+@define-color sidebar_bg_color #2b3045;           /* bg-inactive */
 @define-color secondary_sidebar_bg_color @sidebar_bg_color;
 @define-color sidebar_backdrop_color @sidebar_bg_color;
 @define-color secondary_sidebar_backdrop_color @sidebar_bg_color;

@@ -15,6 +15,7 @@ GruberDarker = [
     ["#cc8c3c", "#cc8c3c",], # color[8] -> brown
     ["#453d41", "#453d41",]  # color[9] -> bg->light
         ]
+
 Nord = [
     ["#2e3440", "#2e3440",], # color[0] -> bg
     ["#eceff4", "#eceff4",], # color[1] -> fg
@@ -26,4 +27,17 @@ Nord = [
     ["#88c0d0", "#88c0d0",], # color[7] -> cyan
     ["#8fbcbb", "#8fbcbb",], # color[8] -> frost
     ["#4c566a", "#4c566a",]  # color[9] -> bg->light
+        ]
+
+ModusVivendiTinted = [
+    ["#0d0e1c", "#0d0e1c",], # color[0] -> bg
+    ["#ffffff", "#ffffff",], # color[1] -> fg
+    ["#ff5f59", "#ff5f59",], # color[2] -> red
+    ["#44bc44", "#44bc44",], # color[3] -> green
+    ["#d0bc00", "#d0bc00",], # color[4] -> yellow
+    ["#2fafff", "#2fafff",], # color[5] -> blue
+    ["#feacd0", "#feacd0",], # color[6] -> magenta
+    ["#00d3d0", "#00d3d0",], # color[7] -> cyan
+    ["#ff66ff", "#ff66ff",], # color[8] -> magenta intense
+    ["#484d67", "#484d67",]  # color[9] -> bg->light
         ]
