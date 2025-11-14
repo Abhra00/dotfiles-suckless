@@ -28,23 +28,9 @@
 ;; Disable scrollbar
 (scroll-bar-mode -1)
 
-;; Set theme
-(rc/require-theme 'nord)
-
-;; Add frame borders and window dividers
-(modify-all-frames-parameters
- '((right-divider-width . 25)
-   (internal-border-width . 25)))
-(dolist (face '(window-divider
-                window-divider-first-pixel
-                window-divider-last-pixel))
-  (face-spec-reset-face face)
-  (set-face-foreground face (face-attribute 'default :background)))
-(set-face-background 'fringe (face-attribute 'default :background))
-
 ;; Global Font Settings
 (set-face-attribute 'default nil
-                    :family "JetBrainsMono Nerd Font"
+                    :family "Iosevka"
                     :weight 'regular
                     :height 210)
 
@@ -52,9 +38,9 @@
 (when (member "Symbols Nerd Font Mono" (font-family-list))
   (set-fontset-font t nil (font-spec :family "Symbols Nerd Font Mono") nil 'append))
 
-;; Make sure both pitch types use JetBrainsMono
-(set-face-attribute 'fixed-pitch nil :family "JetBrainsMono Nerd Font" :height 210)
-(set-face-attribute 'variable-pitch nil :family "JetBrainsMono Nerd Font" :height 210)
+;; Make sure both pitch types use Iosevka
+(set-face-attribute 'fixed-pitch nil :family "Iosevka" :height 210)
+(set-face-attribute 'variable-pitch nil :family "Iosevka" :height 210)
 
 ;; Enable ligatures
 (dolist (char/ligature-re
@@ -92,21 +78,69 @@
     (set-char-table-range composition-function-table char
                           `([,ligature-re 0 font-shape-gstring]))))
 
-;; Mode line settings
-(defun rc/setup-mode-line-settings ()
-  "Add modifications of mode-line settings here !!!"
-  (let ((active-bg   (face-attribute 'mode-line :background))
-        (inactive-bg (face-attribute 'mode-line-inactive :background)))
-    (set-face-attribute 'mode-line nil
-      :box `(:line-width 4 :color ,active-bg)
-      :overline nil
-      :underline nil)
-    (set-face-attribute 'mode-line-inactive nil
-      :box `(:line-width 4 :color ,inactive-bg)
-      :overline nil
-      :underline nil)))
+;;; --- Modus Vivendi Tinted Theme ---
+(setq custom-safe-themes t)
 
-(rc/setup-mode-line-settings)
+;; Modus theme options
+(setq modus-themes-bold-constructs t
+      modus-themes-italic-constructs t
+      modus-themes-variable-pitch-ui t
+      modus-themes-mixed-fonts t
+      modus-themes-prompts '(bold intense)
+      modus-themes-completions '((t . (extrabold)))
+      modus-themes-headings '((1 . (overline background)))
+      modus-themes-fringes 'nil)
+
+;; Override palette for line numbers
+(setq modus-themes-common-palette-overrides
+      '((bg-line-number-active   bg-main)
+        (bg-line-number-inactive bg-main)
+        (fg-line-number-active   "white")
+        (fg-line-number-inactive "gray50")))
+
+;; Load theme
+(load-theme 'modus-vivendi-tinted :no-confirm)
+
+;;; Add modeline padding
+(defun rc/setup-modern-mode-line ()
+  "Setup a spacious, padded mode-line compatible with modus-vivendi-tinted."
+  (let* ((active-bg   (face-attribute 'mode-line :background))
+         (active-fg   (face-attribute 'mode-line :foreground))
+         (inactive-bg (face-attribute 'mode-line-inactive :background))
+         (inactive-fg (face-attribute 'mode-line-inactive :foreground))
+         (padding     7))  ;; Vertical padding in pixels
+    ;; Active mode-line
+    (set-face-attribute 'mode-line nil
+                        :foreground active-fg
+                        :background active-bg
+                        :box `(:line-width ,padding :color ,active-bg)
+                        :overline nil
+                        :underline nil
+                        :height 1.0)
+    ;; Inactive mode-line
+    (set-face-attribute 'mode-line-inactive nil
+                        :foreground inactive-fg
+                        :background inactive-bg
+                        :box `(:line-width ,padding :color ,inactive-bg)
+                        :overline nil
+                        :underline nil
+                        :height 1.0)
+    ;; Refresh
+    (setq-default mode-line-format mode-line-format)))
+
+(rc/setup-modern-mode-line)
+(add-hook 'modus-themes-after-load-theme-hook #'rc/setup-modern-mode-line)
+
+;; Add frame borders and window dividers
+(modify-all-frames-parameters
+ '((right-divider-width . 25)
+   (internal-border-width . 25)))
+(dolist (face '(window-divider
+                window-divider-first-pixel
+                window-divider-last-pixel))
+  (face-spec-reset-face face)
+  (set-face-foreground face (face-attribute 'default :background)))
+(set-face-background 'fringe (face-attribute 'default :background))
 
 ;; Enable line & column numbers
 (column-number-mode 1)
