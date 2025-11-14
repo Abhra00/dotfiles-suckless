@@ -7,6 +7,7 @@
 #---------------------- Import needed libraries ----------------------#
 import os
 import subprocess
+import threading
 from libqtile import bar, extension, hook, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, ScratchPad, DropDown
 from libqtile.lazy import lazy
@@ -43,6 +44,20 @@ def maximize_by_switching_layout(qtile):
         qtile.current_group.layout = 'max'
     elif current_layout_name == 'max':
         qtile.current_group.layout = 'monadtall'
+
+# Run paru in a background thread, then refresh the updates widget
+def run_paru_and_refresh(qtile):
+    def task():
+        # run update in a blocking way, but inside a THREAD
+        subprocess.run([myTerm, "-e", "paru"])
+
+        # refresh widget
+        try:
+            qtile.widgets_map["updates"].timer_setup()
+        except KeyError:
+            pass
+
+    threading.Thread(target=task, daemon=True).start()
 
 #---------------------- Define keybinds ----------------------#
 keys = [
@@ -244,7 +259,7 @@ layouts = [
 #---------------------- Widgets ----------------------#
 widget_defaults = dict(
     font="JetBrainsMonoNerdFontPropo",
-    fontsize = 12,
+    fontsize = 10,
     padding = 0,
     background=colors[0]
 )
@@ -330,7 +345,7 @@ def init_widgets_list():
                  foreground = colors[2],
                  padding = 2,
                  mouse_callbacks = {
-                     'Button1': lazy.spawn(f'sh -c "{myTerm} -e paru; qtile cmd-obj -o widget updates -f force_update"')
+                     'Button1': lazy.function(run_paru_and_refresh)
                      },
                  ),
         widget.TextBox(
