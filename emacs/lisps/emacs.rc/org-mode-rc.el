@@ -69,14 +69,14 @@
 ;;; org Mode visual enhancements
 (setq
  ;;; editing behavior
- 
+
  org-auto-align-tags nil
  org-tags-column 0
  org-fold-catch-invisible-edits 'show-and-error
  org-special-ctrl-a/e t
  org-insert-heading-respect-content t
  ;;; appearance
- 
+
  org-hide-emphasis-markers t
  org-pretty-entities t
  org-agenda-tags-column 0
@@ -87,18 +87,18 @@
   (setq org-modern-variable-pitch nil) ; ensures fixed pitch
 
   ;; Allow different heading sizes again
-  (dolist (pair '((org-level-1 . 3.35)
-                  (org-level-2 . 3.25)
-                  (org-level-3 . 3.15)
-                  (org-level-4 . 3.10)
-                  (org-level-5 . 3.05)
-                  (org-level-6 . 3.00)
-                  (org-level-7 . 3.00)
-                  (org-level-8 . 3.00)))
+  (dolist (pair '((org-level-1 . 3.00)
+                  (org-level-2 . 2.85)
+                  (org-level-3 . 2.75)
+                  (org-level-4 . 2.55)
+                  (org-level-5 . 2.45)
+                  (org-level-6 . 2.45)
+                  (org-level-7 . 2.45)
+                  (org-level-8 . 2.45)))
     (set-face-attribute (car pair) nil
-                        :family "JetBrainsMono Nerd Font"
+                        :family "Iosevka"
                         :weight 'bold
-                        :slant 'italic
+                        :slant 'normal
                         :height (floor (* 110 (cdr pair))))))
 
 ;;; enable org-modern in all Org buffers

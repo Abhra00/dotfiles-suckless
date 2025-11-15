@@ -78,32 +78,12 @@
     (set-char-table-range composition-function-table char
                           `([,ligature-re 0 font-shape-gstring]))))
 
-;;; --- Modus Vivendi Tinted Theme ---
-(setq custom-safe-themes t)
-
-;; Modus theme options
-(setq modus-themes-bold-constructs t
-      modus-themes-italic-constructs t
-      modus-themes-variable-pitch-ui t
-      modus-themes-mixed-fonts t
-      modus-themes-prompts '(bold intense)
-      modus-themes-completions '((t . (extrabold)))
-      modus-themes-headings '((1 . (overline background)))
-      modus-themes-fringes 'nil)
-
-;; Override palette for line numbers
-(setq modus-themes-common-palette-overrides
-      '((bg-line-number-active   bg-main)
-        (bg-line-number-inactive bg-main)
-        (fg-line-number-active   "white")
-        (fg-line-number-inactive "gray50")))
-
-;; Load theme
-(load-theme 'modus-vivendi-tinted :no-confirm)
+;;; Set theme
+(rc/require-theme 'gruber-darker)
 
 ;;; Add modeline padding
 (defun rc/setup-modern-mode-line ()
-  "Setup a spacious, padded mode-line compatible with modus-vivendi-tinted."
+  "Setup a spacious, padded modern mode-line"
   (let* ((active-bg   (face-attribute 'mode-line :background))
          (active-fg   (face-attribute 'mode-line :foreground))
          (inactive-bg (face-attribute 'mode-line-inactive :background))
@@ -129,7 +109,6 @@
     (setq-default mode-line-format mode-line-format)))
 
 (rc/setup-modern-mode-line)
-(add-hook 'modus-themes-after-load-theme-hook #'rc/setup-modern-mode-line)
 
 ;; Add frame borders and window dividers
 (modify-all-frames-parameters
@@ -270,29 +249,33 @@
 (global-set-key (kbd "M-n") 'move-text-down)
 
 ;; Whitespace mode
-(setq whitespace-style '(face tabs spaces trailing space-before-tab space-after-tab space-mark tab-mark))
+(setq whitespace-style
+      '(face tabs spaces trailing space-before-tab space-after-tab space-mark tab-mark))
+
 (defun rc/set-up-whitespace-handling ()
   (interactive)
-  (whitespace-mode 1)
-  (add-to-list 'before-save-hook 'delete-trailing-whitespace))
+  (whitespace-mode 1))
 
-(add-hook 'tuareg-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'c++-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'c-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'emacs-lisp-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'java-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'lua-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'rust-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'scala-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'markdown-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'haskell-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'python-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'erlang-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'asm-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'go-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'nim-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'yaml-mode-hook 'rc/set-up-whitespace-handling)
-(add-hook 'porth-mode-hook 'rc/set-up-whitespace-handling)
+(dolist (hook '(tuareg-mode-hook
+                c++-mode-hook
+                c-mode-hook
+                emacs-lisp-mode-hook
+                java-mode-hook
+                lua-mode-hook
+                rust-mode-hook
+                scala-mode-hook
+                markdown-mode-hook
+                haskell-mode-hook
+                python-mode-hook
+                erlang-mode-hook
+                asm-mode-hook
+                go-mode-hook
+                nim-mode-hook
+                yaml-mode-hook
+                porth-mode-hook))
+  (add-hook hook #'rc/set-up-whitespace-handling))
+
+(add-hook 'before-save-hook #'delete-trailing-whitespace)
 
 ;; Nxml
 (add-to-list 'auto-mode-alist '("\\.html\\'" . nxml-mode))
