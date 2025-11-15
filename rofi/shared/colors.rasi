@@ -8,16 +8,15 @@
 /*--------Color definitions------------*/
 
 * {
-       background:               #0d0e1c;
-       background-alpha:         #0d0e1cd3;
-       background-alt:           #595959;
-       background-alt-alpha:     #595959d3;
-       foreground:               #ffffff;
-       border-color:             #ff66ff;
-       selected:                 #ff66ff;
-       selected-alpha:           #ff66ffd3;
-       selected-text:            #000000;
-       active:                   #70b900;
-       urgent:                   #ff6b55;
+       background:       	    #181818;
+       background-alpha: 	    #181818d3;
+       background-alt:   	    #453d41;
+       background-alt-alpha:        #453d41d3;
+       foreground:       	    #e4e4ef;
+       border-color:     	    #96a6c8;
+       selected:         	    #9e95c7;
+       selected-alpha:   	    #9e95c7d3;
+       selected-text:    	    #181818;
+       active:           	    #73c936;
+       urgent:           	    #f43841;
 }
-

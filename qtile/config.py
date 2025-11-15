@@ -208,7 +208,7 @@ for i in group_names:
     )
 
 #---------------------- Select colors ----------------------#
-colors = colors.ModusVivendiTinted
+colors = colors.GruberDarker
 
 
 #---------------------- Layout management ----------------------#
@@ -272,7 +272,7 @@ def init_widgets_list():
         widget.TextBox(
                  fmt = ' ',
                  fontsize = 35,
-                 foreground = colors[8],
+                 foreground = colors[6],
                  mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn("emacs")},
                  ),
         widget.Prompt(

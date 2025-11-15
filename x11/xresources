@@ -15,35 +15,34 @@ Xft.lcdfilter:	lcddefault
 /* Font */
 *.font:            Iosevka Nerd Font:style=Medium:size=10:antialias=true:autohint=true
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!      MODUS-VIVENDI-TINTED      !!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-! Background and foreground
-*.background: #0d0e1c
-*.foreground: #ffffff
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!      GRUBER-DARKER      !!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*.background:  #181818
+*.foreground:  #e4e4e4
+*.cursorColor: #ffdb00
+*.cursorText:  #000000
 
-! Cursor colors
-*.cursorColor: #ff66ff
-*.cursorTextColor: #0d0e1c
+! selection
+*.selection_background: #282828
+*.selection_foreground: #e4e4e4
 
-! Selection colors
-*.selectionForeground: #ffffff
-*.selectionBackground: #555a66
+! normal colors
+*.color0:  #282828
+*.color1:  #ff0a36
+*.color2:  #42dc00
+*.color3:  #ffdb00
+*.color4:  #92a7cb
+*.color5:  #a095cb
+*.color6:  #90aa9e
+*.color7:  #e4e4e4
 
-! Terminal colors
-*.color0:  #000000
-*.color1:  #ff5f59
-*.color2:  #44bc44
-*.color3:  #d0bc00
-*.color4:  #2fafff
-*.color5:  #feacd0
-*.color6:  #00d3d0
-*.color7:  #a6a6a6
-*.color8:  #595959
-*.color9:  #ff6b55
-*.color10: #70b900
-*.color11: #fec43f
-*.color12: #79a8ff
-*.color13: #f78fe7
-*.color14: #4ae2f0
-*.color15: #ffffff
+! bright colors
+*.color8:  #54494e
+*.color9:  #ff3851
+*.color10: #42dc00
+*.color11: #ffdb00
+*.color12: #92a7cb
+*.color13: #afafda
+*.color14: #90aa9e
+*.color15: #f5f5f5

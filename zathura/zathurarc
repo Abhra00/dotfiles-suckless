@@ -35,50 +35,40 @@ map [fullscreen] i 		    recolor
 map [fullscreen] p 		    print
 map [fullscreen] g 		    goto top
 
-# Notifications
-set notification-error-bg       "#4f1127"  # bg-removed
-set notification-error-fg       "#ff5f59"  # red
-set notification-warning-bg     "#363300"  # bg-changed
-set notification-warning-fg     "#d0bc00"  # yellow
-set notification-bg             "#0d0e1c"  # bg-main
-set notification-fg             "#ffffff"  # fg-main
+# ---------------------------
+# Zathura Colorscheme
+# ---------------------------
 
-# Completion
-set completion-bg               "#0d0e1c"  # bg-main
-set completion-fg               "#c6daff"  # fg-alt
-set completion-group-bg         "#2b3045"  # bg-inactive
-set completion-group-fg         "#ffffff"  # fg-main
-set completion-highlight-bg     "#2fafff"  # blue
-set completion-highlight-fg     "#0d0e1c"  # bg-main
+set default-bg                  "#181818"
+set default-fg                  "#e4e4e4"
 
-# Index / Sidebar
-set index-bg                    "#2b3045"  # bg-inactive
-set index-fg                    "#00d3d0"  # cyan
-set index-active-bg             "#00d3d0"  # cyan
-set index-active-fg             "#2b3045"  # bg-inactive
+set statusbar-fg                "#e4e4e4"
+set statusbar-bg                "#282828"
 
-# Input bar
-set inputbar-bg                 "#2b3045"  # bg-inactive
-set inputbar-fg                 "#c6daff"  # fg-alt
+set inputbar-bg                 "#282828"
+set inputbar-fg                 "#e4e4e4"
 
-# Status bar
-set statusbar-bg                "#292d48"  # bg-mode-line-inactive
-set statusbar-fg                "#969696"  # fg-mode-line-inactive
+set notification-bg             "#282828"
+set notification-fg             "#e4e4e4"
+set notification-error-bg       "#282828"
+set notification-error-fg       "#ff0a36"
+set notification-warning-bg     "#282828"
+set notification-warning-fg     "#ffdb00"
 
-# Highlight
-set highlight-color             "#d0bc00"  # yellow
-set highlight-active-color      "#ff5f59"  # red
+# Highlight colors
+set highlight-color             "#ffdb00"
+set highlight-active-color      "#ff3851"
 
-# Defaults
-set default-bg                  "#0d0e1c"  # bg-main
-set default-fg                  "#ffffff"  # fg-main
-set render-loading              "true"
-set render-loading-bg           "#2b3045"  # bg-inactive
-set render-loading-fg           "#61647a"  # border
+# Completion menu
+set completion-bg               "#282828"
+set completion-fg               "#e4e4e4"
+set completion-highlight-bg     "#54494e"
+set completion-highlight-fg     "#f5f5f5"
 
-# Recolor / Misc
-set recolor-lightcolor          "#0d0e1c"  # bg-main
-set recolor-darkcolor           "#ffffff"  # fg-main
+# Recoloring (optional)
+# Makes all PDFs dark-mode based on your palette
+set recolor-lightcolor          "#181818"
+set recolor-darkcolor           "#e4e4e4"
 set recolor                     "true"
 set font                        "Iosevka Nerd Font"
 set guioptions                  none
