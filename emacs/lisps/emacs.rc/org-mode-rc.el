@@ -84,7 +84,11 @@
 
 ;; when org-modern is ready, set org modern symbol font
 (with-eval-after-load 'org-modern
-  (setq org-modern-variable-pitch nil) ; ensures fixed pitch
+  (setq org-modern-star 'replace
+        org-modern-replace-stars
+        ["◉" "◎" "○" "◌" "◍" "●" "◯" "∙"])
+
+  (set-face-attribute 'org-modern-symbol nil :family "Iosevka Aile")
 
   ;; Allow different heading sizes again
   (dolist (pair '((org-level-1 . 3.00)
@@ -96,8 +100,8 @@
                   (org-level-7 . 2.45)
                   (org-level-8 . 2.45)))
     (set-face-attribute (car pair) nil
-                        :family "Iosevka"
-                        :weight 'bold
+                        :family "Iosevka Aile"
+                        :weight 'Medium
                         :slant 'normal
                         :height (floor (* 110 (cdr pair))))))
 
