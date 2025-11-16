@@ -34,6 +34,8 @@
       (gruber-darker-red+1     "#ff4f58")
       (gruber-darker-green     "#73c936")
       (gruber-darker-yellow    "#ffdd33")
+      (gruber-darker-blue      "#4f94cd")
+      (gruber-darker-purple    "#a020f0")
       (gruber-darker-brown     "#cc8c3c")
       (gruber-darker-quartz    "#95a99f")
       (gruber-darker-niagara-2 "#303540")
@@ -200,8 +202,8 @@
 
 
    ;; Show paren
-   `(show-paren-match ((t (:background ,gruber-darker-niagara :foreground ,gruber-darker-black :weight normal))))
-   `(show-paren-mismatch ((t (:background ,gruber-darker-red :foreground ,gruber-darker-black :weight normal))))
+   `(show-paren-match ((t (:background ,gruber-darker-blue :foreground ,gruber-darker-fg :weight normal))))
+   `(show-paren-mismatch ((t (:background ,gruber-darker-purple :foreground ,gruber-darker-fg :weight normal))))
 
 
    ;; Diff / VC

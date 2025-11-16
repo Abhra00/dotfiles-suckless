@@ -1,171 +1,70 @@
+/*
+┏┓┏┓┏┓┏┳┓┏┓┏┓┏┳┓┏┓┓┏
+┣ ┣┫┗┓ ┃ ┣ ┣  ┃ ┃ ┣┫
+┻ ┛┗┗┛ ┻ ┻ ┗┛ ┻ ┗┛┛┗
+*/
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-  "logo": {
-  "source": ".config/fastfetch/logo.png",
-  "type":"kitty-direct",
-        "position": "left",
-        "width": 51,
-        "padding": {
-            "top": 3,
-            "bottom": 10,
-            "left": 3,
-            "right": 3,
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": null,
+    "display": {
+        "separator": "  ",
+        "color": "white",
+        "constants": ["\u001b[37m", "\u001b[38;5;13m", "\u001b[38;5;9m", "\u001b[38;5;11m"]
+    },
+    "modules": [
+        "break",
+        {
+            "type": "custom",
+            "key": "╔═══════════════════════════════════╗"
         },
- },    
-  "display": {
-    "separator": "› "
-  },
-  "modules": [
-    {
-      "type": "custom",
-      "format": "\u001b[36m╭───────────────────────────── \u001b[32mSoftware \u001b[36m────────────────────────────╮"
-    },
-    {
-      "type": "os",
-      "key": "│ OS",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "kernel",
-      "key": "│ Kernel",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "packages",
-      "key": "│ Packages",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "shell",
-      "key": "│ Shell",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "de",
-      "key": "│ Desktop Environment",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "wm",
-      "key": "│ Window Manager",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "terminal",
-      "key": "│ Terminal",
-      "keyColor": "cyan"
-    },
-
- {
-      "type": "custom",
-      "format": "\u001b[36m├───────────────────────────── \u001b[32mHardware \u001b[36m────────────────────────────┤"
-    },
-    {
-      "type": "host",
-      "key": "│ Host",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "bios",
-      "key": "│ BIOS",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "cpu",
-      "key": "│ CPU",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "cpuUsage",
-      "key": "│ CPU Usage",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "gpu",
-      "key": "│ GPU",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "memory",
-      "key": "│ Memory",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "physicalMemory",
-      "key": "│ Physical Memory",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "disk",
-      "key": "│ Disk",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "physicalDisk",
-      "key": "│ Physical Disk",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "battery",
-      "key": "│ Battery",
-      "keyColor": "cyan"
-    },
-
-
-    {
-      "type": "custom",
-      "format": "\u001b[36m├─────────────────────────── \u001b[32mPerformance \u001b[36m───────────────────────────┤"
-    },
-    {
-      "type": "uptime",
-      "key": "│ Uptime",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "loadavg",
-      "key": "│ Load Average",
-      "keyColor": "cyan"
-    },
-    
-    {
-      "type": "custom",
-      "format": "\u001b[36m├──────────────────────────── \u001b[32mAppearance \u001b[36m───────────────────────────┤"
-    },
-    {
-      "type": "theme",
-      "key": "│ Theme",
-      "keyColor": "cyan"
-    },    
-    {
-      "type": "icons",
-      "key": "│ Icons",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "font",
-      "key": "│ Font",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "cursor",
-      "key": "│ Cursor",
-      "keyColor": "cyan"
-    },
-    {
-      "type": "terminalfont",
-      "key": "│ TerminalFont",
-      "keyColor": "cyan"
-    },        
-    {
-      "type": "custom",
-      "format": "\u001b[36m╰───────────────────────────────────────────────────────────────────╯"
-    },
-    {
-      "type": "colors"
-    },
-    {
-      "type": "custom",
-      "format": " "
-    }
-  ]
+        {
+            "type": "kernel",
+            "key": "║ {$2}{$1}  kernel",
+            "format": "{$2}{release>22}{$1} ║"
+        },
+        {
+            "type": "command",
+            "key": "║   uptime",
+            "text": "uptime -p | cut -d ' ' -f 2-",
+            "format": "{>22} ║"
+        },
+        {
+            "type": "shell",
+            "key": "║ {$2}{$1}  shell ",
+            "format": "{$2}{pretty-name>22}{$1} ║"
+        },
+        {
+            "type": "command",
+            "key": "║ {$3}{$1}  mem   ",
+            "text": "free -m | awk 'NR==2{printf \"%.2f GiB / %.2f GiB\",$3/1024,$2/1024}'",
+            "format": "{$3}{>22}{$1} ║"
+        },
+        {
+            "type": "packages",
+            "key": "║   pkgs  ",
+            "format": "{all>22} ║"
+        },
+        {
+            "type": "command",
+            "key": "║ {$2}{$1}  user  ",
+            "text": "echo $USER",
+            "format": "{$2}{>22}{$1} ║"
+        },
+        {
+            "type": "command",
+            "key": "║   hname ",
+            "text": "hostnamectl hostname",
+            "format": "{>22} ║"
+        },
+        {
+            "type": "os",
+            "key": "║ {$4}󰻀{$1}  distro",
+            "format": "{$4}{pretty-name>22}{$1} ║"
+        },
+        {
+            "type": "custom",
+            "key": "╚═══════════════════════════════════╝"
+        },
+        "break"
+    ]
 }
