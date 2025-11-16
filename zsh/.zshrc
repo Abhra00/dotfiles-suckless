@@ -268,4 +268,7 @@ source <(fzf --zsh)
 #  ┣┫┃┃ ┃ ┃┃┗┓ ┃ ┣┫┣┫ ┃
 #  ┛┗┗┛ ┻ ┗┛┗┛ ┻ ┛┗┛┗ ┻
 #
+echo "┳┓┳┳┏┓┏┓  ┏━┓  ┳┓┳┳┓ ┓" 
+echo "┣┫┃┃┃┓┗┓  ┃┗┛  ┃┃┃┃┃ ┃" 
+echo "┻┛┗┛┗┛┗┛  ┗━┛  ┛┗┗┛┗┛┗┛"                            
 fastfetch -c $HOME/.config/fastfetch/config.jsonc
