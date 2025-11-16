@@ -79,7 +79,9 @@
                           `([,ligature-re 0 font-shape-gstring]))))
 
 ;;; Set theme
-(rc/require-theme 'gruber-darker)
+(add-to-list 'custom-theme-load-path
+             (expand-file-name "~/.config/emacs/lisps/emacs.local/"))
+(load-theme 'gruber-darker t)
 
 ;;; Add modeline padding
 (defun rc/setup-modern-mode-line ()

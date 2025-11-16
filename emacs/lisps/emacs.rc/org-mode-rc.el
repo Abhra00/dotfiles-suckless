@@ -87,7 +87,9 @@
   (setq org-modern-star 'replace
         org-modern-replace-stars
         ["◉" "◎" "○" "◌" "◍" "●" "◯" "∙"])
-
+  (setq org-modern-todo-faces
+        '(("TODO" . org-todo)
+          ("DONE" . org-done)))
   (set-face-attribute 'org-modern-symbol nil :family "Iosevka Aile")
 
   ;; Allow different heading sizes again
