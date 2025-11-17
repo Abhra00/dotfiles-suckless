@@ -59,7 +59,7 @@ zstyle ':fzf-tab:*' accept-line enter
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
-zstyle ':vcs_info:git:*' formats '%F{011} ( %F{009}%m%u%c %F{013} %F{009}%b%F{011} )%f'
+zstyle ':vcs_info:git:*' formats '%F{011} ( %F{009}%m%u%c %F{013} %F{009}%b%F{011} )%f'
 
 #  ┓ ┏┏┓┳┏┳┓┳┳┓┏┓  ┳┓┏┓┏┳┓┏┓
 #  ┃┃┃┣┫┃ ┃ ┃┃┃┃┓  ┃┃┃┃ ┃ ┗┓
@@ -268,7 +268,7 @@ source <(fzf --zsh)
 #  ┣┫┃┃ ┃ ┃┃┗┓ ┃ ┣┫┣┫ ┃
 #  ┛┗┗┛ ┻ ┗┛┗┛ ┻ ┛┗┛┗ ┻
 #
-echo "┳┓┳┳┏┓┏┓  ┏━┓  ┳┓┳┳┓ ┓" 
-echo "┣┫┃┃┃┓┗┓  ┃┗┛  ┃┃┃┃┃ ┃" 
-echo "┻┛┗┛┗┛┗┛  ┗━┛  ┛┗┗┛┗┛┗┛"                            
+echo "┳┓┳┳┏┓┏┓  ┏━┓  ┳┓┳┳┓ ┓"
+echo "┣┫┃┃┃┓┗┓  ┃┗┛  ┃┃┃┃┃ ┃"
+echo "┻┛┗┛┗┛┗┛  ┗━┛  ┛┗┗┛┗┛┗┛"
 fastfetch -c $HOME/.config/fastfetch/config.jsonc

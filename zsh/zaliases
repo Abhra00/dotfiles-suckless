@@ -2,7 +2,7 @@
 #  ┏┓┓ ┳┏┓┏┓┏┓┏┓
 #  ┣┫┃ ┃┣┫┗┓┣ ┗┓
 #  ┛┗┗┛┻┛┗┗┛┗┛┗┛
-#               
+#
 
 
 
@@ -21,8 +21,8 @@ alias cat='bat --theme=base16'
 alias grep='grep --color=always'
 
 # application aliases
-alias v="$EDITOR"
-alias vim="$EDITOR"
+alias e="$EDITOR"
+alias edit="$EDITOR"
 alias p="paru"
 alias nb="newsboat"
 alias za="zathura"
@@ -33,6 +33,9 @@ alias sysm="sysmaintenance.sh"
 
 # aliases to clean up home directory
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+
+# anifetch alias
+alias af="anifetch ~/.config/fastfetch/fetch.gif -r 10 -W 40 -H 20 -C -c '--symbols braille --fg-only' --sound ~/.config/fastfetch/fetch.mp3 -ff"
 
 # git aliases
 alias g="git"
@@ -56,5 +59,3 @@ alias gt="git ls-tree -r master --name-only"
 alias grm="git remote"
 alias gb="git branch"
 alias gf="git fetch"
-
-
