@@ -85,6 +85,7 @@
 
    ;; Mode line
    `(mode-line ((t (:background ,gruber-darker-bg+1 :foreground ,gruber-darker-white))))
+   `(mode-line-active ((t (:inherit mode-line))))
    `(mode-line-inactive ((t (:background ,gruber-darker-bg+1 :foreground ,gruber-darker-quartz))))
    `(mode-line-buffer-id ((t (:foreground ,gruber-darker-white :background ,gruber-darker-bg+1))))
    `(mode-line-highlight ((t (:box nil :foreground ,gruber-darker-yellow))))
