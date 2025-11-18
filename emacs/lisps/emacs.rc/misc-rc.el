@@ -4,7 +4,7 @@
 (global-set-key (kbd "C-c i m") 'imenu)
 
 (setq-default inhibit-splash-screen t
-              make-backup-files nil
+              make-backup-files t
               tab-width 4
               indent-tabs-mode nil
               compilation-scroll-output t
