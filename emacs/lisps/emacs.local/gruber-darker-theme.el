@@ -129,17 +129,47 @@
    `(dired-broken-symlink ((t (:foreground ,gruber-darker-red+1 :weight bold))))
 
 
-   ;; Vertico / Marginalia (popular completion UI)
+   ;; Vertico (popular completion UI)
    `(vertico-current ((t (:background ,gruber-darker-bg+1))))
    `(vertico-posframe ((t (:background ,gruber-darker-bg))))
-   `(marginalia-documentation ((t (:foreground ,gruber-darker-quartz))))
+   `(vertico-posframe-border ((t (:background ,gruber-darker-bg+2))))
+
+
+   ;; Marginalia (minibuffer annotations)
    `(marginalia-key ((t (:foreground ,gruber-darker-niagara))))
+   `(marginalia-type ((t (:foreground ,gruber-darker-niagara))))
+   `(marginalia-char ((t (:foreground ,gruber-darker-yellow))))
+   `(marginalia-lighter ((t (:foreground ,gruber-darker-quartz))))
+   `(marginalia-on ((t (:foreground ,gruber-darker-green :weight bold))))
+   `(marginalia-off ((t (:foreground ,gruber-darker-bg+4))))
+   `(marginalia-documentation ((t (:foreground ,gruber-darker-quartz))))
+   `(marginalia-file-name ((t (:foreground ,gruber-darker-fg))))
+   `(marginalia-file-modes ((t (:foreground ,gruber-darker-quartz))))
+   `(marginalia-file-owner ((t (:foreground ,gruber-darker-brown))))
+   `(marginalia-date ((t (:foreground ,gruber-darker-quartz))))
+   `(marginalia-list ((t (:foreground ,gruber-darker-quartz))))
+   `(marginalia-mode ((t (:foreground ,gruber-darker-niagara))))
+   `(marginalia-modified ((t (:foreground ,gruber-darker-yellow))))
+   `(marginalia-size ((t (:foreground ,gruber-darker-quartz))))
+   `(marginalia-number ((t (:foreground ,gruber-darker-quartz))))
+   `(marginalia-string ((t (:foreground ,gruber-darker-green))))
+   `(marginalia-null ((t (:foreground ,gruber-darker-bg+4))))
+   `(marginalia-true ((t (:foreground ,gruber-darker-green))))
+   `(marginalia-function ((t (:foreground ,gruber-darker-niagara))))
+   `(marginalia-symbol ((t (:foreground ,gruber-darker-fg+1))))
+   `(marginalia-value ((t (:foreground ,gruber-darker-quartz))))
+   `(marginalia-version ((t (:foreground ,gruber-darker-quartz))))
+   `(marginalia-archive ((t (:foreground ,gruber-darker-quartz))))
+   `(marginalia-installed ((t (:foreground ,gruber-darker-green))))
 
 
    ;; Corfu (popup completion)
    `(corfu-default ((t (:background ,gruber-darker-bg+1 :foreground ,gruber-darker-fg))))
    `(corfu-current ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-white))))
    `(corfu-bar ((t (:background ,gruber-darker-niagara-1))))
+   `(corfu-border ((t (:background ,gruber-darker-bg+2))))
+   `(corfu-annotations ((t (:foreground ,gruber-darker-quartz :slant italic))))
+   `(corfu-deprecated ((t (:foreground ,gruber-darker-bg+4 :strike-through t))))
 
 
    ;; Company
@@ -271,6 +301,16 @@
    `(orderless-match-face-3 ((t (:foreground ,gruber-darker-quartz))))
 
 
+   ;; Embark
+   `(embark-keybinding ((t (:foreground ,gruber-darker-green :weight bold))))
+   `(embark-keybinding-repeat ((t (:foreground ,gruber-darker-yellow :weight bold))))
+   `(embark-keymap ((t (:foreground ,gruber-darker-niagara :slant italic))))
+   `(embark-target ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-yellow))))
+   `(embark-verbose-indicator-documentation ((t (:foreground ,gruber-darker-quartz))))
+   `(embark-verbose-indicator-title ((t (:foreground ,gruber-darker-niagara :weight bold))))
+   `(embark-verbose-indicator-shadowed ((t (:foreground ,gruber-darker-bg+4))))
+
+
    ;; Error / Warning / Success
    `(error ((t (:foreground ,gruber-darker-red))))
    `(warning ((t (:foreground ,gruber-darker-yellow))))
@@ -282,9 +322,30 @@
 
 
    ;; Magit faces
+   `(magit-header-line ((t (:foreground ,gruber-darker-yellow :weight bold))))
+   `(magit-header-line-key ((t (:foreground ,gruber-darker-green :weight bold))))
+   `(magit-dimmed ((t (:foreground ,gruber-darker-bg+4))))
+   `(magit-hash ((t (:foreground ,gruber-darker-quartz))))
+   `(magit-tag ((t (:foreground ,gruber-darker-yellow))))
+   `(magit-branch-local ((t (:foreground ,gruber-darker-niagara))))
+   `(magit-branch-remote ((t (:foreground ,gruber-darker-wisteria))))
+   `(magit-branch-current ((t (:foreground ,gruber-darker-yellow :weight bold))))
+   `(magit-refname ((t (:foreground ,gruber-darker-quartz))))
+   `(magit-refname-stash ((t (:foreground ,gruber-darker-quartz))))
+   `(magit-refname-wip ((t (:foreground ,gruber-darker-quartz))))
    `(magit-section-heading ((t (:foreground ,gruber-darker-niagara :weight bold))))
    `(magit-section-highlight ((t (:background ,gruber-darker-bg+1))))
    `(magit-section-heading-selection ((t (:foreground ,gruber-darker-yellow :background ,gruber-darker-bg+2 :weight bold))))
+   `(magit-log-author ((t (:foreground ,gruber-darker-brown))))
+   `(magit-log-date ((t (:foreground ,gruber-darker-quartz))))
+   `(magit-log-graph ((t (:foreground ,gruber-darker-niagara-1))))
+   `(magit-cherry-equivalent ((t (:foreground ,gruber-darker-wisteria))))
+   `(magit-cherry-unmatched ((t (:foreground ,gruber-darker-niagara))))
+
+   ;; Magit diffs
+   `(magit-diff-file-heading ((t (:foreground ,gruber-darker-fg :weight bold))))
+   `(magit-diff-file-heading-highlight ((t (:background ,gruber-darker-bg+1 :foreground ,gruber-darker-fg :weight bold))))
+   `(magit-diff-file-heading-selection ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-yellow :weight bold))))
    `(magit-diff-added ((t (:foreground ,gruber-darker-green))))
    `(magit-diff-added-highlight ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-green))))
    `(magit-diff-removed ((t (:foreground ,gruber-darker-red+1))))
@@ -293,15 +354,41 @@
    `(magit-diff-context-highlight ((t (:background ,gruber-darker-bg+1 :foreground ,gruber-darker-quartz))))
    `(magit-diff-hunk-heading ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-fg))))
    `(magit-diff-hunk-heading-highlight ((t (:background ,gruber-darker-bg+3 :foreground ,gruber-darker-fg))))
-   `(magit-branch-local ((t (:foreground ,gruber-darker-niagara))))
-   `(magit-branch-remote ((t (:foreground ,gruber-darker-wisteria))))
-   `(magit-branch-current ((t (:foreground ,gruber-darker-yellow :weight bold))))
-   `(magit-header ((t (:foreground ,gruber-darker-yellow :weight bold))))
-   `(magit-hash ((t (:foreground ,gruber-darker-quartz))))
-   `(magit-tag ((t (:foreground ,gruber-darker-yellow))))
-   `(magit-log-author ((t (:foreground ,gruber-darker-brown))))
-   `(magit-log-date ((t (:foreground ,gruber-darker-quartz))))
-   `(magit-log-graph ((t (:foreground ,gruber-darker-niagara-1))))
+   `(magit-diff-hunk-heading-selection ((t (:background ,gruber-darker-bg+3 :foreground ,gruber-darker-yellow :weight bold))))
+   `(magit-diff-lines-heading ((t (:background ,gruber-darker-red :foreground ,gruber-darker-fg))))
+   `(magit-diff-lines-boundary ((t (:background ,gruber-darker-red :foreground ,gruber-darker-fg))))
+   `(magit-diff-revision-summary ((t (:foreground ,gruber-darker-fg :weight bold))))
+   `(magit-diff-revision-summary-highlight ((t (:foreground ,gruber-darker-yellow :weight bold))))
+   `(magit-diffstat-added ((t (:foreground ,gruber-darker-green))))
+   `(magit-diffstat-removed ((t (:foreground ,gruber-darker-red))))
+
+   ;; Magit merge conflicts
+   `(magit-diff-base ((t (:foreground ,gruber-darker-yellow))))
+   `(magit-diff-base-highlight ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-yellow))))
+   `(magit-diff-our ((t (:foreground ,gruber-darker-green))))
+   `(magit-diff-our-highlight ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-green))))
+   `(magit-diff-their ((t (:foreground ,gruber-darker-red))))
+   `(magit-diff-their-highlight ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-red))))
+   `(magit-diff-conflict-heading ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-fg))))
+   `(magit-diff-conflict-heading-highlight ((t (:background ,gruber-darker-bg+3 :foreground ,gruber-darker-fg))))
+   `(magit-diff-whitespace-warning ((t (:background ,gruber-darker-red :foreground ,gruber-darker-fg))))
+
+   ;; Magit blame
+   `(magit-blame-highlight ((t (:background ,gruber-darker-bg+1 :foreground ,gruber-darker-fg))))
+   `(magit-blame-heading ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-fg))))
+   `(magit-blame-summary ((t (:foreground ,gruber-darker-fg))))
+   `(magit-blame-hash ((t (:foreground ,gruber-darker-quartz))))
+   `(magit-blame-name ((t (:foreground ,gruber-darker-brown))))
+   `(magit-blame-date ((t (:foreground ,gruber-darker-quartz))))
+
+   ;; Magit signatures
+   `(magit-signature-good ((t (:foreground ,gruber-darker-green))))
+   `(magit-signature-bad ((t (:foreground ,gruber-darker-red :weight bold))))
+   `(magit-signature-untrusted ((t (:foreground ,gruber-darker-yellow))))
+   `(magit-signature-expired ((t (:foreground ,gruber-darker-brown))))
+   `(magit-signature-expired-key ((t (:foreground ,gruber-darker-brown))))
+   `(magit-signature-revoked ((t (:foreground ,gruber-darker-red))))
+   `(magit-signature-error ((t (:foreground ,gruber-darker-red))))
 
 
   ;; Org-modern integration
