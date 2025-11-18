@@ -90,7 +90,7 @@
   (setq org-modern-todo-faces
         '(("TODO" . org-todo)
           ("DONE" . org-done)))
-  (set-face-attribute 'org-modern-symbol nil :family "Iosevka Aile")
+  (set-face-attribute 'org-modern-symbol nil :family "Iosevka Etoile")
 
   ;; Allow different heading sizes again
   (dolist (pair '((org-level-1 . 3.00)
