@@ -54,7 +54,7 @@
 
 ;; Make sure both pitch types use Iosevka
 (set-face-attribute 'fixed-pitch nil :family "Iosevka" :height 210)
-(set-face-attribute 'variable-pitch nil :family "Iosevka Aile" :height 210)
+(set-face-attribute 'variable-pitch nil :family "Iosevka Etoile" :height 210)
 
 ;; Enable ligatures
 (dolist (char/ligature-re
