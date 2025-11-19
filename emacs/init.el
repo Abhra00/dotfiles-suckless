@@ -93,38 +93,23 @@
                           `([,ligature-re 0 font-shape-gstring]))))
 
 ;;; Set theme
-(add-to-list 'custom-theme-load-path
-             (expand-file-name "~/.config/emacs/lisps/emacs.local/"))
+(add-to-list 'custom-theme-load-path "~/.config/emacs/lisps/emacs.local")
 (load-theme 'gruber-darker t)
 
-;;; Add modeline padding
-(defun rc/setup-modern-mode-line ()
-  "Setup a spacious, padded modern mode-line."
-  (let* ((active-bg   (face-attribute 'mode-line :background))
-         (active-fg   (face-attribute 'mode-line :foreground))
-         (inactive-bg (face-attribute 'mode-line-inactive :background))
-         (inactive-fg (face-attribute 'mode-line-inactive :foreground))
-         (padding     7))  ;; Vertical padding in pixels
-    ;; Active mode-line
-    (set-face-attribute 'mode-line nil
-                        :foreground active-fg
-                        :background active-bg
-                        :box `(:line-width ,padding :color ,active-bg)
-                        :overline nil
-                        :underline nil
-                        :height 1.0)
-    ;; Inactive mode-line
-    (set-face-attribute 'mode-line-inactive nil
-                        :foreground inactive-fg
-                        :background inactive-bg
-                        :box `(:line-width ,padding :color ,inactive-bg)
-                        :overline nil
-                        :underline nil
-                        :height 1.0)
-    ;; Refresh
-    (setq-default mode-line-format mode-line-format)))
 
-(rc/setup-modern-mode-line)
+;; Use minions (For decluttering emacs mode line)
+(rc/require 'minions)
+(minions-mode)
+(when (autoloadp (symbol-function 'glasses-mode))
+  (cl-pushnew 'glasses-mode minor-mode-list))
+(global-set-key (kbd "<S-down-mouse-3>") #'minions-minor-modes-menu)
+
+;; Use moody mode line
+(rc/require 'moody)
+(moody-replace-mode-line-buffer-identification)
+(moody-replace-vc-mode)
+(moody-replace-mode-line-front-space)
+(moody-replace-eldoc-minibuffer-message-function)
 
 ;; Add frame borders and window dividers
 (modify-all-frames-parameters

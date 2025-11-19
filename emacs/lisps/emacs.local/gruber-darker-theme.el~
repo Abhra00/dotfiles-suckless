@@ -282,154 +282,154 @@
    `(term-color-bright-blue ((t (:foreground ,gruber-darker-niagara :background ,gruber-darker-niagara))))
    `(term-color-bright-magenta ((t (:foreground ,gruber-darker-wisteria :background ,gruber-darker-wisteria))))
    `(term-color-bright-cyan ((t (:foreground ,gruber-darker-niagara-1 :background ,gruber-darker-niagara-1))))
-   `(term-color-bright-white ((t (:foreground ,gruber-darker-fg+1 :background ,gruber-darker-fg+1))))
-   `(eshell-prompt ((t (:foreground ,gruber-darker-yellow :weight bold))))
-   `(eshell-ls-archive ((t (:foreground ,gruber-darker-red-1 :weight bold))))
-   `(eshell-ls-backup ((t (:inherit font-lock-comment-face))))
-   `(eshell-ls-clutter ((t (:inherit font-lock-comment-face))))
-   `(eshell-ls-directory ((t (:foreground ,gruber-darker-blue :weight bold))))
-   `(eshell-ls-executable ((t (:foreground ,gruber-darker-red+1 :weight bold))))
-   `(eshell-ls-unreadable ((t (:foreground ,gruber-darker-fg))))
-   `(eshell-ls-missing ((t (:inherit font-lock-warning-face))))
-   `(eshell-ls-product ((t (:inherit font-lock-doc-face))))
-   `(eshell-ls-special ((t (:foreground ,gruber-darker-yellow :weight bold))))
-   `(eshell-ls-symlink ((t (:foreground ,gruber-darker-niagara :weight bold))))
+   `(term-color-bright-white ((t (:foreground ,gruber-darker-fg+1 :background ,gruber-darker-fg+1)))))
+  `(eshell-prompt ((t (:foreground ,gruber-darker-yellow :weight bold))))
+  `(eshell-ls-archive ((t (:foreground ,gruber-darker-red-1 :weight bold))))
+  `(eshell-ls-backup ((t (:inherit font-lock-comment-face))))
+  `(eshell-ls-clutter ((t (:inherit font-lock-comment-face))))
+  `(eshell-ls-directory ((t (:foreground ,gruber-darker-blue :weight bold))))
+  `(eshell-ls-executable ((t (:foreground ,gruber-darker-red+1 :weight bold))))
+  `(eshell-ls-unreadable ((t (:foreground ,gruber-darker-fg))))
+  `(eshell-ls-missing ((t (:inherit font-lock-warning-face))))
+  `(eshell-ls-product ((t (:inherit font-lock-doc-face))))
+  `(eshell-ls-special ((t (:foreground ,gruber-darker-yellow :weight bold))))
+  `(eshell-ls-symlink ((t (:foreground ,gruber-darker-niagara :weight bold))))
 
 
 
-   ;; Helm (kept for users who use helm)
-   `(helm-selection ((t (:background ,gruber-darker-bg+1))))
-   `(helm-source-header ((t (:foreground ,gruber-darker-yellow :background ,gruber-darker-bg :weight bold :box (:line-width -1 :style released-button)))))
+  ;; Helm (kept for users who use helm)
+  `(helm-selection ((t (:background ,gruber-darker-bg+1))))
+  `(helm-source-header ((t (:foreground ,gruber-darker-yellow :background ,gruber-darker-bg :weight bold :box (:line-width -1 :style released-button)))))
 
 
-   ;; Eglot / LSP
-   `(eglot-highlight-symbol-face ((t (:background ,gruber-darker-niagara-2))))
-   `(lsp-face-highlight-textual ((t (:background ,gruber-darker-niagara-2))))
-   `(lsp-face-highlight-read ((t (:background ,gruber-darker-niagara-2))))
+  ;; Eglot / LSP
+  `(eglot-highlight-symbol-face ((t (:background ,gruber-darker-niagara-2))))
+  `(lsp-face-highlight-textual ((t (:background ,gruber-darker-niagara-2))))
+  `(lsp-face-highlight-read ((t (:background ,gruber-darker-niagara-2))))
 
 
-   ;; Which function
-   `(which-func ((t (:foreground ,gruber-darker-wisteria))))
+  ;; Which function
+  `(which-func ((t (:foreground ,gruber-darker-wisteria))))
 
 
-   ;; Which-key / help
-   `(which-key-key-face ((t (:foreground ,gruber-darker-niagara))))
-   `(which-key-command-description-face ((t (:foreground ,gruber-darker-quartz))))
+  ;; Which-key / help
+  `(which-key-key-face ((t (:foreground ,gruber-darker-niagara))))
+  `(which-key-command-description-face ((t (:foreground ,gruber-darker-quartz))))
 
 
-   ;; Completion orderless
-   `(orderless-match-face-0 ((t (:foreground ,gruber-darker-yellow))))
-   `(orderless-match-face-1 ((t (:foreground ,gruber-darker-green))))
-   `(orderless-match-face-2 ((t (:foreground ,gruber-darker-brown))))
-   `(orderless-match-face-3 ((t (:foreground ,gruber-darker-quartz))))
+  ;; Completion orderless
+  `(orderless-match-face-0 ((t (:foreground ,gruber-darker-yellow))))
+  `(orderless-match-face-1 ((t (:foreground ,gruber-darker-green))))
+  `(orderless-match-face-2 ((t (:foreground ,gruber-darker-brown))))
+  `(orderless-match-face-3 ((t (:foreground ,gruber-darker-quartz))))
 
 
-   ;; Embark
-   `(embark-keybinding ((t (:foreground ,gruber-darker-green :weight bold))))
-   `(embark-keybinding-repeat ((t (:foreground ,gruber-darker-yellow :weight bold))))
-   `(embark-keymap ((t (:foreground ,gruber-darker-niagara :slant italic))))
-   `(embark-target ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-yellow))))
-   `(embark-verbose-indicator-documentation ((t (:foreground ,gruber-darker-quartz))))
-   `(embark-verbose-indicator-title ((t (:foreground ,gruber-darker-niagara :weight bold))))
-   `(embark-verbose-indicator-shadowed ((t (:foreground ,gruber-darker-bg+4))))
+  ;; Embark
+  `(embark-keybinding ((t (:foreground ,gruber-darker-green :weight bold))))
+  `(embark-keybinding-repeat ((t (:foreground ,gruber-darker-yellow :weight bold))))
+  `(embark-keymap ((t (:foreground ,gruber-darker-niagara :slant italic))))
+  `(embark-target ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-yellow))))
+  `(embark-verbose-indicator-documentation ((t (:foreground ,gruber-darker-quartz))))
+  `(embark-verbose-indicator-title ((t (:foreground ,gruber-darker-niagara :weight bold))))
+  `(embark-verbose-indicator-shadowed ((t (:foreground ,gruber-darker-bg+4))))
 
 
-   ;; Error / Warning / Success
-   `(error ((t (:foreground ,gruber-darker-red))))
-   `(warning ((t (:foreground ,gruber-darker-yellow))))
-   `(success ((t (:foreground ,gruber-darker-green))))
+  ;; Error / Warning / Success
+  `(error ((t (:foreground ,gruber-darker-red))))
+  `(warning ((t (:foreground ,gruber-darker-yellow))))
+  `(success ((t (:foreground ,gruber-darker-green))))
 
 
-   ;; Provide a fallback for older/less-common faces
-   `(default-italic ((t (:slant italic :foreground ,gruber-darker-fg))))
+  ;; Provide a fallback for older/less-common faces
+  `(default-italic ((t (:slant italic :foreground ,gruber-darker-fg))))
 
 
-   ;; Magit faces
-   `(magit-header-line ((t (:foreground ,gruber-darker-yellow :weight bold))))
-   `(magit-header-line-key ((t (:foreground ,gruber-darker-green :weight bold))))
-   `(magit-dimmed ((t (:foreground ,gruber-darker-bg+4))))
-   `(magit-hash ((t (:foreground ,gruber-darker-quartz))))
-   `(magit-tag ((t (:foreground ,gruber-darker-yellow))))
-   `(magit-branch-local ((t (:foreground ,gruber-darker-niagara))))
-   `(magit-branch-remote ((t (:foreground ,gruber-darker-wisteria))))
-   `(magit-branch-current ((t (:foreground ,gruber-darker-yellow :weight bold))))
-   `(magit-refname ((t (:foreground ,gruber-darker-quartz))))
-   `(magit-refname-stash ((t (:foreground ,gruber-darker-quartz))))
-   `(magit-refname-wip ((t (:foreground ,gruber-darker-quartz))))
-   `(magit-section-heading ((t (:foreground ,gruber-darker-niagara :weight bold))))
-   `(magit-section-highlight ((t (:background ,gruber-darker-bg+1))))
-   `(magit-section-heading-selection ((t (:foreground ,gruber-darker-yellow :background ,gruber-darker-bg+2 :weight bold))))
-   `(magit-log-author ((t (:foreground ,gruber-darker-brown))))
-   `(magit-log-date ((t (:foreground ,gruber-darker-quartz))))
-   `(magit-log-graph ((t (:foreground ,gruber-darker-niagara-1))))
-   `(magit-cherry-equivalent ((t (:foreground ,gruber-darker-wisteria))))
-   `(magit-cherry-unmatched ((t (:foreground ,gruber-darker-niagara))))
+  ;; Magit faces
+  `(magit-header-line ((t (:foreground ,gruber-darker-yellow :weight bold))))
+  `(magit-header-line-key ((t (:foreground ,gruber-darker-green :weight bold))))
+  `(magit-dimmed ((t (:foreground ,gruber-darker-bg+4))))
+  `(magit-hash ((t (:foreground ,gruber-darker-quartz))))
+  `(magit-tag ((t (:foreground ,gruber-darker-yellow))))
+  `(magit-branch-local ((t (:foreground ,gruber-darker-niagara))))
+  `(magit-branch-remote ((t (:foreground ,gruber-darker-wisteria))))
+  `(magit-branch-current ((t (:foreground ,gruber-darker-yellow :weight bold))))
+  `(magit-refname ((t (:foreground ,gruber-darker-quartz))))
+  `(magit-refname-stash ((t (:foreground ,gruber-darker-quartz))))
+  `(magit-refname-wip ((t (:foreground ,gruber-darker-quartz))))
+  `(magit-section-heading ((t (:foreground ,gruber-darker-niagara :weight bold))))
+  `(magit-section-highlight ((t (:background ,gruber-darker-bg+1))))
+  `(magit-section-heading-selection ((t (:foreground ,gruber-darker-yellow :background ,gruber-darker-bg+2 :weight bold))))
+  `(magit-log-author ((t (:foreground ,gruber-darker-brown))))
+  `(magit-log-date ((t (:foreground ,gruber-darker-quartz))))
+  `(magit-log-graph ((t (:foreground ,gruber-darker-niagara-1))))
+  `(magit-cherry-equivalent ((t (:foreground ,gruber-darker-wisteria))))
+  `(magit-cherry-unmatched ((t (:foreground ,gruber-darker-niagara))))
 
-   ;; Magit diffs
-   `(magit-diff-file-heading ((t (:foreground ,gruber-darker-fg :weight bold))))
-   `(magit-diff-file-heading-highlight ((t (:background ,gruber-darker-bg+1 :foreground ,gruber-darker-fg :weight bold))))
-   `(magit-diff-file-heading-selection ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-yellow :weight bold))))
-   `(magit-diff-added ((t (:foreground ,gruber-darker-green))))
-   `(magit-diff-added-highlight ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-green))))
-   `(magit-diff-removed ((t (:foreground ,gruber-darker-red+1))))
-   `(magit-diff-removed-highlight ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-red+1))))
-   `(magit-diff-context ((t (:foreground ,gruber-darker-quartz))))
-   `(magit-diff-context-highlight ((t (:background ,gruber-darker-bg+1 :foreground ,gruber-darker-quartz))))
-   `(magit-diff-hunk-heading ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-fg))))
-   `(magit-diff-hunk-heading-highlight ((t (:background ,gruber-darker-bg+3 :foreground ,gruber-darker-fg))))
-   `(magit-diff-hunk-heading-selection ((t (:background ,gruber-darker-bg+3 :foreground ,gruber-darker-yellow :weight bold))))
-   `(magit-diff-lines-heading ((t (:background ,gruber-darker-red :foreground ,gruber-darker-fg))))
-   `(magit-diff-lines-boundary ((t (:background ,gruber-darker-red :foreground ,gruber-darker-fg))))
-   `(magit-diff-revision-summary ((t (:foreground ,gruber-darker-fg :weight bold))))
-   `(magit-diff-revision-summary-highlight ((t (:foreground ,gruber-darker-yellow :weight bold))))
-   `(magit-diffstat-added ((t (:foreground ,gruber-darker-green))))
-   `(magit-diffstat-removed ((t (:foreground ,gruber-darker-red))))
+  ;; Magit diffs
+  `(magit-diff-file-heading ((t (:foreground ,gruber-darker-fg :weight bold))))
+  `(magit-diff-file-heading-highlight ((t (:background ,gruber-darker-bg+1 :foreground ,gruber-darker-fg :weight bold))))
+  `(magit-diff-file-heading-selection ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-yellow :weight bold))))
+  `(magit-diff-added ((t (:foreground ,gruber-darker-green))))
+  `(magit-diff-added-highlight ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-green))))
+  `(magit-diff-removed ((t (:foreground ,gruber-darker-red+1))))
+  `(magit-diff-removed-highlight ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-red+1))))
+  `(magit-diff-context ((t (:foreground ,gruber-darker-quartz))))
+  `(magit-diff-context-highlight ((t (:background ,gruber-darker-bg+1 :foreground ,gruber-darker-quartz))))
+  `(magit-diff-hunk-heading ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-fg))))
+  `(magit-diff-hunk-heading-highlight ((t (:background ,gruber-darker-bg+3 :foreground ,gruber-darker-fg))))
+  `(magit-diff-hunk-heading-selection ((t (:background ,gruber-darker-bg+3 :foreground ,gruber-darker-yellow :weight bold))))
+  `(magit-diff-lines-heading ((t (:background ,gruber-darker-red :foreground ,gruber-darker-fg))))
+  `(magit-diff-lines-boundary ((t (:background ,gruber-darker-red :foreground ,gruber-darker-fg))))
+  `(magit-diff-revision-summary ((t (:foreground ,gruber-darker-fg :weight bold))))
+  `(magit-diff-revision-summary-highlight ((t (:foreground ,gruber-darker-yellow :weight bold))))
+  `(magit-diffstat-added ((t (:foreground ,gruber-darker-green))))
+  `(magit-diffstat-removed ((t (:foreground ,gruber-darker-red))))
 
-   ;; Magit merge conflicts
-   `(magit-diff-base ((t (:foreground ,gruber-darker-yellow))))
-   `(magit-diff-base-highlight ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-yellow))))
-   `(magit-diff-our ((t (:foreground ,gruber-darker-green))))
-   `(magit-diff-our-highlight ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-green))))
-   `(magit-diff-their ((t (:foreground ,gruber-darker-red))))
-   `(magit-diff-their-highlight ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-red))))
-   `(magit-diff-conflict-heading ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-fg))))
-   `(magit-diff-conflict-heading-highlight ((t (:background ,gruber-darker-bg+3 :foreground ,gruber-darker-fg))))
-   `(magit-diff-whitespace-warning ((t (:background ,gruber-darker-red :foreground ,gruber-darker-fg))))
+  ;; Magit merge conflicts
+  `(magit-diff-base ((t (:foreground ,gruber-darker-yellow))))
+  `(magit-diff-base-highlight ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-yellow))))
+  `(magit-diff-our ((t (:foreground ,gruber-darker-green))))
+  `(magit-diff-our-highlight ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-green))))
+  `(magit-diff-their ((t (:foreground ,gruber-darker-red))))
+  `(magit-diff-their-highlight ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-red))))
+  `(magit-diff-conflict-heading ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-fg))))
+  `(magit-diff-conflict-heading-highlight ((t (:background ,gruber-darker-bg+3 :foreground ,gruber-darker-fg))))
+  `(magit-diff-whitespace-warning ((t (:background ,gruber-darker-red :foreground ,gruber-darker-fg))))
 
-   ;; Magit blame
-   `(magit-blame-highlight ((t (:background ,gruber-darker-bg+1 :foreground ,gruber-darker-fg))))
-   `(magit-blame-heading ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-fg))))
-   `(magit-blame-summary ((t (:foreground ,gruber-darker-fg))))
-   `(magit-blame-hash ((t (:foreground ,gruber-darker-quartz))))
-   `(magit-blame-name ((t (:foreground ,gruber-darker-brown))))
-   `(magit-blame-date ((t (:foreground ,gruber-darker-quartz))))
+  ;; Magit blame
+  `(magit-blame-highlight ((t (:background ,gruber-darker-bg+1 :foreground ,gruber-darker-fg))))
+  `(magit-blame-heading ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-fg))))
+  `(magit-blame-summary ((t (:foreground ,gruber-darker-fg))))
+  `(magit-blame-hash ((t (:foreground ,gruber-darker-quartz))))
+  `(magit-blame-name ((t (:foreground ,gruber-darker-brown))))
+  `(magit-blame-date ((t (:foreground ,gruber-darker-quartz))))
 
-   ;; Magit signatures
-   `(magit-signature-good ((t (:foreground ,gruber-darker-green))))
-   `(magit-signature-bad ((t (:foreground ,gruber-darker-red :weight bold))))
-   `(magit-signature-untrusted ((t (:foreground ,gruber-darker-yellow))))
-   `(magit-signature-expired ((t (:foreground ,gruber-darker-brown))))
-   `(magit-signature-expired-key ((t (:foreground ,gruber-darker-brown))))
-   `(magit-signature-revoked ((t (:foreground ,gruber-darker-red))))
-   `(magit-signature-error ((t (:foreground ,gruber-darker-red))))
+  ;; Magit signatures
+  `(magit-signature-good ((t (:foreground ,gruber-darker-green))))
+  `(magit-signature-bad ((t (:foreground ,gruber-darker-red :weight bold))))
+  `(magit-signature-untrusted ((t (:foreground ,gruber-darker-yellow))))
+  `(magit-signature-expired ((t (:foreground ,gruber-darker-brown))))
+  `(magit-signature-expired-key ((t (:foreground ,gruber-darker-brown))))
+  `(magit-signature-revoked ((t (:foreground ,gruber-darker-red))))
+  `(magit-signature-error ((t (:foreground ,gruber-darker-red))))
 
 
-   ;; Org-modern integration
-   `(org-modern-tag ((t (:foreground ,gruber-darker-yellow :weight bold))))
-   `(org-modern-timestamp ((t (:foreground ,gruber-darker-quartz))))
-   `(org-modern-statistics ((t (:foreground ,gruber-darker-green :weight bold))))
-   `(org-modern-symbol ((t (:foreground ,gruber-darker-niagara))))
-   `(org-modern-label ((t (:foreground ,gruber-darker-wisteria))))
-   `(org-modern-horizontal-rule ((t (:foreground ,gruber-darker-bg+4))))
-   `(org-modern-block ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-fg))))
-   `(org-modern-block-name ((t (:foreground ,gruber-darker-wisteria :weight bold))))
-   `(org-modern-priority ((t (:foreground ,gruber-darker-red :weight bold))))
-   `(org-modern-progress ((t (:foreground ,gruber-darker-green))))
-   `(org-modern-link ((t (:foreground ,gruber-darker-niagara :underline t))))
-   `(org-modern-table ((t (:foreground ,gruber-darker-niagara))))
-   `(org-modern-table-row ((t (:background ,gruber-darker-bg+1))))
-   `(org-modern-habit ((t (:foreground ,gruber-darker-green :weight bold))))
-   `(org-modern-done ((t (:foreground ,gruber-darker-green))))))
+  ;; Org-modern integration
+  `(org-modern-tag ((t (:foreground ,gruber-darker-yellow :weight bold))))
+  `(org-modern-timestamp ((t (:foreground ,gruber-darker-quartz))))
+  `(org-modern-statistics ((t (:foreground ,gruber-darker-green :weight bold))))
+  `(org-modern-symbol ((t (:foreground ,gruber-darker-niagara))))
+  `(org-modern-label ((t (:foreground ,gruber-darker-wisteria))))
+  `(org-modern-horizontal-rule ((t (:foreground ,gruber-darker-bg+4))))
+  `(org-modern-block ((t (:background ,gruber-darker-bg+2 :foreground ,gruber-darker-fg))))
+  `(org-modern-block-name ((t (:foreground ,gruber-darker-wisteria :weight bold))))
+  `(org-modern-priority ((t (:foreground ,gruber-darker-red :weight bold))))
+  `(org-modern-progress ((t (:foreground ,gruber-darker-green))))
+  `(org-modern-link ((t (:foreground ,gruber-darker-niagara :underline t))))
+  `(org-modern-table ((t (:foreground ,gruber-darker-niagara))))
+  `(org-modern-table-row ((t (:background ,gruber-darker-bg+1))))
+  `(org-modern-habit ((t (:foreground ,gruber-darker-green :weight bold))))
+  `(org-modern-done ((t (:foreground ,gruber-darker-green))))))
 
 
 
