@@ -249,8 +249,8 @@
 
 ;; Embark - Contextual actions
 (rc/require 'embark 'embark-consult)
-(global-set-key (kbd "C-S-;") 'embark-act)
-(global-set-key (kbd "C-S-,") 'embark-dwim)
+(global-set-key (kbd "C-;") 'embark-act)
+(global-set-key (kbd "C-.") 'embark-dwim)
 (global-set-key (kbd "C-h B") 'embark-bindings)
 
 ;; Embark-Consult integration
