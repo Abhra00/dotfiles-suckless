@@ -1,0 +1,7 @@
+#    ┏┓┳┓┓┏┏┓
+#    ┣ ┃┃┃┃┗┓
+#    ┗┛┛┗┗┛┗┛
+#            
+
+export SUDO_EDITOR="$EDITOR"
+export BAT_THEME=base16

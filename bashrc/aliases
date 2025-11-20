@@ -28,6 +28,10 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+# Emacs
+alias e="$EDITOR"
+alias edit="$EDITOR"
+
 # Tools
 alias g='git'
 alias d='docker'
