@@ -267,15 +267,15 @@
 
 
    ;; Shell / Term
-   `(term-color-black ((t (:foreground ,gruber-darker-bg-1 :background ,gruber-darker-bg-1))))
+   `(term-color-black ((t (:foreground ,gruber-darker-bg+1 :background ,gruber-darker-bg+1))))
    `(term-color-red ((t (:foreground ,gruber-darker-red :background ,gruber-darker-red))))
    `(term-color-green ((t (:foreground ,gruber-darker-green :background ,gruber-darker-green))))
    `(term-color-yellow ((t (:foreground ,gruber-darker-yellow :background ,gruber-darker-yellow))))
-   `(term-color-blue ((t (:foreground ,gruber-darker-niagara-1 :background ,gruber-darker-niagara-1))))
+   `(term-color-blue ((t (:foreground ,gruber-darker-niagara :background ,gruber-darker-niagara))))
    `(term-color-magenta ((t (:foreground ,gruber-darker-wisteria :background ,gruber-darker-wisteria))))
    `(term-color-cyan ((t (:foreground ,gruber-darker-quartz :background ,gruber-darker-quartz))))
    `(term-color-white ((t (:foreground ,gruber-darker-fg :background ,gruber-darker-fg))))
-   `(term-color-bright-black ((t (:foreground ,gruber-darker-bg+1 :background ,gruber-darker-bg+1))))
+   `(term-color-bright-black ((t (:foreground ,gruber-darker-bg+4 :background ,gruber-darker-bg+4))))
    `(term-color-bright-red ((t (:foreground ,gruber-darker-red+1 :background ,gruber-darker-red+1))))
    `(term-color-bright-green ((t (:foreground ,gruber-darker-green :background ,gruber-darker-green))))
    `(term-color-bright-yellow ((t (:foreground ,gruber-darker-yellow :background ,gruber-darker-yellow))))
