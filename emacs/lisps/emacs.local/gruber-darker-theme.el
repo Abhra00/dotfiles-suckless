@@ -271,7 +271,7 @@
    `(term-color-red ((t (:foreground ,gruber-darker-red :background ,gruber-darker-red))))
    `(term-color-green ((t (:foreground ,gruber-darker-green :background ,gruber-darker-green))))
    `(term-color-yellow ((t (:foreground ,gruber-darker-yellow :background ,gruber-darker-yellow))))
-   `(term-color-blue ((t (:foreground ,gruber-darker-niagra-1 :background ,gruber-darker-niagra-1))))
+   `(term-color-blue ((t (:foreground ,gruber-darker-niagara-1 :background ,gruber-darker-niagara-1))))
    `(term-color-magenta ((t (:foreground ,gruber-darker-wisteria :background ,gruber-darker-wisteria))))
    `(term-color-cyan ((t (:foreground ,gruber-darker-quartz :background ,gruber-darker-quartz))))
    `(term-color-white ((t (:foreground ,gruber-darker-fg :background ,gruber-darker-fg))))
