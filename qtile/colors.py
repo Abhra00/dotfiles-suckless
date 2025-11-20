@@ -1,7 +1,7 @@
 #    ┏┓┏┓┓ ┏┓┳┓┏┓
 #    ┃ ┃┃┃ ┃┃┣┫┗┓
 #    ┗┛┗┛┗┛┗┛┛┗┗┛
-#
+#                
 
 GruberDarker = [
     ["#181818", "#181818",], # color[0] -> bg
@@ -41,16 +41,3 @@ ModusVivendiTinted = [
     ["#ff66ff", "#ff66ff",], # color[8] -> magenta intense
     ["#484d67", "#484d67",]  # color[9] -> bg->light
         ]
-
-Palenight = [
-    ["#292D3E", "#292D3E"],  # 0 -> background (bg-main)
-    ["#eeffff", "#eeffff"],  # 1 -> foreground (fg-alt)
-    ["#ff5572", "#ff5572"],  # 2 -> red
-    ["#C3E88D", "#C3E88D"],  # 3 -> green
-    ["#FFCB6B", "#FFCB6B"],  # 4 -> yellow
-    ["#82AAFF", "#82AAFF"],  # 5 -> blue
-    ["#C792EA", "#C792EA"],  # 6 -> magenta
-    ["#89DDFF", "#89DDFF"],  # 7 -> cyan
-    ["#a9c77d", "#a9c77d"],  # 8 -> brown/olive
-    ["#676E95", "#676E95"]   # 9 -> light background / alt-bg
-]

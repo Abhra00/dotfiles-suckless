@@ -92,10 +92,9 @@
     (set-char-table-range composition-function-table char
                           `([,ligature-re 0 font-shape-gstring]))))
 
-
-;; Load theme config
-(load-file "~/.config/emacs/lisps/emacs.rc/theme-rc.el")
-
+;;; Set theme
+(add-to-list 'custom-theme-load-path "~/.config/emacs/lisps/emacs.local")
+(load-theme 'gruber-darker t)
 
 ;; Clean up mode line
 (setq-default mode-line-format
@@ -126,7 +125,6 @@
 (when (autoloadp (symbol-function 'glasses-mode))
   (cl-pushnew 'glasses-mode minor-mode-list))
 (global-set-key (kbd "<S-down-mouse-3>") #'minions-minor-modes-menu)
-
 
 ;; Use moody mode line
 (rc/require 'moody)
