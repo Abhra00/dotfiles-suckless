@@ -1,0 +1,27 @@
+[aws]
+style = "bold yellow"
+
+[character]
+error_symbol = "[λ](bold red)"
+success_symbol = "[λ](bold purple)"
+
+[cmd_duration]
+style = "bold yellow"
+
+[directory]
+style = "bold bright-white"
+
+[git_branch]
+symbol = 'git::'
+style = "bold purple"
+format = '[$symbol]($style)[$branch](bold blue)'
+
+[git_status]
+style = "bold red"
+
+[hostname]
+style = "bold purple"
+
+[username]
+format = "[$user]($style) on "
+style_user = "bold cyan"
