@@ -1,37 +1,37 @@
 /****************************************************
- *   GRUBER DARKER THEME   *
+ *   PALENIGHT GTK THEME   *
  ****************************************************/
 
-/* Accent / Primary (use your yellow accent) */
-@define-color accent_color #ffdb00;
-@define-color accent_bg_color alpha(#ffdb00, 0.4);
-@define-color accent_fg_color #181818;
+/* Accent / Primary (purple) */
+@define-color accent_color #7E57C2;
+@define-color accent_bg_color alpha(#7E57C2, 0.4);
+@define-color accent_fg_color #EEFFFF;
 
 /* Destructive (red) */
-@define-color destructive_color #ff0a36;
-@define-color destructive_bg_color #ff0a36;
-@define-color destructive_fg_color #ffffff;
+@define-color destructive_color #FF5572;
+@define-color destructive_bg_color #FF5572;
+@define-color destructive_fg_color #EEFFFF;
 
 /* Success (green) */
-@define-color success_color #42dc00;
-@define-color success_bg_color #2e6f1f;
-@define-color success_fg_color #ffffff;
+@define-color success_color #C3E88D;
+@define-color success_bg_color #2F822F;
+@define-color success_fg_color #EEFFFF;
 
 /* Warning (yellow) */
-@define-color warning_color #ffdb00;
-@define-color warning_bg_color #ffdb00;
-@define-color warning_fg_color #181818;
+@define-color warning_color #FFCB6B;
+@define-color warning_bg_color #FFCB6B;
+@define-color warning_fg_color #292D3E;
 
-/* Error (use bright red) */
-@define-color error_color #ff3851;
-@define-color error_bg_color #ff3851;
-@define-color error_fg_color #ffffff;
+/* Error (bright red) */
+@define-color error_color #EF5350;
+@define-color error_bg_color #EF5350;
+@define-color error_fg_color #EEFFFF;
 
 /* Window / View */
-@define-color window_bg_color #181818;
-@define-color window_fg_color #e4e4e4;
-@define-color view_bg_color   #181818;
-@define-color view_fg_color   #e4e4e4;
+@define-color window_bg_color #292D3E;
+@define-color window_fg_color #EEFFFF;
+@define-color view_bg_color   #292D3E;
+@define-color view_fg_color   #EEFFFF;
 
 /* Header bar */
 @define-color headerbar_bg_color @window_bg_color;
@@ -41,8 +41,8 @@
 @define-color headerbar_shade_color @window_bg_color;
 
 /* Card / Popover / Dialog */
-@define-color card_bg_color #282828;  /* fits your palette's darker neutral */
-@define-color card_fg_color #e4e4e4;
+@define-color card_bg_color #31364A;  /* darker neutral from Palenight */
+@define-color card_fg_color #EEFFFF;
 @define-color card_shade_color rgba(0,0,0,0.07);
 
 @define-color dialog_bg_color @card_bg_color;
@@ -53,10 +53,10 @@
 
 /* Misc */
 @define-color shade_color rgba(0, 0, 0, 0.36);
-@define-color scrollbar_outline_color rgba(144,170,158,0.5); /* uses palette greenish-grey */
+@define-color scrollbar_outline_color rgba(140,170,200,0.5); /* Palenight blueish */
 
 /* Sidebar */
-@define-color sidebar_bg_color #282828;
+@define-color sidebar_bg_color #31364A;
 @define-color secondary_sidebar_bg_color @sidebar_bg_color;
 @define-color sidebar_backdrop_color @sidebar_bg_color;
 @define-color secondary_sidebar_backdrop_color @sidebar_bg_color;
@@ -127,4 +127,3 @@ tooltip {
 tooltip.background label {
   color: @card_fg_color;
 }
-
