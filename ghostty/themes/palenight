@@ -16,24 +16,24 @@ selection-background = #7580B8
 selection-foreground = #ffffff
 
 # Black
-palette = 0=#676E95
-palette = 8=#4c5374
+palette = 0=#4c5374
+palette = 8=#676E95
 
 # Red
-palette = 1=#ff5572
-palette = 9=#EF5350
+palette = 1=#EF5350
+palette = 9=#ff5572
 
 # Green
-palette = 2=#C3E88D
-palette = 10=#a9c77d
+palette = 2=#a9c77d
+palette = 10=#C3E88D
 
 # Yellow
-palette = 3=#ffcb6b
-palette = 11=#FFCA28
+palette = 3=#FFCA28
+palette = 11=#ffcb6b
 
 # Blue
-palette = 4=#82AAFF
-palette = 12=#64B5F6
+palette = 4=#64B5F6
+palette = 12=#82AAFF
 
 # Magenta
 palette = 5=#C792EA
