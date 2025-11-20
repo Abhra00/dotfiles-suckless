@@ -1,0 +1,48 @@
+# ┏┓┏┓┓ ┏┓┳┓┳┏┓┓┏┏┳┓
+# ┃┃┣┫┃ ┣ ┃┃┃┃┓┣┫ ┃
+# ┣┛┛┗┗┛┗┛┛┗┻┗┛┛┗ ┻
+#
+
+# Background and foreground
+background = #292D3E
+foreground = #eeffff
+
+# Cursor
+cursor-color = #ff66ff
+cursor-text = #292D3E
+
+# Selection
+selection-background = #7580B8
+selection-foreground = #ffffff
+
+# Black
+palette = 0=#676E95
+palette = 8=#4c5374
+
+# Red
+palette = 1=#ff5572
+palette = 9=#EF5350
+
+# Green
+palette = 2=#C3E88D
+palette = 10=#a9c77d
+
+# Yellow
+palette = 3=#ffcb6b
+palette = 11=#FFCA28
+
+# Blue
+palette = 4=#82AAFF
+palette = 12=#64B5F6
+
+# Magenta
+palette = 5=#C792EA
+palette = 13=#d1aaff
+
+# Cyan
+palette = 6=#89DDFF
+palette = 14=#80CBC4
+
+# White
+palette = 7=#bfc7d5
+palette = 15=#ffffff

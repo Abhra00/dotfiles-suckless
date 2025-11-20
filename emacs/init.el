@@ -92,9 +92,32 @@
     (set-char-table-range composition-function-table char
                           `([,ligature-re 0 font-shape-gstring]))))
 
-;;; Set theme
-(add-to-list 'custom-theme-load-path "~/.config/emacs/lisps/emacs.local")
-(load-theme 'gruber-darker t)
+
+;; Load theme config
+(load-file "~/.config/emacs/lisps/emacs.rc/theme-rc.el")
+
+
+;; Clean up mode line
+(setq-default mode-line-format
+              '("%e" "  "
+                (:propertize
+                 ("" mode-line-mule-info mode-line-client mode-line-modified mode-line-remote))
+                mode-line-frame-identification
+                mode-line-buffer-identification
+                "   "
+                mode-line-position
+                mode-line-format-right-align
+                "  "
+                (project-mode-line project-mode-line-format)
+                " "
+                (vc-mode vc-mode)
+                "  "
+                mode-line-modes
+                mode-line-misc-info
+                "  ")
+              project-mode-line t
+              mode-line-buffer-identification '(" %b")
+              mode-line-position-column-line-format '(" %l:%c"))
 
 
 ;; Use minions (For decluttering emacs mode line)
@@ -103,6 +126,7 @@
 (when (autoloadp (symbol-function 'glasses-mode))
   (cl-pushnew 'glasses-mode minor-mode-list))
 (global-set-key (kbd "<S-down-mouse-3>") #'minions-minor-modes-menu)
+
 
 ;; Use moody mode line
 (rc/require 'moody)
