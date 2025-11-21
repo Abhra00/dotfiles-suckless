@@ -42,10 +42,6 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-;; Perfer vertical splits
-(setq split-height-threshold nil
-      split-width-threshold 0)
-
 ;; Global Font Settings
 (set-face-attribute 'default nil
                     :family "Iosevka"
@@ -265,6 +261,15 @@
 ;; Embark-Consult integration
 (with-eval-after-load 'embark-consult
   (add-hook 'embark-collect-mode-hook #'consult-preview-at-point-mode))
+
+;; Make embark prefer vertical splits & do not show modeline in embark buffers
+(add-to-list 'display-buffer-alist
+             '("\\*Embark"
+               (display-buffer-in-side-window)
+               (side . right)
+               (slot . 0)
+               (window-width . 0.55)
+               (window-parameters (mode-line-format . none))))
 
 ;;; ============================================================================
 ;;; Project Management
