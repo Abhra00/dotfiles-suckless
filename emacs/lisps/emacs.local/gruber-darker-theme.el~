@@ -449,7 +449,7 @@
    `(markdown-metadata-value-face ((t (:foreground ,gruber-darker-quartz))))
    `(markdown-gfm-checkbox-face ((t (:foreground ,gruber-darker-yellow))))
    `(markdown-highlighting-face ((t (:background ,gruber-darker-yellow :foreground ,gruber-darker-black))))
-   `(markdown-math-face ((t (:foreground ,gruber-darker-wisteria))))
+   `(markdown-math-face ((t (:foreground ,gruber-darker-wisteria)))
 
 
    ;; Magit faces

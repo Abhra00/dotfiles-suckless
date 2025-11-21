@@ -42,6 +42,10 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+;; Perfer vertical splits
+(setq split-height-threshold nil
+      split-width-threshold 0)
+
 ;; Global Font Settings
 (set-face-attribute 'default nil
                     :family "Iosevka"
@@ -122,8 +126,6 @@
 ;; Use minions (For decluttering emacs mode line)
 (rc/require 'minions)
 (minions-mode)
-(when (autoloadp (symbol-function 'glasses-mode))
-  (cl-pushnew 'glasses-mode minor-mode-list))
 (global-set-key (kbd "<S-down-mouse-3>") #'minions-minor-modes-menu)
 
 ;; Use moody mode line
