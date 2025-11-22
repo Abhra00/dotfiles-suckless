@@ -1,74 +1,80 @@
 #  ┏┓┏┓┏┳┓┓┏┳┳┳┓┏┓┳┓┏┓
 #  ┏┛┣┫ ┃ ┣┫┃┃┣┫┣┫┣┫┃
 #  ┗┛┛┗ ┻ ┛┗┗┛┛┗┛┗┛┗┗┛
-#
-
-
+# --------------------------------------
 
 # Options
-set recolor                 	    "true"
-set recolor-keephue 		    "true"
-set window-title-home-tilde 	    true
-set statusbar-basename 		    true
-set selection-clipboard 	    clipboard
-set database			    null
+set recolor                      "true"
+set recolor-keephue              "true"
+set window-title-home-tilde      true
+set statusbar-basename           true
+set selection-clipboard          clipboard
+set database                     null
 
-# Keymaps
-map u                   	    scroll half-up
-map d 				    scroll half-down
-map D 				    toggle_page_mode
-map r 				    reload
-map R 				    rotate
-map K 				    zoom in
-map J 				    zoom out
-map i 				    recolor
-map p 				    print
-map g 				    goto top
-map [fullscreen] u 		    scroll half-up
-map [fullscreen] d 		    scroll half-down
-map [fullscreen] D 		    toggle_page_mode
-map [fullscreen] r 		    reload
-map [fullscreen] R 		    rotate
-map [fullscreen] K 		    zoom in
-map [fullscreen] J 		    zoom out
-map [fullscreen] i 		    recolor
-map [fullscreen] p 		    print
-map [fullscreen] g 		    goto top
+# Keymaps (unchanged)
+map u                             scroll half-up
+map d                             scroll half-down
+map D                             toggle_page_mode
+map r                             reload
+map R                             rotate
+map K                             zoom in
+map J                             zoom out
+map i                             recolor
+map p                             print
+map g                             goto top
 
-# ---------------------------
-# Zathura Colorscheme
-# ---------------------------
+map [fullscreen] u                scroll half-up
+map [fullscreen] d                scroll half-down
+map [fullscreen] D                toggle_page_mode
+map [fullscreen] r                reload
+map [fullscreen] R                rotate
+map [fullscreen] K                zoom in
+map [fullscreen] J                zoom out
+map [fullscreen] i                recolor
+map [fullscreen] p                print
+map [fullscreen] g                goto top
 
-set default-bg                  "#181818"
-set default-fg                  "#e4e4e4"
+# --------------------------------------
+#           Colors
+# --------------------------------------
 
-set statusbar-fg                "#e4e4e4"
-set statusbar-bg                "#282828"
+# Background / Foreground
+set default-bg                    "#292D3E"
+set default-fg                    "#EEFFFF"
 
-set inputbar-bg                 "#282828"
-set inputbar-fg                 "#e4e4e4"
+# Status Bar
+set statusbar-fg                  "#EEFFFF"
+set statusbar-bg                  "#31364A"
 
-set notification-bg             "#282828"
-set notification-fg             "#e4e4e4"
-set notification-error-bg       "#282828"
-set notification-error-fg       "#ff0a36"
-set notification-warning-bg     "#282828"
-set notification-warning-fg     "#ffdb00"
+# Input Bar
+set inputbar-bg                   "#31364A"
+set inputbar-fg                   "#EEFFFF"
 
-# Highlight colors
-set highlight-color             "#ffdb00"
-set highlight-active-color      "#ff3851"
+# Notifications
+set notification-bg               "#31364A"
+set notification-fg               "#EEFFFF"
 
-# Completion menu
-set completion-bg               "#282828"
-set completion-fg               "#e4e4e4"
-set completion-highlight-bg     "#54494e"
-set completion-highlight-fg     "#f5f5f5"
+set notification-error-bg         "#31364A"
+set notification-error-fg         "#ff5572"     # palenight red
 
-# Recoloring (optional)
-# Makes all PDFs dark-mode based on your palette
-set recolor-lightcolor          "#181818"
-set recolor-darkcolor           "#e4e4e4"
-set recolor                     "true"
-set font                        "Iosevka Nerd Font"
-set guioptions                  none
+set notification-warning-bg       "#31364A"
+set notification-warning-fg       "#FFCA28"     # palenight yellow
+
+# Highlights
+set highlight-color               "#82AAFF"     # palenight blue
+set highlight-active-color        "#C792EA"     # palenight magenta
+
+# Completion Menu
+set completion-bg                 "#292D3E"
+set completion-fg                 "#EEFFFF"
+
+set completion-highlight-bg       "#7e57c2"     # purple accent
+set completion-highlight-fg       "#EEFFFF"
+
+# Recolor (PDF dark mode)
+set recolor-lightcolor            "#292D3E"
+set recolor-darkcolor             "#EEFFFF"
+
+# Fonts / GUI
+set font                          "Iosevka Nerd Font"
+set guioptions                    none

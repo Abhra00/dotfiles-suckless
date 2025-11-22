@@ -21,14 +21,21 @@
 ;; Set different path for custom file
 (setq custom-file "~/.config/emacs/custom.el")
 
+;; Load emacs.rc directory
+(add-to-list 'load-path "~/.config/emacs/lisps/emacs.rc/")
+
 ;; Load rc.el
-(load-file "~/.config/emacs/lisps/emacs.rc/rc.el")
+(require 'rc)
 
 ;; Load miscellaneous rc file
-(load-file "~/.config/emacs/lisps/emacs.rc/misc-rc.el")
+(require 'misc-rc)
 
 ;; Load auto-commit rc file
-(load-file "~/.config/emacs/lisps/emacs.rc/autocommit-rc.el")
+(require 'autocommit-rc)
+
+;; Load icons rc file
+(require 'icons-rc)
+
 
 ;; Suppress compiler warnings
 (setq native-comp-async-report-warnings-errors nil)
@@ -42,11 +49,27 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+;; Set theme
+(require 'theme-rc)
+
 ;; Global Font Settings
 (set-face-attribute 'default nil
                     :family "Iosevka"
                     :weight 'regular
                     :height 210)
+
+(set-face-attribute 'bold nil
+                    :family "Iosevka"
+                    :weight 'semibold)
+
+(set-face-attribute 'italic nil
+                    :family "Iosevka"
+                    :slant 'oblique)
+
+(set-face-attribute 'bold-italic nil
+                    :family "Iosevka"
+                    :weight 'semibold
+                    :slant 'oblique)
 
 ;; Fallback for icons/symbols
 (when (member "Symbols Nerd Font Mono" (font-family-list))
@@ -92,15 +115,53 @@
     (set-char-table-range composition-function-table char
                           `([,ligature-re 0 font-shape-gstring]))))
 
-;;; Set theme
-(add-to-list 'custom-theme-load-path "~/.config/emacs/lisps/emacs.local")
-(load-theme 'gruber-darker t)
+;; Custom scratch buffer
+(with-current-buffer (get-buffer-create "*scratch*")
+  (insert (format ";;
+;;⠀⠀⠀⠀⠀⠀⣠⡴⣦⡄⣠⣤⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⢶⣦⠀⠀⠀
+;;⠀⢀⣶⣄⣠⡼⠋⠻⣷⡻⠛⠺⣷⢯⣦⡀⠀⠀⡀⠀⠀⠀⣠⡾⠛⢻⣞⠆⠀⠀
+;;⠀⠘⣿⡗⠋⠀⠀⣠⠊⠀⠀⠀⠈⢻⣾⣝⣶⣾⢡⣦⣤⡜⠉⠀⠀⢸⣿⠀⠀⠀
+;;⠀⠀⠀⠀⠀⠀⡼⠁⠀⠀⡠⣠⣿⡀⠙⠛⠛⠁⢿⡽⠏⠁⠀⠀⠀⢸⡏⠀⠀⠀
+;;⠀⠀⠀⠀⢀⣾⠁⢀⣠⠞⠉⠻⡾⣵⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡿⠀⠀⠀⠀
+;;⠀⠀⠀⠀⢼⣯⡻⠋⣡⢤⡖⡄⣿⠇⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⣸⠃⠀⠀⠀⠀
+;;⠀⠀⠀⠀⠀⣠⡴⠟⢋⠩⠋⠀⠁⡴⠀⠀⠀⠀⠀⣰⠃⠀⠀⢠⡟⠀⠀⠀⠀⠀
+;;⠀⠀⠀⢠⣾⣋⣀⣄⠆⠀⠀⢀⡾⠃⠀⠀⣀⢀⣴⠃⠀⠀⠀⣸⠇⠀⠀⠀⠀⠀
+;;⠀⠀⠀⣻⣶⠽⠊⠁⢀⠀⣰⡟⠁⣀⠀⣴⣟⠟⣁⢄⡀⠀⠀⣿⣀⢠⢀⣠⡄⠀
+;;⠀⢠⣾⠟⠀⠀⢠⣾⣿⣾⡿⣷⢿⣿⣼⠃⣷⡾⢻⣾⠃⠀⣼⡿⠟⢸⡿⣴⣶⡄
+;;⢀⡞⣇⡠⣴⠾⣛⣾⡿⢻⠕⠁⣮⣵⣷⣺⡏⠀⣟⣴⡶⢾⣣⣧⡄⢠⣀⢠⡷⠃
+;;⠘⠽⠖⠋⠁⠰⢫⡟⠁⠀⠀⠀⠉⠁⠈⠉⠀⠀⠈⠁⠀⠀⠉⠀⠀⠈⠉⠀⠀⠀
+;;⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+;;   Gnu-Emacs (Fuck vim)
+;;   Loading time : %s
+;;   Packages     : %s
+;;
+"
+                  (emacs-init-time)
+                  (number-to-string (length package-activated-list)))))
 
-;; Clean up mode line
+(message (emacs-init-time))
+
+
+
+;; Setup clean modern mode line
+(defun rc/shorten-vc-mode (vc)
+  "Shorten VC string to at most 20 characters & replace `Git-' with a branch symbol."
+  (let* ((vc (replace-regexp-in-string "^ Git[:-]"
+                                       (if (char-displayable-p ?) "  " "Git: ")
+                                       vc)))
+    (if (> (length vc) 20)
+        (concat (substring vc 0 20)
+                (if (char-displayable-p ?…) "…" "..."))
+      vc)))
 (setq-default mode-line-format
               '("%e" "  "
+                (:propertize " " display (raise +0.35)) ;; Top padding
+                (:propertize
+                 (if (char-displayable-p ?λ) "λ  " "   ") face font-lock-keyword-face)
+
                 (:propertize
                  ("" mode-line-mule-info mode-line-client mode-line-modified mode-line-remote))
+
                 mode-line-frame-identification
                 mode-line-buffer-identification
                 "   "
@@ -108,28 +169,36 @@
                 mode-line-format-right-align
                 "  "
                 (project-mode-line project-mode-line-format)
-                " "
-                (vc-mode vc-mode)
+                "  "
+                (vc-mode (:eval (rc/shorten-vc-mode vc-mode)))
                 "  "
                 mode-line-modes
                 mode-line-misc-info
-                "  ")
+                "  "
+                (:propertize " " display (raise -0.35))) ;; Bottom padding
               project-mode-line t
               mode-line-buffer-identification '(" %b")
               mode-line-position-column-line-format '(" %l:%c"))
 
+;; Hide boring minor modes
+(setq rc/hidden-minor-modes
+      '(abbrev-mode
+        auto-revert-mode
+        eldoc-mode
+        flyspell-mode
+        smooth-scroll-mode
+        outline-minor-mode
+        completion-preview-mode
+        which-key-mode))
 
-;; Use minions (For decluttering emacs mode line)
-(rc/require 'minions)
-(minions-mode)
-(global-set-key (kbd "<S-down-mouse-3>") #'minions-minor-modes-menu)
+(defun rc/purge-minor-modes ()
+  "Remove selected minor modes from the mode-line."
+  (dolist (mode rc/hidden-minor-modes)
+    (let ((entry (cdr (assoc mode minor-mode-alist))))
+      (when entry
+        (setcar entry "")))))
 
-;; Use moody mode line
-(rc/require 'moody)
-(moody-replace-mode-line-buffer-identification)
-(moody-replace-vc-mode)
-(moody-replace-mode-line-front-space)
-(moody-replace-eldoc-minibuffer-message-function)
+(add-hook 'after-change-major-mode-hook #'rc/purge-minor-modes)
 
 ;; Add frame borders and window dividers
 (modify-all-frames-parameters
@@ -141,7 +210,6 @@
   (face-spec-reset-face face)
   (set-face-foreground face (face-attribute 'default :background)))
 (set-face-attribute 'fringe nil :inherit 'default)
-
 
 ;;; ============================================================================
 ;;; Editor Behavior
@@ -305,8 +373,7 @@
 ;;; ============================================================================
 ;;; Org Mode
 ;;; ============================================================================
-
-(load-file "~/.config/emacs/lisps/emacs.rc/org-mode-rc.el")
+(require 'org-mode-rc)
 
 ;;; ============================================================================
 ;;; Version Control - Magit
@@ -322,6 +389,11 @@
 (global-set-key (kbd "C-c m s") 'magit-status)
 (global-set-key (kbd "C-c m l") 'magit-log)
 (global-set-key (kbd "C-c m b") 'magit-blame)
+
+;;; ============================================================================
+;;; Eshell
+;;; ============================================================================
+(require 'eshell-rc)
 
 ;;; ============================================================================
 ;;; Multiple Cursors
@@ -397,6 +469,7 @@
 ;; Corfu popupinfo for documentation
 (add-hook 'corfu-mode-hook #'corfu-popupinfo-mode)
 (setq corfu-popupinfo-delay '(0.5 . 0.2))
+
 
 ;; Cape - Additional completion sources
 (rc/require 'cape)

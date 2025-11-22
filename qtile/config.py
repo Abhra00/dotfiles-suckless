@@ -1,7 +1,7 @@
 #    ┏┓┏┳┓┳┓ ┏┓
-#    ┃┃ ┃ ┃┃ ┣ 
+#    ┃┃ ┃ ┃┃ ┣
 #    ┗┻ ┻ ┻┗┛┗┛
-#              
+#
 #-------- A qtile config by bugs ---------#
 
 #---------------------- Import needed libraries ----------------------#
@@ -35,7 +35,7 @@ def minimize_all(qtile):
     for win in qtile.current_group.windows:
         if hasattr(win, "toggle_minimize"):
             win.toggle_minimize()
-           
+
 # A function for toggling between MAX and MONADTALL layouts
 @lazy.function
 def maximize_by_switching_layout(qtile):
@@ -77,7 +77,7 @@ keys = [
     Key([], "Print", lazy.spawn("maimshot"), desc="Screenshot menu"),
     Key([mod, alt], "x", lazy.spawn("pmenu"), desc="Logout menu"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    
+
     # Window management
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
@@ -117,7 +117,7 @@ keys = [
     # Treetab prompt
     Key([mod, "shift"], "a", add_treetab_section, desc='Prompt to add new section in treetab'),
 
-    # Grow/shrink windows left/right. 
+    # Grow/shrink windows left/right.
     # This is mainly for the 'monadtall' and 'monadwide' layouts
     # although it does also work in the 'bsp' and 'columns' layouts.
     Key([mod], "equal",
@@ -146,7 +146,7 @@ keys = [
     # Switch focus of monitors
     Key([mod], "period", lazy.next_screen(), desc='Move focus to next monitor'),
     Key([mod], "comma", lazy.prev_screen(), desc='Move focus to prev monitor'),
-    
+
     # Scratchpad's bind
     Key(["control"], "1", lazy.group['SPTERM'].dropdown_toggle('Term')),
     Key(["control"], "2", lazy.group['SPCALC'].dropdown_toggle('Calculator')),
@@ -208,7 +208,7 @@ for i in group_names:
     )
 
 #---------------------- Select colors ----------------------#
-colors = colors.GruberDarker
+colors = colors.Palenight
 
 
 #---------------------- Layout management ----------------------#
@@ -310,7 +310,7 @@ def init_widgets_list():
                           ("👻", "ghostty", "Ghostty terminal"),
                           ("📁", "thunar", "Thunar file manager"),
                           ("🎦", "obs", "Video Recorder")
-                         ], 
+                         ],
                  fontsize = 12,
                  padding = 6,
                  foreground = colors[3],
@@ -364,7 +364,7 @@ def init_widgets_list():
                  unknown_char='UKN',
                  not_charging_char = 'NOT',
                  foreground = colors[3],
-                 update_interval=30, 
+                 update_interval=30,
                  padding = 2,
                  ),
         widget.TextBox(
@@ -376,7 +376,7 @@ def init_widgets_list():
                  ),
         widget.CPU(
                  foreground = colors[4],
-                 padding = 2, 
+                 padding = 2,
                  mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e btop')},
                  format = '󰘚 Tea: {load_percent}%',
                  ),
@@ -389,7 +389,7 @@ def init_widgets_list():
                  ),
         widget.Memory(
                  foreground = colors[2],
-                 padding = 2, 
+                 padding = 2,
                  mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e btop')},
                  format = '{MemUsed:.0f}{mm}',
                  fmt = ' Hot Loads: {}',
@@ -404,7 +404,7 @@ def init_widgets_list():
         widget.DF(
                  update_interval = 60,
                  foreground = colors[5],
-                 padding = 2, 
+                 padding = 2,
                  mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('notify-disk')},
                  partition = '/',
                  format = '{uf}{m} free',
@@ -420,7 +420,7 @@ def init_widgets_list():
                  ),
         widget.Volume(
                  foreground = colors[7],
-                 padding = 2, 
+                 padding = 2,
                  fmt = ' Boom Box: {}',
                  ),
         widget.TextBox(
@@ -432,7 +432,7 @@ def init_widgets_list():
                  ),
         widget.Clock(
                  foreground = colors[8],
-                 padding = 2, 
+                 padding = 2,
                  mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('notify-date')},
                  format = "󰥔 %a, %b %d - %H:%M",
                  ),
@@ -444,7 +444,7 @@ def init_widgets_list():
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
-    return widgets_screen1 
+    return widgets_screen1
 
 
 def init_screens():

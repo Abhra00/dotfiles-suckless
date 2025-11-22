@@ -1,7 +1,7 @@
 #  ┳┓┳┳┳┓┏┓┏┳┓┳┓┏┓
-#  ┃┃┃┃┃┃┗┓ ┃ ┣┫┃ 
+#  ┃┃┃┃┃┃┗┓ ┃ ┣┫┃
 #  ┻┛┗┛┛┗┗┛ ┻ ┛┗┗┛
-#                                    
+# --------------------------------------
 
 [global]
 
@@ -21,14 +21,14 @@ corner_radius = 0
 
 gap_size = 4
 separator_height = 1
-separator_color = "#453d41"
+separator_color = "#31364A"
 
 padding = 15
 horizontal_padding = 15
 text_icon_padding = 0
 
 frame_width = 0
-frame_color = "#484848"
+frame_color = "#31364A"
 
 sort = no
 idle_threshold = 0
@@ -37,7 +37,7 @@ font = Iosevka NF Medium 9
 line_height = 0
 
 markup = full
-format = "<span size='xx-large' font_desc='Iosevka NF Medium 9' weight='bold' foreground='#9e95c7'>%s</span>\n%b"
+format = "<span size='xx-large' font_desc='Iosevka NF Medium 9' weight='bold' foreground='#C792EA'>%s</span>\n%b"
 alignment = center
 vertical_alignment = center
 
@@ -78,20 +78,24 @@ progress_bar_corner_radius = 1
 title = Dunst
 class = Dunst
 
+# --------------------------------------
+#           URGENCIES
+# --------------------------------------
+
 [urgency_low]
 timeout = 3
-background = "#282828"
-foreground = "#e4e4ef"
-highlight = "#96a6c8"
+background = "#292D3E"
+foreground = "#EEFFFF"
+highlight = "#82AAFF"
 
 [urgency_normal]
 timeout = 5
-background = "#282828"
-foreground = "#e4e4ef"
-highlight = "#96a6c8"
+background = "#292D3E"
+foreground = "#EEFFFF"
+highlight = "#C792EA"
 
 [urgency_critical]
 timeout = 0
-background = "#282828"
-foreground = "#f43841"
-highlight = "#f43841"
+background = "#292D3E"
+foreground = "#ff5572"
+highlight = "#EF5350"
