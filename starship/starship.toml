@@ -1,27 +1,55 @@
-[aws]
-style = "bold yellow"
+#    ┏┓┏┳┓┏┓┳┓┏┓┓┏┳┏┓
+#    ┗┓ ┃ ┣┫┣┫┗┓┣┫┃┃┃
+#    ┗┛ ┻ ┛┗┛┗┗┛┛┗┻┣┛
+#
 
-[character]
-error_symbol = "[λ](bold red)"
-success_symbol = "[λ](bold purple)"
-
-[cmd_duration]
-style = "bold yellow"
-
-[directory]
-style = "bold bright-white"
-
-[git_branch]
-symbol = 'git::'
-style = "bold purple"
-format = '[$symbol]($style)[$branch](bold blue)'
-
-[git_status]
-style = "bold red"
-
-[hostname]
-style = "bold purple"
+format = """
+[$git_branch$git_status](bright-yellow)
+\\[[$username@](bright-white)\
+[$hostname](red) \
+[$directory](bright-white)\
+\\]$character"""
 
 [username]
-format = "[$user]($style) on "
-style_user = "bold cyan"
+format = "[$user]($style)"
+style_user = "bright-white"
+style_root = "bright-white"
+show_always = true
+disabled = false
+
+[hostname]
+format = "[$hostname]($style)"
+style = "red"
+ssh_only = false
+disabled = false
+
+[git_branch]
+format = "\\[[$symbol$branch]($style) "
+style = "bright-white"
+symbol = ""
+
+[git_status]
+format = "[$all_status$ahead_behind]($style)\\] "
+style = "yellow"
+conflicted = "="
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+up_to_date = ""
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+[directory]
+format = "[$path]($style)"
+style = "bright-white"
+truncation_length = 1
+truncate_to_repo = false
+fish_style_pwd_dir_length = 0
+
+[character]
+success_symbol = "[\\$](bright-white)"
+error_symbol = "[\\$](bright-white)"
